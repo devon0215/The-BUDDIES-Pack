@@ -1,0 +1,15 @@
+--------------------------------------
+FIXES
+
+-Remake AI to look more professional
+-Models and Pictures for Items (Uniforms, Berets, etc.)
+-Marine vehicles have regular buddy crew and drivers
+-Need marine rolled sleeves, patched, and patched rolled sleeves uniforms
+-Need navy rolled sleeves, patched, and patched rolled sleeves, uniforms
+-Need marine and navy 8-points
+-Need recon sweater
+-Add Marine and navy insignia
+-Add preview pictures for all the vehicles
+-add units for the marine and recon parts of the faction
+----------------------------------------
+
