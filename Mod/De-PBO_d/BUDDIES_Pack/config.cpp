@@ -149,6 +149,7 @@ class CfgPatches
 			"BUDDIES_bmp1d",
 			"BUDDIES_bmp1k",
 			"BUDDIES_bmp1p",
+			"BUDDIES_bmp2",
 			"BUDDIES_Recon_LT_01_AA",
 			"BUDDIES_Recon_LT_01_AT",
 			"BUDDIES_Recon_LT_01_Cannon",
@@ -5615,6 +5616,7 @@ class CfgVehicles
 	class rhs_bmp1p_msv;
 	class rhs_bmp1k_msv;
 	class rhs_bmp1d_msv;
+	class rhs_bmp2_msv;
 	class Tank: LandVehicle
 	{
 		class NewTurret;
@@ -7362,6 +7364,44 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
+	class BUDDIES_bmp2: rhs_bmp2_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_IFVs";
+		author="Atli";
+		displayName="BMP-2";
+		crew="B_BUDDY_R_Crew";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Crew",
+			"B_BUDDY_R_Crew",
+			"B_BUDDY_R_Crew"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_BMP_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_3_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_4_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_5_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_6_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};	
 	class BUDDIES_Recon_LT_01_AA: I_LT_01_AA_F
 	{
 		side=1;
