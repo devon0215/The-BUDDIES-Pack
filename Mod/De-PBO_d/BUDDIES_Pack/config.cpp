@@ -77,6 +77,7 @@ class CfgPatches
 			"B_BUDDY_A_Crew_Officer",
 			"B_BUDDY_A_Secfor",
 			"B_BUDDY_A_Driver",
+			"B_BUDDY_AquaBud_DeckCrew",
 			"B_BUDDY_Recon_Driver",
 			"B_BUDDY_Recon_Crew",
 			"B_BUD_Officer",
@@ -286,6 +287,10 @@ class CfgEditorSubcategories
 	class BUD_Men
 	{
 		displayName="Men (B.U.D.)";
+	};
+	class BUDDIES_Men_AquaBud
+	{
+		displayName="Men (AQUABUD)";
 	};
 	class BUDDIES_Men_Recon
 	{
@@ -4138,6 +4143,55 @@ class CfgVehicles
 		{
 			"V_TacVest_blk",
 			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+	};
+	class B_BUDDY_AquaBud_DeckCrew: B_BUDDY_A_Crew
+    {
+		author="Atli";
+		scope=2;
+		scopeCurator=2;
+		displayName="Deck Crew";
+	    editorSubcategory="BUDDIES_Men_AquaBud";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
+		uniformClass="BUDDIES_Navy_Camo";
+		role="Crewman";
+		weapons[]=
+		{
+			"Throw",
+			"Put"
+		};
+		respawnWeapons[]=
+		{
+			"Throw",
+			"Put"
+		};
+		items[]=
+		{};
+		respawnItems[]=
+		{};
+		magazines[]=
+		{};
+		respawnMagazines[]=
+		{};
+		linkedItems[]=
+		{
+			"V_DeckCrew_white_F",
+			"CUP_H_Navy_CrewHelmet_White",
+		    "ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+		respawnLinkedItems[]=
+		{
+			"V_DeckCrew_white_F",
+			"CUP_H_Navy_CrewHelmet_White",
+		    "ItemMap",
 			"ItemCompass",
 			"ItemRadio",
 			"ItemWatch",
