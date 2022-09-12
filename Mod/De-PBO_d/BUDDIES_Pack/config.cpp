@@ -73,13 +73,16 @@ class CfgPatches
 			"B_BUDDY_R_Driver",
 			"B_BUDDY_R_Crew",
 			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_GroundCrew",
 			"B_BUDDY_A_Crew",
 			"B_BUDDY_A_Crew_Officer",
 			"B_BUDDY_A_Secfor",
 			"B_BUDDY_A_Driver",
 			"B_BUDDY_AquaBud_DeckCrew",
+			"B_BUDDY_Marine",
 			"B_BUDDY_Recon_Driver",
 			"B_BUDDY_Recon_Crew",
+			"B_BUDDY_Recon_Squad_Leader",
 			"B_BUD_Officer",
 			"B_BUD_Marksman_M14",
 			"B_BUD_Rifleman_FAL",
@@ -292,6 +295,10 @@ class CfgEditorSubcategories
 	class BUDDIES_Men_AquaBud
 	{
 		displayName="Men (AQUABUD)";
+	};
+	class BUDDIES_AQUABUD_Marines
+	{
+		displayName="Men (Marines)";
 	};
 	class BUDDIES_Men_Recon
 	{
@@ -3797,6 +3804,7 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
+	
 	class B_BUDDY_A_Crew: B_BUDDY_A_Pilot
 	{
 		author="Devon0215";
@@ -4199,6 +4207,237 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
+	class B_BUDDY_Marine: B_BUDDY_R_Rifleman_FAL
+	{
+		author="Atli";
+		scope=2;
+		scopeCurator=2;
+		displayName="Rifleman"
+		uniformClass="BUDDIES_Marines_Camo";
+		editorSubcategory="BUDDIES_AQUABUD_Marines";
+		weapons[]=
+		{
+			"hlc_rifle_auga1carb",
+			"rhsusf_weap_m1911a1",
+			"Throw",
+			"Put"
+		};
+		respawnWeapons[]=
+		{
+			"hlc_rifle_auga1carb",
+			"rhsusf_weap_m1911a1",
+			"Throw",
+			"Put"
+		};
+		items[]=
+		{
+			"FirstAidKit",
+			"FirstAidKit",
+			"FirstAidKit",
+			"FirstAidKit"
+		};
+		respawnItems[]=
+		{
+			"FirstAidKit",
+			"FirstAidKit",
+			"FirstAidKit",
+			"FirstAidKit"
+		};
+		magazines[]= 
+		{
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_m67",
+			"rhs_mag_m67"
+		};
+		respawnMagazines[]=
+		{
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"hlc_30Rnd_556x45_B_AUG",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhsusf_mag_7x45acp_MHP",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_m67",
+			"rhs_mag_m67"
+		};
+		linkedItems[]=
+		{
+			"CUP_H_Ger_M92_Tan_GG_CF",
+			"VSM_FAPC_Operator_OGA",
+			"rhs_googles_black",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+	    respawnLinkedItems[]=
+		{
+			"CUP_H_Ger_M92_Tan_GG_CF",
+			"VSM_FAPC_Operator_OGA",
+			"rhs_googles_black",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+	};
+	class B_BUDDY_A_GroundCrew: B_BUDDY_AquaBud_DeckCrew
+	{
+		author="Atli";
+		scope=2;
+		scopeCurator=2;
+		displayName="Ground Crew";
+		editorSubcategory="BUDDIES_Men_Air";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
+		uniformClass="BUDDIES_Air_Camo";
+		linkedItems[]=
+		{
+			"V_DeckCrew_white_F",
+			"CUP_H_PMC_Cap_Grey",
+			"VSM_Peltor_OD_glasses",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+		respawnLinkedItems[]=
+		{
+			"V_DeckCrew_white_F",
+			"CUP_H_PMC_Cap_Grey",
+			"VSM_Peltor_OD_glasses",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+	};
+	class B_BUDDY_Recon_Squad_Leader: B_BUDDY_R_Squad_Leader
+	{
+		author="Atli";
+		scope=2;
+		scopeCurator=2;
+		uniformClass="BUDDIES_Recon_Camo";
+		editorSubcategory="BUDDIES_Men_Recon";
+		weapons[]=
+		{
+			"CUP_arifle_FNFAL5061_wooden",
+			"rhs_weap_tt33",
+			"rhssaf_zrak_rd7j",
+			"Throw",
+			"Put"
+		};
+		respawnWeapons[]=
+		{
+			"CUP_arifle_FNFAL5061_wooden",
+			"rhs_weap_tt33",
+			"rhssaf_zrak_rd7j",
+			"Throw",
+			"Put"
+		};
+		items[]=
+		{
+			"FirstAidKit",
+			"FirstAidKit",
+			"FirstAidKit",
+			"FirstAidKit"
+		};
+		respawnItems[]=
+		{
+			"FirstAidKit",
+			"FirstAidKit",
+			"FirstAidKit",
+			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"rhs_mag_762x25_8",
+			"rhs_mag_762x25_8",
+			"rhs_mag_762x25_8",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_m67",
+			"rhs_mag_m67"
+		};
+		respawnMagazines[]=
+		{
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"CUP_20Rnd_762x51_FNFAL_M",
+			"rhs_mag_762x25_8",
+			"rhs_mag_762x25_8",
+			"rhs_mag_762x25_8",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_m67",
+			"rhs_mag_m67"
+		};
+		linkedItems[]=
+		{
+			"rhssaf_helmet_m97_olive_nocamo_black_ess",
+			"V_SmershVest_01_radio_F",
+			"rhsusf_shemagh_od",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+		respawnLinkedItems[]=
+		{
+			"rhssaf_helmet_m97_olive_nocamo_black_ess",
+			"V_SmershVest_01_radio_F",
+			"rhsusf_shemagh_od",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+	};
 	class B_BUDDY_Recon_Driver: B_BUDDY_R_Driver
 	{
 		author="Devon0215";
@@ -4211,19 +4450,18 @@ class CfgVehicles
 		role="Crewman";
 		weapons[]=
 		{
-			"rhs_weap_savz61",
+			"hlc_rifle_G36C",
 			"Throw",
 			"Put"
 		};
 		respawnWeapons[]=
 		{
-			"rhs_weap_savz61",
+			"hlc_rifle_G36C",
 			"Throw",
 			"Put"
 		};
 		items[]=
 		{
-			"FirstAidKit",
 			"FirstAidKit",
 			"FirstAidKit",
 			"FirstAidKit",
@@ -4234,60 +4472,35 @@ class CfgVehicles
 			"FirstAidKit",
 			"FirstAidKit",
 			"FirstAidKit",
-			"FirstAidKit",
 			"FirstAidKit"
 		};
 		magazines[]=
 		{
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"SmokeShell",
-			"SmokeShell",
-			"SmokeShell",
-			"SmokeShellGreen",
-			"SmokeShellGreen",
-			"SmokeShellBlue",
-			"SmokeShellBlue",
-			"SmokeShellPurple",
-			"SmokeShellRed",
-			"rhs_mag_rgd5",
-			"rhs_mag_rgd5"
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"rhs_mag_m67",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_an_m8hc"
 		};
 		respawnMagazines[]=
 		{
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"rhsgref_20rnd_765x17_vz61",
-			"SmokeShell",
-			"SmokeShell",
-			"SmokeShell",
-			"SmokeShellGreen",
-			"SmokeShellGreen",
-			"SmokeShellBlue",
-			"SmokeShellBlue",
-			"SmokeShellPurple",
-			"SmokeShellRed",
-			"rhs_mag_rgd5",
-			"rhs_mag_rgd5"
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"rhs_mag_m67",
+			"rhs_mag_an_m8hc",
+			"rhs_mag_an_m8hc"
 		};
 		linkedItems[]=
 		{
-			"V_TacVest_blk",
+			"H_Cap_blk",
+			"VSM_Shemagh_Facemask_OD_Peltor_Goggles",
+			"VSM_MBSS_PACA",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -4296,7 +4509,9 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"V_TacVest_blk",
+			"H_Cap_blk",
+			"VSM_Shemagh_Facemask_OD_Peltor_Goggles",
+			"VSM_MBSS_PACA",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
