@@ -3804,7 +3804,6 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	
 	class B_BUDDY_A_Crew: B_BUDDY_A_Pilot
 	{
 		author="Devon0215";
