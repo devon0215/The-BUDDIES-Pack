@@ -8931,6 +8931,13 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_bud_inverted.paa";
 		textureVehicle="";
 	};
+	class BIO_Insignia
+	{
+		displayName="BIO Insignia";
+		author="Starman";
+		texture="\BUDDIES_Pack\Data\Insignia\BIOPatch.paa";
+		textureVehicle="";
+	};
 };
 class CfgMarkers
 {
