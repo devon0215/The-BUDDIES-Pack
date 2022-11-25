@@ -1,9 +1,5 @@
 -----------
 Added:
 
-AQUABUD Deck Crew
-AIRBUD Ground Crew
-Marine Rifleman
-Recon SL
-BMP-2
+BIO Patch
 ---------------
