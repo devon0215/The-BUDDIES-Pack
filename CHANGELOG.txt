@@ -2,4 +2,6 @@
 Added:
 
 Small picture frames of: Buddy, Fig
+
+Intel Patch
 ---------------
