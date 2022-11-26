@@ -93,6 +93,8 @@ class CfgPatches
 			"B_BUD_Engineer",
 			"B_BUD_Medic",
 			"B_BUD_MG_M249",
+			"Land_Photoframe_BUDDIES_Fig",
+			"Land_Photoframe_BUDDIES_Buddy",
 			"BUDDIES_UAZ",
 			"BUDDIES_UAZ_Open",
 			"BUDDIES_UAZ_AGS",
@@ -5590,6 +5592,31 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
+	class Land_Photoframe_01_F;
+	class Land_Photoframe_BUDDIES_Fig: Land_Photoframe_01_F
+	{
+		author="Saucy Salmon";
+		scope=2;
+		scopeCurator=2;
+		displayName="Photo Frame (BUDDIES, Fig)";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Photo\photos_buddies_fig_co.paa",
+			"a3\props_f_orange\items\decorative\data\photoframe_01_f_co.paa"
+		};
+	};
+	class Land_Photoframe_BUDDIES_Buddy: Land_Photoframe_01_F
+	{
+		author="Saucy Salmon";
+		scope=2;
+		scopeCurator=2;
+		displayName="Photo Frame (BUDDIES, Buddy)";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Photo\photos_buddies_buddy_co.paa",
+			"a3\props_f_orange\items\decorative\data\photoframe_01_f_co.paa"
+		};
+	};
 	class LandVehicle;
 	class Car: LandVehicle
 	{
@@ -8931,11 +8958,11 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_bud_inverted.paa";
 		textureVehicle="";
 	};
-	class BIO_Insignia
+	class Intel_Insignia
 	{
-		displayName="BIO Insignia";
+		displayName="Intel Insignia";
 		author="Starman";
-		texture="\BUDDIES_Pack\Data\Insignia\BIOPatch.paa";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_intel.paa";
 		textureVehicle="";
 	};
 };
