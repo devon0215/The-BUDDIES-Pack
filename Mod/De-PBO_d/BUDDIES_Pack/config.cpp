@@ -124,6 +124,11 @@ class CfgPatches
 			"BUDDIES_bmp1k",
 			"BUDDIES_bmp1p",
 			"BUDDIES_bmp2",
+			"BUDDIES_bmp2e",
+			"BUDDIES_bmp2k",
+			"BUDDIES_bmp2d",
+			"BUDDIES_Recon_brm1k",
+			"BUDDIES_Recon_prp3",
 			"BUDDIES_Recon_LT_01_AA",
 			"BUDDIES_Recon_LT_01_AT",
 			"BUDDIES_Recon_LT_01_Cannon",
@@ -336,6 +341,10 @@ class CfgEditorSubcategories
 	class BUDDIES_IFVs
 	{
 		displayName="IFVs";
+	};
+	class BUDDIES_Recon_IFVs
+	{
+		displayName="IFVs (Recon)";
 	};
 	class BUDDIES_Tanks
 	{
@@ -5853,6 +5862,11 @@ class CfgVehicles
 	class rhs_bmp1k_msv;
 	class rhs_bmp1d_msv;
 	class rhs_bmp2_msv;
+	class rhs_bmp2e_msv;
+	class rhs_bmp2k_msv;
+	class rhs_bmp2d_msv;
+	class rhs_brm1k_msv;
+	class rhs_prp3_msv;
 	class Tank: LandVehicle
 	{
 		class NewTurret;
@@ -7608,14 +7622,8 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_IFVs";
 		author="Atli";
-		displayName="BMP-2";
+		displayName="BMP-2 (obr. 1986g.)";
 		crew="B_BUDDY_R_Crew";
-		typicalCargo[]=
-		{
-			"B_BUDDY_R_Crew",
-			"B_BUDDY_R_Crew",
-			"B_BUDDY_R_Crew"
-		};
 		hiddenSelectionsTextures[]=
 		{
 			"BUDDIES_Pack\Data\Vehicle\BUDDIES_BMP_2_co.paa",
@@ -7637,7 +7645,167 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
-	};	
+	};
+	class BUDDIES_bmp2e: rhs_bmp2e_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_IFVs";
+		author="Devon0215";
+		displayName="BMP-2 (obr. 1980g.)";
+		crew="B_BUDDY_R_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_BMP_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_3_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_4_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_5_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_6_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_bmp2k: rhs_bmp2k_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_IFVs";
+		author="Devon0215";
+		displayName="BMP-2K";
+		crew="B_BUDDY_R_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_BMP_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_3_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_4_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_5_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_6_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_bmp2d: rhs_bmp2d_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_IFVs";
+		author="Devon0215";
+		displayName="BMP-2D";
+		crew="B_BUDDY_R_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_BMP_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_3_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_4_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_5_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_6_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_Recon_brm1k: rhs_brm1k_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Recon_IFVs";
+		author="Devon0215";
+		displayName="BRM-1K";
+		crew="B_BUDDY_Recon_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"rhsafrf\addons\rhs_bmp\textures\bmp_1_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_3_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_4_co.paa",
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_Recon_BRM1K_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_6_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_Recon_prp3: rhs_prp3_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Recon_IFVs";
+		author="Devon0215";
+		displayName="PRP-3";
+		crew="B_BUDDY_Recon_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"rhsafrf\addons\rhs_bmp\textures\bmp_1_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_2_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_3_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_4_co.paa",
+			"rhsafrf\addons\rhs_bmp\textures\bmp_5_co.paa",
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_Recon_PRP3_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
 	class BUDDIES_Recon_LT_01_AA: I_LT_01_AA_F
 	{
 		side=1;
