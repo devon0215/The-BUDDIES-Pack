@@ -171,6 +171,8 @@ class CfgPatches
 			"BUDDIES_Mi24P",
 			"BUDDIES_Mi24V",
 			"BUDDIES_Mi24G",
+			"BUDDIES_C47",
+			"BUDDIES_AC47",
 			"BUDDIES_L39",
 			"BUDDIES_MiG29SM"
 		};
@@ -6108,6 +6110,8 @@ class CfgVehicles
 	class RHS_Mi24P_CAS_vvsc;
 	class RHS_Mi24V_vvsc;
 	class rhsgref_mi24g_CAS;
+	class CUP_C47_Base;
+	class CUP_AC47_Spooky_Base;
 	class rhs_l39_cdf;
 	class rhs_mig29sm_vvsc;
 	class BUDDIES_UAZ: RHS_UAZ_MSV_01
@@ -9141,6 +9145,57 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
 			"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo2_co.paa",
 			"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_g3_co.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_C47: CUP_C47_Base
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Planes";
+		author="Saucy Salmon";
+		displayName="C-47"
+		crew="B_BUDDY_A_Pilot";
+		typicalCargo[]=
+		{
+			"B_BUDDY_A_Pilot"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_AC47: CUP_AC47_Spooky_Base
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Planes";
+		author="Saucy Salmon";
+		displayName="AC-47"
+		crew="B_BUDDY_A_Pilot";
+		typicalCargo[]=
+		{
+			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_Pilot"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
 		};
 		rhs_decalParameters[]=
 		{
