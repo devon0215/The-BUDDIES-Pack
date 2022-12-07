@@ -5980,23 +5980,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class Attributes
-		{
-			class ObjectTexture;
-			class rhs_decalNumber_type;
-			class rhs_decalNumber;
-			class rhs_decalPlatoon_type;
-			class rhs_decalPlatoon;
-			class rhs_ammoslot_1_type;
-			class rhs_ammoslot_1;
-			class rhs_ammoslot_2_type;
-			class rhs_ammoslot_2;
-			class rhs_ammoslot_3_type;
-			class rhs_ammoslot_3;
-			class rhs_ammoslot_4_type;
-			class rhs_ammoslot_4;
-			class rhs_hide_com_shield;
-		};
 	};
 	class rhs_t72ba_tv: rhs_a3t72tank_base
 	{
@@ -6065,6 +6048,18 @@ class CfgVehicles
 	class Helicopter: Air
 	{
 		class Turrets;
+		class HitPoints
+		{
+			class HitGlass1;
+			class HitGlass2;
+			class HitGlass3;
+			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+			class HitHull;
+			class HitEngine;
+			class HitAvionics;
+		};
 	};
 	class Helicopter_Base_F: Helicopter
 	{
@@ -6072,28 +6067,145 @@ class CfgVehicles
 		{
 			class MainTurret;
 		};
+		class HitPoints: HitPoints
+		{
+			class HitGlass1;
+			class HitGlass2;
+			class HitGlass3;
+			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+			class HitMissiles;
+			class HitHull;
+			class HitEngine;
+			class HitAvionics;
+			class HitVRotor;
+			class HitHRotor;
+		};
+		class AnimationSources;
+		class Eventhandlers;
+		class CargoTurret;
+		class ViewOptics;
+		class Reflectors
+		{
+			class Right;
+		};
 	};
-	class Helicopter_Base_H: Helicopter_Base_F {};
-	class Heli_Transport_01_base_F: Helicopter_Base_H {};
-	class RHS_UH60_Base: Heli_Transport_01_base_F {};
-	class RHS_UH60M_base: RHS_UH60_Base {};
-	class RHS_UH60M_US_base: RHS_UH60M_base {};
+	class Helicopter_Base_H: Helicopter_Base_F
+	{
+		class Turrets: Turrets
+		{
+			class CopilotTurret;
+		};
+		class AnimationSources;
+		class Eventhandlers;
+		class Viewoptics;
+		class HitPoints;
+		class Components;
+	};
+	class Heli_Transport_01_base_F: Helicopter_Base_H
+	{
+		class Sounds;
+		class SoundsExt
+		{
+			class Sounds;
+		};
+		class HitPoints: HitPoints
+		{
+			class HitHull;
+			class HitFuel;
+			class HitAvionics;
+			class HitMissiles;
+			class HitEngine1;
+			class HitEngine2;
+			class HitEngine;
+			class HitHRotor;
+			class HitVRotor;
+			class HitGlass1;
+			class HitGlass2;
+			class HitGlass3;
+			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+			class HitGlass7;
+			class HitGlass8;
+		};
+	};
+	class RHS_UH60_Base: Heli_Transport_01_base_F
+	{
+		class EventHandlers;
+	};
+	class RHS_UH60M_base: RHS_UH60_Base
+	{
+		class EventHandlers;
+	};
+	class RHS_UH60M_US_base: RHS_UH60M_base
+	{
+		class EventHandlers;
+	};
 	class RHS_UH60M: RHS_UH60M_US_base
 	{
-		class MainTurret;
-		class RightDoorGun: MainTurret {};
+		class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+			class RightDoorGun;
+			class CargoTurret_01;
+			class CargoTurret_02;
+			class CargoTurret_03;
+			class CargoTurret_04;
+		};
+		class EventHandlers;
 	};
-	class RHS_UH60M2: RHS_UH60M {};
+	class RHS_UH60M_d: RHS_UH60M
+	{
+		class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class MainTurret;
+			class RightDoorGun;
+			class CargoTurret_01;
+			class CargoTurret_02;
+			class CargoTurret_03;
+			class CargoTurret_04;
+		};
+	};
+	class RHS_UH60M2: RHS_UH60M
+	{
+		class Turrets: Turrets
+		{
+			class CopilotTurret;
+			class CargoTurret_01;
+			class CargoTurret_02;
+			class CargoTurret_03;
+			class CargoTurret_04;
+		};
+	};
+	class RHS_UH60M2_d: RHS_UH60M2
+	{
+		class EventHandlers;
+	};
+	class RHS_UH60M_ESSS: RHS_UH60M2
+	{
+		class EventHandlers;
+	};
+	class RHS_UH60M_ESSS2: RHS_UH60M_ESSS
+	{
+		class EventHandlers;
+	};
+	class RHS_UH60M_ESSS_d: RHS_UH60M_ESSS
+	{
+		class EventHandlers;
+	};
+	class RHS_UH60M_ESSS2_d: RHS_UH60M_ESSS2
+	{
+		class EventHandlers;
+	};
 	class rhs_uh1h_hidf;
 	class rhs_uh1h_hidf_gunship;
 	class rhs_uh1h_hidf_unarmed;
 	class rhs_melb_mh6m;
 	class rhs_melb_ah6m;
-	class RHS_UH60M2_d: RHS_UH60M2 {};
-	class RHS_UH60M_d: RHS_UH60M {};
-	class RHS_UH60M_ESSS: RHS_UH60M2 {};
-	class RHS_UH60M_ESSS2: RHS_UH60M_ESSS {};
-	class RHS_UH60M_ESSS2_d: RHS_UH60M_ESSS2 {};
 	class CUP_B_CH53E_GER;
 	class CUP_B_CH53E_VIV_GER;
 	class RHS_Mi8T_vdv;
@@ -8658,6 +8770,10 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_BUD_Helicopters";
 		crew="B_BUDDY_A_Pilot";
+		typicalCargo[]=
+		{
+			"B_BUDDY_A_Pilot"
+		};
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
@@ -8679,8 +8795,13 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_BUD_Helicopters";
 		crew="B_BUDDY_A_Pilot";
+		typicalCargo[]=
+		{
+			"B_BUDDY_A_Pilot"
+		};
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret {};
 			class MainTurret: MainTurret
 			{
 				gunnerType="B_BUDDY_A_Pilot";
@@ -8689,6 +8810,10 @@ class CfgVehicles
 			{
 				gunnerType="B_BUDDY_A_Pilot";
 			};
+			class CargoTurret_01: CargoTurret_01 {};
+			class CargoTurret_02: CargoTurret_02 {};
+			class CargoTurret_03: CargoTurret_03 {};
+			class CargoTurret_04: CargoTurret_04 {};
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -8711,16 +8836,9 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_BUD_Helicopters";
 		crew="B_BUDDY_A_Pilot";
-		class Turrets: Turrets
+		typicalCargo[]=
 		{
-			class MainTurret: MainTurret
-			{
-				gunnerType="B_BUDDY_A_Pilot";
-			};
-			class RightDoorGun: RightDoorGun
-			{
-				gunnerType="B_BUDDY_A_Pilot";
-			};
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -8734,7 +8852,7 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class BUDDIES_BUD_UH60M_ESSS: RHS_UH60M_ESSS
+	class BUDDIES_BUD_UH60M_ESSS: RHS_UH60M_ESSS_d
 	{
 		side=1;
 		scope=2;
@@ -8743,16 +8861,9 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_BUD_Helicopters";
 		crew="B_BUDDY_A_Pilot";
-		class Turrets: Turrets
+		typicalCargo[]=
 		{
-			class MainTurret: MainTurret
-			{
-				gunnerType="B_BUDDY_A_Pilot";
-			};
-			class RightDoorGun: RightDoorGun
-			{
-				gunnerType="B_BUDDY_A_Pilot";
-			};
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
