@@ -10,7 +10,6 @@ FIXES
 -Add Marine and navy insignia
 -Add preview pictures for all the vehicles
 -add units for the marine and recon parts of the faction
--Need other BMP-2 variants
 ----------------------------------------
 
 Wishlist
