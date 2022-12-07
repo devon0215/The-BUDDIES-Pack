@@ -95,6 +95,9 @@ class CfgPatches
 			"B_BUD_MG_M249",
 			"Land_Photoframe_BUDDIES_Fig",
 			"Land_Photoframe_BUDDIES_Buddy",
+			"Land_Photoframe_BUDDIES_Saucy",
+			"GalleryFrame_Large_Rectangle_BUDDIES_Group_Art",
+			"SignAd_Sponsor_BUDDIES",
 			"BUDDIES_UAZ",
 			"BUDDIES_UAZ_Open",
 			"BUDDIES_UAZ_AGS",
@@ -172,6 +175,12 @@ class CfgPatches
 			"BUDDIES_UH1H",
 			"BUDDIES_UH1H_Gunship",
 			"BUDDIES_UH1H_Unarmed",
+			"BUDDIES_BUD_MH6M",
+			"BUDDIES_BUD_AH6M",
+			"BUDDIES_BUD_UH60M2",
+			"BUDDIES_BUD_UH60M",
+			"BUDDIES_BUD_UH60M_ESSS2",
+			"BUDDIES_BUD_UH60M_ESSS",
 			"BUDDIES_Air_CH53E",
 			"BUDDIES_Air_CH53E_VIV",
 			"BUDDIES_Mi8T",
@@ -361,6 +370,10 @@ class CfgEditorSubcategories
 	class BUDDIES_Air_Helicopters
 	{
 		displayName="Helicopters (A.I.R.B.U.D.)";
+	};
+	class BUDDIES_BUD_Helicopters
+	{
+		displayName="Helicopters (B.U.D.)";
 	};
 	class BUDDIES_Planes
 	{
@@ -5593,6 +5606,8 @@ class CfgVehicles
 		};
 	};
 	class Land_Photoframe_01_F;
+	class Land_Photoframe_02_F;
+	class GalleryFrame_02_large_rectangle_F;
 	class Land_Photoframe_BUDDIES_Fig: Land_Photoframe_01_F
 	{
 		author="Saucy Salmon";
@@ -5615,6 +5630,43 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Photo\photos_buddies_buddy_co.paa",
 			"a3\props_f_orange\items\decorative\data\photoframe_01_f_co.paa"
+		};
+	};
+	class Land_Photoframe_BUDDIES_Saucy: Land_Photoframe_02_F
+	{
+		author="Saucy Salmon";
+		scope=2;
+		scopeCurator=2;
+		displayName="Photo Frame (BUDDIES, Saucy)";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Photo\photos_buddies_saucy_co.paa",
+			"a3\props_f_aow\items\decorative\data\photoframe_02_f_co.paa"
+		};
+	};
+	class GalleryFrame_Large_Rectangle_BUDDIES_Group_Art: GalleryFrame_02_large_rectangle_F
+	{
+		author="Saucy Salmon";
+		scope=2;
+		scopeCurator=2;
+		displayName="Gallery Frame (Large Rectangle, BUDDIES, Group Art)";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Photo\photos_buddies_group_painting_co.paa",
+			"a3\props_f_aow\civilian\gallery\data\galleryframe_02_large_rectangle_f_co.paa",
+			"a3\props_f_aow\civilian\gallery\data\galleryframe_02_large_rectangle_f_co.paa"
+		};
+	};
+	class SignAd_Sponsor_ARMEX_F;
+	class SignAd_Sponsor_BUDDIES: SignAd_Sponsor_ARMEX_F
+	{
+		author="Saucy Salmon";
+		scope=2;
+		scopeCurator=2;
+		displayName="Sign (BUDDIES, Tagline)";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Sign\Sign_BUDDIES_CO.paa"
 		};
 	};
 	class LandVehicle;
@@ -5998,9 +6050,39 @@ class CfgVehicles
 			};
 		};
 	};
+	class Air;
+	class Helicopter: Air
+	{
+		class Turrets;
+	};
+	class Helicopter_Base_F: Helicopter
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret;
+		};
+	};
+	class Helicopter_Base_H: Helicopter_Base_F {};
+	class Heli_Transport_01_base_F: Helicopter_Base_H {};
+	class RHS_UH60_Base: Heli_Transport_01_base_F {};
+	class RHS_UH60M_base: RHS_UH60_Base {};
+	class RHS_UH60M_US_base: RHS_UH60M_base {};
+	class RHS_UH60M: RHS_UH60M_US_base
+	{
+		class MainTurret;
+		class RightDoorGun: MainTurret {};
+	};
+	class RHS_UH60M2: RHS_UH60M {};
 	class rhs_uh1h_hidf;
 	class rhs_uh1h_hidf_gunship;
 	class rhs_uh1h_hidf_unarmed;
+	class rhs_melb_mh6m;
+	class rhs_melb_ah6m;
+	class RHS_UH60M2_d: RHS_UH60M2 {};
+	class RHS_UH60M_d: RHS_UH60M {};
+	class RHS_UH60M_ESSS: RHS_UH60M2 {};
+	class RHS_UH60M_ESSS2: RHS_UH60M_ESSS {};
+	class RHS_UH60M_ESSS2_d: RHS_UH60M_ESSS2 {};
 	class CUP_B_CH53E_GER;
 	class CUP_B_CH53E_VIV_GER;
 	class RHS_Mi8T_vdv;
@@ -8354,6 +8436,163 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Vehicle\buddies_uh1h_co.paa",
 			"rhsgref\addons\rhsgref_air\uh1h\data\uh1h_hidf_olv_in_co.paa",
 			"rhsgref\addons\rhsgref_air\uh1h\data\mlod_us_co.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BUD_MH6M: rhs_melb_mh6m
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_BUD_Helicopters";
+		author="Saucy Salmon";
+		displayName="MH-6M";
+		crew="B_BUDDY_A_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_mh6m.paa",
+			"rhsusf\addons\rhsusf_melb\data\decals\SN\blank_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BUD_AH6M: rhs_melb_ah6m
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_BUD_Helicopters";
+		author="Saucy Salmon";
+		displayName="AH-6M";
+		crew="B_BUDDY_A_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_mh6m.paa",
+			"rhsusf\addons\rhsusf_melb\data\decals\SN\blank_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BUD_UH60M2: RHS_UH60M2_d
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		displayName="UH-60M (Unarmed)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_BUD_Helicopters";
+		crew="B_BUDDY_A_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_engine_co.paa",
+			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
+			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BUD_UH60M: RHS_UH60M_d
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		displayName="UH-60M";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_BUD_Helicopters";
+		crew="B_BUDDY_A_Pilot";
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				gunnerType="B_BUDDY_A_Pilot";
+			};
+			class RightDoorGun: RightDoorGun
+			{
+				gunnerType="B_BUDDY_A_Pilot";
+			};
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_engine_co.paa",
+			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
+			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BUD_UH60M_ESSS2: RHS_UH60M_ESSS2_d
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		displayName="UH-60M (EWS)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_BUD_Helicopters";
+		crew="B_BUDDY_A_Pilot";
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				gunnerType="B_BUDDY_A_Pilot";
+			};
+			class RightDoorGun: RightDoorGun
+			{
+				gunnerType="B_BUDDY_A_Pilot";
+			};
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_engine_co.paa",
+			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
+			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BUD_UH60M_ESSS: RHS_UH60M_ESSS
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		displayName="UH-60M (ESSS)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_BUD_Helicopters";
+		crew="B_BUDDY_A_Pilot";
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				gunnerType="B_BUDDY_A_Pilot";
+			};
+			class RightDoorGun: RightDoorGun
+			{
+				gunnerType="B_BUDDY_A_Pilot";
+			};
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_engine_co.paa",
+			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
+			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
 		};
 		rhs_decalParameters[]=
 		{
