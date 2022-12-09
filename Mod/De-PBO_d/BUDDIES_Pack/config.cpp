@@ -6222,8 +6222,8 @@ class CfgVehicles
 	class RHS_Mi24P_CAS_vvsc;
 	class RHS_Mi24V_vvsc;
 	class rhsgref_mi24g_CAS;
-	class CUP_C47_Base;
-	class CUP_AC47_Spooky_Base;
+	class CUP_B_C47_USA;
+	class CUP_B_AC47_Spooky_USA;
 	class rhs_l39_cdf;
 	class rhs_mig29sm_vvsc;
 	class BUDDIES_UAZ: RHS_UAZ_MSV_01
@@ -9262,7 +9262,7 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class BUDDIES_C47: CUP_C47_Base
+	class BUDDIES_C47: CUP_B_C47_USA
 	{
 		side=1;
 		scope=2;
@@ -9271,22 +9271,21 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
 		displayName="C-47"
-		crew="B_BUDDY_A_Pilot";
+		crew="B_BUDDY_A_Crew";
 		typicalCargo[]=
 		{
-			"B_BUDDY_A_Pilot"
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew"
 		};
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
 		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
-		};
 	};
-	class BUDDIES_AC47: CUP_AC47_Spooky_Base
+	class BUDDIES_AC47: CUP_B_AC47_Spooky_USA
 	{
 		side=1;
 		scope=2;
@@ -9295,22 +9294,18 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
 		displayName="AC-47"
-		crew="B_BUDDY_A_Pilot";
+		crew="B_BUDDY_A_Crew";
 		typicalCargo[]=
 		{
-			"B_BUDDY_A_Pilot",
-			"B_BUDDY_A_Pilot",
-			"B_BUDDY_A_Pilot",
-			"B_BUDDY_A_Pilot"
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew"
 		};
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
 	class BUDDIES_L39: rhs_l39_cdf
