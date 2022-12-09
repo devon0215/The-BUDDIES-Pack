@@ -5,30 +5,32 @@ FIXES
 -Marine vehicles have regular buddy crew and drivers
 -Need marine rolled sleeves, patched, and patched rolled sleeves uniforms
 -Need navy rolled sleeves, patched, and patched rolled sleeves, uniforms
--Need marine and navy 8-points
--Need recon sweater
 -Add Marine and navy insignia
 -Add preview pictures for all the vehicles
 -add units for the marine and recon parts of the faction
+-Retexture old vehicles to be devon green
+-Add buddy retextures as skins in the editor/zeus
 ----------------------------------------
 
 Wishlist
 
-T-shirt w/ Trousers for various branches/uniforms (designs vary, e.g. "moto")
-Winter Gear
-Intel Patch/Beret
-Ambywamce
-BUD skill scaling as Spec Forces
-AQUABUD LCVP, Frigate, Gunboat, Big transport I can't think of
-FOB/Base Compositions
-Various BUDDIES Signs
-Support Personnel
-C47
-Static Weapons
-Covert Civilian BUD
-High Command (units of da goons)
-Person Specific Skins for vics (story category?)
-BUD Prowler and Little Bird and Blackhawk
-TU-95 (gay joke) for AIRBUD
-Dress uniforms
-BRDM
+-T-shirt w/ Trousers for various branches/uniforms (designs vary, e.g. "moto")
+-Winter Gear
+-Intel Patch/Beret
+-Ambywamce
+-BUD skill scaling as Spec Forces
+-AQUABUD LCVP, Frigate, Gunboat, Big transport I can't think of
+-FOB/Base Compositions
+-Various BUDDIES Signs
+-Support Personnel
+-C47
+-Static Weapons
+-Covert Civilian BUD
+-High Command (units of da goons)
+-Person Specific Skins for vics (story category?)
+-BUD Prowler and Little Bird and Blackhawk
+-TU-95 (gay joke) for AIRBUD
+-Dress uniforms
+-BRDM
+-Marine and Navy 8-Points
+-Recon Sweater
