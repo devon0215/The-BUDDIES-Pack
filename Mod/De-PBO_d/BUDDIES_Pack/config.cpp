@@ -198,7 +198,9 @@ class CfgPatches
 			"BUDDIES_Mi24V",
 			"BUDDIES_Mi24G",
 			"BUDDIES_C47",
+			"BUDDIES_A_C47",
 			"BUDDIES_AC47",
+			"BUDDIES_A_AC47",
 			"BUDDIES_L39",
 			"BUDDIES_MiG29SM"
 		};
@@ -8997,15 +8999,31 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
 		displayName="C-47"
-		crew="B_BUDDY_A_Pilot";
-		typicalCargo[]=
-		{
-			"B_BUDDY_A_Pilot"
-		};
+		crew="B_BUDDY_A_Crew_Officer";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_A_C47: CUP_C47_Base
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Planes";
+		author="Saucy Salmon";
+		displayName="C-47 (AIRBUD)"
+		crew="B_BUDDY_A_Crew_Officer";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01a.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02a.paa"
 		};
 		rhs_decalParameters[]=
 		{
@@ -9021,18 +9039,31 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
 		displayName="AC-47"
-		crew="B_BUDDY_A_Pilot";
-		typicalCargo[]=
-		{
-			"B_BUDDY_A_Pilot",
-			"B_BUDDY_A_Pilot",
-			"B_BUDDY_A_Pilot",
-			"B_BUDDY_A_Pilot"
-		};
+		crew="B_BUDDY_A_Crew_Officer";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_A_AC47: CUP_AC47_Spooky_Base
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Planes";
+		author="Saucy Salmon";
+		displayName="AC-47 (AIRBUD)"
+		crew="B_BUDDY_A_Crew_Officer";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_ac47_body_01.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02a.paa"
 		};
 		rhs_decalParameters[]=
 		{
