@@ -9278,7 +9278,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
 		displayName="C130J";
 		crew="B_BUDDY_A_Crew";
@@ -9298,7 +9298,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
 		displayName="C130J (Cargo)";
 		crew="B_BUDDY_A_Crew";
