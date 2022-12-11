@@ -9452,7 +9452,7 @@ class CfgVehicles
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
-		displayname="BUDDIES Flag (Basic)";
+		displayname="BUDDIES Flag";
 		class EventHandlers: EventHandlers
 		{
 			init="(_this select 0) setFlagTexture ""\BUDDIES_Pack\Data\Flag\flag_buddies_co.paa""";
@@ -9496,7 +9496,7 @@ class CfgVehicles
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
-		displayName="BUD Flag (Basic)";
+		displayName="BUD Flag";
 		class EventHandlers: EventHandlers
 		{
 			init="(_this select 0) setFlagTexture ""\BUDDIES_Pack\Data\Flag\flag_bud_co.paa""";
@@ -9518,7 +9518,7 @@ class CfgUnitInsignia
 {
 	class BUDDIES_Insignia
 	{
-		displayName="BUDDIES Insignia (Basic)";
+		displayName="BUDDIES Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies.paa";
 		textureVehicle="";
@@ -9595,7 +9595,7 @@ class CfgUnitInsignia
 	};
 	class BUD_Insignia
 	{
-		displayName="BUD Insignia (Basic)";
+		displayName="BUD Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_bud.paa";
 		textureVehicle="";
@@ -9619,7 +9619,7 @@ class CfgMarkers
 {
 	class BUDDIES_Marker
 	{
-		name="BUDDIES Marker (Basic)";
+		name="BUDDIES Marker";
 		icon="\BUDDIES_Pack\Data\Marker\marker_buddies.paa";
 		color[]={1,1,1,0};
 		size=32;
