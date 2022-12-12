@@ -1,7 +1,6 @@
 --------------------------------------
 FIXES
 
--Models and Pictures for Items (Uniforms, Berets, etc.)
 -Marine vehicles have regular buddy crew and drivers
 -Need marine rolled sleeves, patched, and patched rolled sleeves uniforms
 -Need navy rolled sleeves, patched, and patched rolled sleeves, uniforms
