@@ -1,9 +1,17 @@
 ADDED
 
-Updated existing C47/AC47 skins slightly and added AIRBUD Variants, Changed crew to AIRBUD Crew Officer
+-Added AIRBUD variants of C47/AC47
 
-Added C130J and Cargo Variant
+-Added C130J and Cargo Variant
+
+-Added rolled sleeves verions of marine and navy uniforms
+
+-Added armor to BUD uniforms
 
 CHANGED
 
-Edited config, uniforms no longer have weird model, etc.
+-Cleaned up config (for real this time)
+
+-Changed C47/AC47 crew to AIRBUD Crewmen
+
+-Slightly Changed C47/AC47 skins

@@ -196,7 +196,9 @@ class CfgPatches
 			"BUDDIES_Armor_Camo",
 			"BUDDIES_Recon_Armor_Camo",
 			"BUDDIES_Navy_Camo",
+			"BUDDIES_Navy_Camo_RS",
 			"BUDDIES_Marines_Camo",
+			"BUDDIES_Marines_Camo_RS",
 			"BUDDIES_Air_Camo",
 			"BUDDIES_Air_Camo_RS",
 			"BUDDIES_Air_Crew_Camo",
@@ -470,6 +472,150 @@ class CfgVehicles
 		respawnMagazines[]={};
 		linkedItems[]={};
 		respawnLinkedItems[]={};
+		class HitPoints
+		{
+			class HitFace
+			{
+				armor=1;
+				material=-1;
+				name="face_hub";
+				passThrough=0.80000001;
+				radius=0.079999998;
+				explosionShielding=0.1;
+				minimalHit=0.0099999998;
+			};
+			class HitNeck: HitFace
+			{
+				armor=1;
+				material=-1;
+				name="neck";
+				passThrough=0.80000001;
+				radius=0.1;
+				explosionShielding=0.5;
+				minimalHit=0.0099999998;
+			};
+			class HitHead: HitNeck
+			{
+				armor=1;
+				material=-1;
+				name="head";
+				passThrough=0.80000001;
+				radius=0.2;
+				explosionShielding=0.5;
+				minimalHit=0.0099999998;
+				depends="HitFace max HitNeck";
+			};
+			class HitPelvis: HitHead
+			{
+				armor=6;
+				material=-1;
+				name="pelvis";
+				passThrough=0.80000001;
+				radius=0.23999999;
+				explosionShielding=1;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class HitAbdomen: HitPelvis
+			{
+				armor=1;
+				material=-1;
+				name="spine1";
+				passThrough=0.80000001;
+				radius=0.16;
+				explosionShielding=1;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitDiaphragm: HitAbdomen
+			{
+				armor=1;
+				material=-1;
+				name="spine2";
+				passThrough=0.80000001;
+				radius=0.18000001;
+				explosionShielding=6;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitChest: HitDiaphragm
+			{
+				armor=1;
+				material=-1;
+				name="spine3";
+				passThrough=0.80000001;
+				radius=0.18000001;
+				explosionShielding=6;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitBody: HitChest
+			{
+				armor=1000;
+				material=-1;
+				name="body";
+				passThrough=1;
+				radius=0;
+				explosionShielding=6;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+				depends="HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
+			};
+			class HitArms: HitBody
+			{
+				armor=3;
+				material=-1;
+				name="arms";
+				passThrough=1;
+				radius=0.1;
+				explosionShielding=1;
+				visual="injury_hands";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class HitHands: HitArms
+			{
+				armor=3;
+				material=-1;
+				name="hands";
+				passThrough=1;
+				radius=0.1;
+				explosionShielding=1;
+				visual="injury_hands";
+				minimalHit=0.0099999998;
+				depends="HitArms";
+			};
+			class HitLegs: HitHands
+			{
+				armor=3;
+				material=-1;
+				name="legs";
+				passThrough=1;
+				radius=0.14;
+				explosionShielding=1;
+				visual="injury_legs";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class Incapacitated: HitLegs
+			{
+				armor=1000;
+				material=-1;
+				name="body";
+				passThrough=1;
+				radius=0;
+				explosionShielding=1;
+				visual="";
+				minimalHit=0;
+				depends="(((Total - 0.25) max 0) + ((HitHead - 0.25) max 0) + ((HitBody - 0.25) max 0)) * 2";
+			};
+		};
+		armor=2;
+		armorStructural=3;
+		explosionShielding=0.30000001;
+		minTotalDamageThreshold=0.001;
+		impactDamageMultiplier=0.5;
 	};
 	class BUDDIES_Uniform: B_BUDDY_Soldier_Base
 	{
@@ -673,11 +819,43 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_marines_co.paa"
 		};
 	};
+	class BUDDIES_Marines_Uniform_RS: BUDDIES_Marines_Uniform
+	{
+		author="Devon0215";
+		displayName="Buddy Marines Uniform (Rolled Sleeves)";
+		uniformClass="BUDDIES_Marines_Camo_RS";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_marines_co.paa"
+		};
+	};
 	class BUDDIES_Navy_Uniform: BUDDIES_Uniform
 	{
 		author="Devon0215";
 		displayName="Buddy Navy Uniform";
 		uniformClass="BUDDIES_Navy_Camo";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_navy_co.paa"
+		};
+	};
+	class BUDDIES_Navy_Uniform_RS: BUDDIES_Navy_Uniform
+	{
+		author="Devon0215";
+		displayName="Buddy Navy Uniform (Rolled Sleeves)";
+		uniformClass="BUDDIES_Navy_Camo_RS";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		hiddenSelections[]=
 		{
 			"Camo",
@@ -766,6 +944,148 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_bud_co.paa"
 		};
+		class HitPoints
+		{
+			class HitFace
+			{
+				armor=1;
+				material=-1;
+				name="face_hub";
+				passThrough=0.80000001;
+				radius=0.079999998;
+				explosionShielding=0.1;
+				minimalHit=0.0099999998;
+			};
+			class HitNeck: HitFace
+			{
+				armor=1;
+				material=-1;
+				name="neck";
+				passThrough=0.80000001;
+				radius=0.1;
+				explosionShielding=0.5;
+				minimalHit=0.0099999998;
+			};
+			class HitHead: HitNeck
+			{
+				armor=1;
+				material=-1;
+				name="head";
+				passThrough=0.80000001;
+				radius=0.2;
+				explosionShielding=0.5;
+				minimalHit=0.0099999998;
+				depends="HitFace max HitNeck";
+			};
+			class HitPelvis: HitHead
+			{
+				armor=6;
+				material=-1;
+				name="pelvis";
+				passThrough=0.33000001;
+				radius=0.23999999;
+				explosionShielding=1;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class HitAbdomen: HitPelvis
+			{
+				armor=6;
+				material=-1;
+				name="spine1";
+				passThrough=0.33000001;
+				radius=0.16;
+				explosionShielding=1;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitDiaphragm: HitAbdomen
+			{
+				armor=6;
+				material=-1;
+				name="spine2";
+				passThrough=0.33000001;
+				radius=0.18000001;
+				explosionShielding=1.5;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitChest: HitDiaphragm
+			{
+				armor=6;
+				material=-1;
+				name="spine3";
+				passThrough=0.33000001;
+				radius=0.18000001;
+				explosionShielding=1.5;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitBody: HitChest
+			{
+				armor=1000;
+				material=-1;
+				name="body";
+				passThrough=1;
+				radius=0;
+				explosionShielding=1.5;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+				depends="HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
+			};
+			class HitArms: HitBody
+			{
+				armor=3;
+				material=-1;
+				name="arms";
+				passThrough=1;
+				radius=0.1;
+				explosionShielding=1;
+				visual="injury_hands";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class HitHands: HitArms
+			{
+				armor=3;
+				material=-1;
+				name="hands";
+				passThrough=1;
+				radius=0.1;
+				explosionShielding=1;
+				visual="injury_hands";
+				minimalHit=0.0099999998;
+				depends="HitArms";
+			};
+			class HitLegs: HitHands
+			{
+				armor=3;
+				material=-1;
+				name="legs";
+				passThrough=1;
+				radius=0.14;
+				explosionShielding=1;
+				visual="injury_legs";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class Incapacitated: HitLegs
+			{
+				armor=1000;
+				material=-1;
+				name="body";
+				passThrough=1;
+				radius=0;
+				explosionShielding=1;
+				visual="";
+				minimalHit=0;
+				depends="(((Total - 0.25) max 0) + ((HitHead - 0.25) max 0) + ((HitBody - 0.25) max 0)) * 2";
+			};
+		};
+		armor=2;
+		armorStructural=4;
+		explosionShielding=0.40000001;
 	};
 	class BUD_Uniform_RS: BUD_Uniform
 	{
@@ -9599,8 +9919,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9611,8 +9932,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Subdued)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Subdued";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Subdued;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9623,8 +9945,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Textured)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Textured";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Textured;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9635,8 +9958,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9647,8 +9971,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Subdued, Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Subdued_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Subdued_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9659,8 +9984,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Textured, Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Textured_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Textured_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9671,8 +9997,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Worn)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9683,8 +10010,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Worn, Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9695,8 +10023,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Worn, Subdued)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_Subdued";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_Subdued;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9707,8 +10036,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Worn, Subdued, Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_Subdued_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_Subdued_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9719,8 +10049,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Worn, Textured)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_Textured";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_Textured;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9731,8 +10062,9 @@ class cfgWeapons
 		displayName="BUDDIES Uniform (Worn, Textured, Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_Textured_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_Textured_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9743,8 +10075,21 @@ class cfgWeapons
 		displayName="BUDDIES Marines Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Marines_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Marines_Uniform;
+			containerClass=Supply50;
+			mass=50;
+		};
+	};
+	class BUDDIES_Marines_Camo_RS: BUDDIES_Marines_Camo
+	{
+		author="Devon0215";
+		displayName="BUDDIES Marines Uniform (Rolled Sleeves)";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=BUDDIES_Marines_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9755,8 +10100,21 @@ class cfgWeapons
 		displayName="AQUABUD Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Navy_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Navy_Uniform;
+			containerClass=Supply50;
+			mass=50;
+		};
+	};
+	class BUDDIES_Navy_Camo_RS: BUDDIES_Navy_Camo
+	{
+		author="Devon0215";
+		displayName="AQUABUD Uniform (Rolled Sleeves)";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=BUDDIES_Navy_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9767,8 +10125,9 @@ class cfgWeapons
 		displayName="BUDDIES Recon Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9779,8 +10138,9 @@ class cfgWeapons
 		displayName="BUDDIES Recon Uniform (Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Uniform_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9791,8 +10151,9 @@ class cfgWeapons
 		displayName="BUDDIES Recon Uniform (Patch)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Uniform_Patch";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Uniform_Patch;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9803,8 +10164,9 @@ class cfgWeapons
 		displayName="BUDDIES Recon Uniform (Patch, Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Uniform_Patch_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Uniform_Patch_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9815,20 +10177,22 @@ class cfgWeapons
 		displayName="BUD Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUD_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUD_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUD_Camo_RS: BUDDIES_Camo_RS
+	class BUD_Camo_RS: BUD_Camo
 	{
 		author="Devon0215";
 		scope=2;
 		displayName="BUD Uniform (Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUD_Uniform_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUD_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9839,8 +10203,9 @@ class cfgWeapons
 		displayName="BUD Uniform (Patch)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUD_Uniform_Patch";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUD_Uniform_Patch;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9851,8 +10216,9 @@ class cfgWeapons
 		displayName="BUD Uniform (Patch, Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUD_Uniform_Patch_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUD_Uniform_Patch_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9863,8 +10229,9 @@ class cfgWeapons
 		displayName="BUDDIES Armor Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Armor_Uniform";
-			containerClass="Supply100";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Armor_Uniform;
+			containerClass=Supply100;
 			mass=100;
 		};
 	};
@@ -9875,8 +10242,9 @@ class cfgWeapons
 		displayName="BUDDIES Recon Armor Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Armor_Uniform";
-			containerClass="Supply100";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Armor_Uniform;
+			containerClass=Supply100;
 			mass=100;
 		};
 	};
@@ -9887,8 +10255,9 @@ class cfgWeapons
 		displayName="AIRBUD Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9899,8 +10268,9 @@ class cfgWeapons
 		displayName="AIRBUD Uniform (Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Uniform_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9911,8 +10281,9 @@ class cfgWeapons
 		displayName="AIRBUD Uniform (Patch)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Uniform_Patch";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Uniform_Patch;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9923,8 +10294,9 @@ class cfgWeapons
 		displayName="AIRBUD Uniform (Patch, Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Uniform_Patch_RS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Uniform_Patch_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
@@ -9935,8 +10307,9 @@ class cfgWeapons
 		displayName="AIRBUD Crew Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Crew_Uniform";
-			containerClass="Supply100";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Crew_Uniform;
+			containerClass=Supply100;
 			mass=100;
 		};
 	};
@@ -9947,8 +10320,9 @@ class cfgWeapons
 		displayName="AIRBUD Crew Officer Uniform";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Crew_Officer_Uniform";
-			containerClass="Supply100";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Crew_Officer_Uniform;
+			containerClass=Supply100;
 			mass=100;
 		};
 	};
