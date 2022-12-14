@@ -10148,16 +10148,16 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_bud_inverted.paa";
 		textureVehicle="";
 	};
-	class Intel_Insignia
+	class BUDDIES_Intel_Insignia
 	{
-		displayName="Intel Insignia";
+		displayName="BUDDIES Intel Insignia";
 		author="Starman";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_intel.paa";
 		textureVehicle="";
 	};
 	class BUDDIES_Medic_Insignia
 	{
-		displayName="Medical Insignia";
+		displayName="BUDDIES Medical Insignia";
 		author="Biwwy";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_medic.paa";
 		textureVehicle="";
