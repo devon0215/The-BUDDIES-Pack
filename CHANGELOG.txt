@@ -4,4 +4,4 @@ Updated existing C47/AC47 skins slightly and added AIRBUD Variants, Changed crew
 
 Added C130J and Cargo Variant
 
-
+Added Medic Insignia

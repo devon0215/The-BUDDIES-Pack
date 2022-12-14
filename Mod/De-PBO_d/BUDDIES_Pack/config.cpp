@@ -9608,6 +9608,13 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_intel.paa";
 		textureVehicle="";
 	};
+	class BUDDIES_Medic_Insignia
+	{
+		displayName="Medical Insignia";
+		author="Biwwy";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_medic.paa";
+		textureVehicle="";
+	};
 };
 class CfgMarkers
 {
