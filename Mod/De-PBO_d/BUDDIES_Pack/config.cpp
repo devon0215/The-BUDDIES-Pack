@@ -498,12 +498,11 @@ class CfgVehicles
 		};
 		side=1;
 		genericNames="NATOMen";
-		displayName="Base BUDDY (Militia)";
+		displayName="Militia";
 		icon="iconMan";
 		role="Rifleman";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_Men_Militia";
-		accuracy=3;
 		camouflage=1;
 		minFireTime=12;
 		class AttributeValues
@@ -530,157 +529,12 @@ class CfgVehicles
 		respawnMagazines[]={};
 		linkedItems[]={};
 		respawnLinkedItems[]={};
-		class HitPoints
-		{
-			class HitFace
-			{
-				armor=1;
-				material=-1;
-				name="face_hub";
-				passThrough=0.80000001;
-				radius=0.079999998;
-				explosionShielding=0.1;
-				minimalHit=0.0099999998;
-			};
-			class HitNeck: HitFace
-			{
-				armor=1;
-				material=-1;
-				name="neck";
-				passThrough=0.80000001;
-				radius=0.1;
-				explosionShielding=0.5;
-				minimalHit=0.0099999998;
-			};
-			class HitHead: HitNeck
-			{
-				armor=1;
-				material=-1;
-				name="head";
-				passThrough=0.80000001;
-				radius=0.2;
-				explosionShielding=0.5;
-				minimalHit=0.0099999998;
-				depends="HitFace max HitNeck";
-			};
-			class HitPelvis: HitHead
-			{
-				armor=6;
-				material=-1;
-				name="pelvis";
-				passThrough=0.80000001;
-				radius=0.23999999;
-				explosionShielding=1;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class HitAbdomen: HitPelvis
-			{
-				armor=1;
-				material=-1;
-				name="spine1";
-				passThrough=0.80000001;
-				radius=0.16;
-				explosionShielding=1;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitDiaphragm: HitAbdomen
-			{
-				armor=1;
-				material=-1;
-				name="spine2";
-				passThrough=0.80000001;
-				radius=0.18000001;
-				explosionShielding=6;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitChest: HitDiaphragm
-			{
-				armor=1;
-				material=-1;
-				name="spine3";
-				passThrough=0.80000001;
-				radius=0.18000001;
-				explosionShielding=6;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitBody: HitChest
-			{
-				armor=1000;
-				material=-1;
-				name="body";
-				passThrough=1;
-				radius=0;
-				explosionShielding=6;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-				depends="HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
-			};
-			class HitArms: HitBody
-			{
-				armor=3;
-				material=-1;
-				name="arms";
-				passThrough=1;
-				radius=0.1;
-				explosionShielding=1;
-				visual="injury_hands";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class HitHands: HitArms
-			{
-				armor=3;
-				material=-1;
-				name="hands";
-				passThrough=1;
-				radius=0.1;
-				explosionShielding=1;
-				visual="injury_hands";
-				minimalHit=0.0099999998;
-				depends="HitArms";
-			};
-			class HitLegs: HitHands
-			{
-				armor=3;
-				material=-1;
-				name="legs";
-				passThrough=1;
-				radius=0.14;
-				explosionShielding=1;
-				visual="injury_legs";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class Incapacitated: HitLegs
-			{
-				armor=1000;
-				material=-1;
-				name="body";
-				passThrough=1;
-				radius=0;
-				explosionShielding=1;
-				visual="";
-				minimalHit=0;
-				depends="(((Total - 0.25) max 0) + ((HitHead - 0.25) max 0) + ((HitBody - 0.25) max 0)) * 2";
-			};
-		};
-		armor=2;
-		armorStructural=3;
-		explosionShielding=0.30000001;
-		minTotalDamageThreshold=0.001;
-		impactDamageMultiplier=0.5;
 	};
 	class B_BUDDY_Soldier_R_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
-		displayName="Base BUDDY (Regular)";
+		displayName="Regular";
 		editorSubcategory="BUDDIES_Men_Regular";
-		accuracy=2.5;
 		camouflage=1.5;
 		minFireTime=8;
 		class AttributeValues
@@ -691,9 +545,8 @@ class CfgVehicles
 	class B_BUDDY_Soldier_Recon_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
-		displayName="Base BUDDY (Recon)";
+		displayName="Recon";
 		editorSubcategory="BUDDIES_Men_Recon";
-		accuracy=2;
 		camouflage=0.75;
 		minFireTime=7;
 		class AttributeValues
@@ -704,9 +557,8 @@ class CfgVehicles
 	class B_BUDDY_Soldier_A_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
-		displayName="Base BUDDY (AIRBUD)";
+		displayName="AIRBUD";
 		editorSubcategory="BUDDIES_Men_Air";
-		accuracy=1.5;
 		camouflage=2;
 		minFireTime=8;
 		class AttributeValues
@@ -717,9 +569,8 @@ class CfgVehicles
 	class B_BUDDY_Soldier_AQUABUD_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
-		displayName="Base BUDDY (AQUABUD)";
+		displayName="AquaBUD";
 		editorSubcategory="BUDDIES_Men_AQUABUD";
-		accuracy=1.5;
 		camouflage=2;
 		minFireTime=8;
 		class AttributeValues
@@ -730,9 +581,8 @@ class CfgVehicles
 	class B_BUDDY_Soldier_Marine_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
-		displayName="Base BUDDY (Marines)";
+		displayName="Marine";
 		editorSubcategory="BUDDIES_Men_Marines";
-		accuracy=2;
 		camouflage=1.75;
 		minFireTime=7;
 		class AttributeValues
@@ -743,9 +593,8 @@ class CfgVehicles
 	class B_BUD_Soldier_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
-		displayName="Base BUDDY (BUD)";
+		displayName="BUD";
 		editorSubcategory="BUD_Men";
-		accuracy=5;
 		camouflage=0.5;
 		minFireTime=5;
 		class AttributeValues
@@ -1080,148 +929,6 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_bud_co.paa"
 		};
-		class HitPoints
-		{
-			class HitFace
-			{
-				armor=1;
-				material=-1;
-				name="face_hub";
-				passThrough=0.80000001;
-				radius=0.079999998;
-				explosionShielding=0.1;
-				minimalHit=0.0099999998;
-			};
-			class HitNeck: HitFace
-			{
-				armor=1;
-				material=-1;
-				name="neck";
-				passThrough=0.80000001;
-				radius=0.1;
-				explosionShielding=0.5;
-				minimalHit=0.0099999998;
-			};
-			class HitHead: HitNeck
-			{
-				armor=1;
-				material=-1;
-				name="head";
-				passThrough=0.80000001;
-				radius=0.2;
-				explosionShielding=0.5;
-				minimalHit=0.0099999998;
-				depends="HitFace max HitNeck";
-			};
-			class HitPelvis: HitHead
-			{
-				armor=6;
-				material=-1;
-				name="pelvis";
-				passThrough=0.33000001;
-				radius=0.23999999;
-				explosionShielding=1;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class HitAbdomen: HitPelvis
-			{
-				armor=6;
-				material=-1;
-				name="spine1";
-				passThrough=0.33000001;
-				radius=0.16;
-				explosionShielding=1;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitDiaphragm: HitAbdomen
-			{
-				armor=6;
-				material=-1;
-				name="spine2";
-				passThrough=0.33000001;
-				radius=0.18000001;
-				explosionShielding=1.5;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitChest: HitDiaphragm
-			{
-				armor=6;
-				material=-1;
-				name="spine3";
-				passThrough=0.33000001;
-				radius=0.18000001;
-				explosionShielding=1.5;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitBody: HitChest
-			{
-				armor=1000;
-				material=-1;
-				name="body";
-				passThrough=1;
-				radius=0;
-				explosionShielding=1.5;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-				depends="HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
-			};
-			class HitArms: HitBody
-			{
-				armor=3;
-				material=-1;
-				name="arms";
-				passThrough=1;
-				radius=0.1;
-				explosionShielding=1;
-				visual="injury_hands";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class HitHands: HitArms
-			{
-				armor=3;
-				material=-1;
-				name="hands";
-				passThrough=1;
-				radius=0.1;
-				explosionShielding=1;
-				visual="injury_hands";
-				minimalHit=0.0099999998;
-				depends="HitArms";
-			};
-			class HitLegs: HitHands
-			{
-				armor=3;
-				material=-1;
-				name="legs";
-				passThrough=1;
-				radius=0.14;
-				explosionShielding=1;
-				visual="injury_legs";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class Incapacitated: HitLegs
-			{
-				armor=1000;
-				material=-1;
-				name="body";
-				passThrough=1;
-				radius=0;
-				explosionShielding=1;
-				visual="";
-				minimalHit=0;
-				depends="(((Total - 0.25) max 0) + ((HitHead - 0.25) max 0) + ((HitBody - 0.25) max 0)) * 2";
-			};
-		};
-		armor=2;
-		armorStructural=4;
-		explosionShielding=0.40000001;
 	};
 	class BUD_Uniform_RS: BUD_Uniform
 	{
