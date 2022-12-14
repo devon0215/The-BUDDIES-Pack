@@ -47,8 +47,8 @@ class CfgPatches
 			"B_BUDDY_A_Crew_Officer",
 			"B_BUDDY_A_Secfor",
 			"B_BUDDY_A_Driver",
-			"B_BUDDY_AquaBud_DeckCrew",
-			"B_BUDDY_Marine",
+			"B_BUDDY_AQUABUD_DeckCrew",
+			"B_BUDDY_Marine_Rifleman",
 			"B_BUDDY_Recon_Driver",
 			"B_BUDDY_Recon_Crew",
 			"B_BUDDY_Recon_Squad_Leader",
@@ -186,33 +186,21 @@ class CfgPatches
 			"BUDDIES_Air_Beret",
 			"BUD_Beret_Inverted",
 			"BUDDIES_Camo",
-			"BUDDIES_Camo_SS",
-			"BUDDIES_Camo_Subdued",
-			"BUDDIES_Camo_Textured",
-			"BUDDIES_Camo_Subdued_SS",
-			"BUDDIES_Camo_Textured_SS",
+			"BUDDIES_Camo_RS",
 			"BUDDIES_Camo_Worn",
-			"BUDDIES_Camo_Worn_SS",
-			"BUDDIES_Camo_Worn_Subdued",
-			"BUDDIES_Camo_Worn_Subdued_SS",
-			"BUDDIES_Camo_Worn_Textured",
-			"BUDDIES_Camo_Worn_Textured_SS",
+			"BUDDIES_Camo_Worn_RS",
 			"BUD_Camo",
-			"BUD_Camo_SS",
-			"BUD_Camo_Patch",
-			"BUD_Camo_Patch_SS",
+			"BUD_Camo_RS",
 			"BUDDIES_Recon_Camo",
-			"BUDDIES_Recon_Camo_SS",
-			"BUDDIES_Recon_Camo_Patch",
-			"BUDDIES_Recon_Camo_Patch_SS",
+			"BUDDIES_Recon_Camo_RS",
 			"BUDDIES_Armor_Camo",
 			"BUDDIES_Recon_Armor_Camo",
 			"BUDDIES_Navy_Camo",
+			"BUDDIES_Navy_Camo_RS",
 			"BUDDIES_Marines_Camo",
+			"BUDDIES_Marines_Camo_RS",
 			"BUDDIES_Air_Camo",
-			"BUDDIES_Air_Camo_SS",
-			"BUDDIES_Air_Camo_Patch",
-			"BUDDIES_Air_Camo_Patch_SS",
+			"BUDDIES_Air_Camo_RS",
 			"BUDDIES_Air_Crew_Camo",
 			"BUDDIES_Air_Crew_Officer_Camo"
 		};
@@ -309,11 +297,11 @@ class CfgEditorSubcategories
 	{
 		displayName="Men (B.U.D.)";
 	};
-	class BUDDIES_Men_AquaBud
+	class BUDDIES_Men_AQUABUD
 	{
 		displayName="Men (AQUABUD)";
 	};
-	class BUDDIES_AQUABUD_Marines
+	class BUDDIES_Men_Marines
 	{
 		displayName="Men (Marines)";
 	};
@@ -389,6 +377,10 @@ class CfgEditorSubcategories
 	{
 		displayName="Planes";
 	};
+	class BUDDIES_Air_Planes
+	{
+		displayName="Planes (A.I.R.B.U.D.)";
+	};
 };
 class CfgVehicles
 {
@@ -399,12 +391,12 @@ class CfgVehicles
 		scope=1;
 		class TransportMagazines
 		{
-			class _xx_rhs_rpg7_PG7VL_mag
+			class rhs_rpg7_PG7VL_mag
 			{
 				magazine="rhs_rpg7_PG7VL_mag";
 				count=2;
 			};
-			class _xx_rhs_rpg7_PG7V_mag
+			class rhs_rpg7_PG7V_mag
 			{
 				magazine="rhs_rpg7_PG7V_mag";
 				count=2;
@@ -416,7 +408,7 @@ class CfgVehicles
 		scope=1;
 		class TransportMagazines
 		{
-			class _xx_rhs_mag_9k38_rocket
+			class rhs_mag_9k38_rocket
 			{
 				magazine="rhs_mag_9k38_rocket";
 				count=1;
@@ -428,7 +420,7 @@ class CfgVehicles
 		scope=1;
 		class TransportMagazines
 		{
-			class _xx_rhs_fim92_mag
+			class rhs_fim92_mag
 			{
 				magazine="rhs_fim92_mag";
 				count=2;
@@ -440,32 +432,62 @@ class CfgVehicles
 		scope=1;
 		class TransportMagazines
 		{
-			class _xx_rhs_mag_maaws_HEAT
+			class rhs_mag_maaws_HEAT
 			{
 				magazine="rhs_mag_maaws_HEAT";
 				count=1;
 			};
 		};
 	};
-	class Man;
-	class CAManBase: Man
+	class BUD_kitbag_blk_Medic: Black_Backpack_kitbag
 	{
-		model="\A3\Characters_F\OPFOR\o_soldier_01.p3d";
-		class HitPoints
+		scope=1;
+		class TransportItems
 		{
-			class HitHead;
-			class HitBody;
-			class HitHands;
-			class HitLegs;
+			class FirstAidKit
+			{
+				name="FirstAidKit";
+				count=10;
+			};
+			class Medikit
+			{
+				name="Medikit";
+				count=1;
+			};
 		};
 	};
-	class SoldierWB: CAManBase
+	class BUD_kitbag_blk_Engineer: Black_Backpack_kitbag
 	{
-		threat[]={1,0.1,0.1};
-		model="\A3\Characters_F\BLUFOR\b_soldier_01.p3d";
-		class EventHandlers;
+		scope=1;
+		class TransportItems
+		{
+			class Toolkit
+			{
+				name="Toolkit";
+				count=1;
+			};
+			class MineDetector
+			{
+				name="MineDetector";
+				count=1;
+			};
+		};
+		class TransportMagazines
+		{
+			class SatchelCharge_Remote_Mag
+			{
+				magazine="SatchelCharge_Remote_Mag";
+				count=1;
+			};
+			class DemoCharge_Remote_Mag
+			{
+				magazine="DemoCharge_Remote_Mag";
+				count=2;
+			};
+		};
 	};
-	class B_BUDDY_Soldier_Base: SoldierWB
+	class B_Soldier_base_F;
+	class B_BUDDY_Soldier_Base: B_Soldier_base_F
 	{
 		author="Devon0215";
 		faceType="Man_A3";
@@ -475,38 +497,25 @@ class CfgVehicles
 			"Head_NATO"
 		};
 		side=1;
-		faction="BUDDIES_Faction";
 		genericNames="NATOMen";
+		displayName="Base BUDDY (Militia)";
 		icon="iconMan";
+		role="Rifleman";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Men_Militia";
+		accuracy=3;
+		camouflage=1;
+		minFireTime=12;
+		class AttributeValues
+		{
+			skill=0.25;
+		};
+		cost=100000;
 		scope=1;
 		scopeCurator=1;
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		nakedUniform="U_BasicBody";
-		uniformClass="BUDDIES_Camo";
-		camouflage=1.5;
-		armor=2;
-		armorStructural=3;
-		explosionShielding=0.30000001;
-		accuracy=2.3;
-		minFireTime=7;
-		canCarryBackPack=1;
-	};
-	class BUDDIES_Uniform: B_BUDDY_Soldier_Base
-	{
-		author="Devon0215";
-		scope=1;
-		scopeCurator=1;
-		displayName="Buddy Uniform";
-		uniformClass="BUDDIES_Camo";
-		hiddenSelections[]=
-		{
-			"Camo",
-			"Insignia"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\BUDDIES_Pack\Data\Uniform\camo_buddies_co.paa"
-		};
+		hiddenSelections[]={};
+		hiddenSelectionsTextures[]={};
 		weapons[]=
 		{
 			"throw",
@@ -521,11 +530,248 @@ class CfgVehicles
 		respawnMagazines[]={};
 		linkedItems[]={};
 		respawnLinkedItems[]={};
+		class HitPoints
+		{
+			class HitFace
+			{
+				armor=1;
+				material=-1;
+				name="face_hub";
+				passThrough=0.80000001;
+				radius=0.079999998;
+				explosionShielding=0.1;
+				minimalHit=0.0099999998;
+			};
+			class HitNeck: HitFace
+			{
+				armor=1;
+				material=-1;
+				name="neck";
+				passThrough=0.80000001;
+				radius=0.1;
+				explosionShielding=0.5;
+				minimalHit=0.0099999998;
+			};
+			class HitHead: HitNeck
+			{
+				armor=1;
+				material=-1;
+				name="head";
+				passThrough=0.80000001;
+				radius=0.2;
+				explosionShielding=0.5;
+				minimalHit=0.0099999998;
+				depends="HitFace max HitNeck";
+			};
+			class HitPelvis: HitHead
+			{
+				armor=6;
+				material=-1;
+				name="pelvis";
+				passThrough=0.80000001;
+				radius=0.23999999;
+				explosionShielding=1;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class HitAbdomen: HitPelvis
+			{
+				armor=1;
+				material=-1;
+				name="spine1";
+				passThrough=0.80000001;
+				radius=0.16;
+				explosionShielding=1;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitDiaphragm: HitAbdomen
+			{
+				armor=1;
+				material=-1;
+				name="spine2";
+				passThrough=0.80000001;
+				radius=0.18000001;
+				explosionShielding=6;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitChest: HitDiaphragm
+			{
+				armor=1;
+				material=-1;
+				name="spine3";
+				passThrough=0.80000001;
+				radius=0.18000001;
+				explosionShielding=6;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitBody: HitChest
+			{
+				armor=1000;
+				material=-1;
+				name="body";
+				passThrough=1;
+				radius=0;
+				explosionShielding=6;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+				depends="HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
+			};
+			class HitArms: HitBody
+			{
+				armor=3;
+				material=-1;
+				name="arms";
+				passThrough=1;
+				radius=0.1;
+				explosionShielding=1;
+				visual="injury_hands";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class HitHands: HitArms
+			{
+				armor=3;
+				material=-1;
+				name="hands";
+				passThrough=1;
+				radius=0.1;
+				explosionShielding=1;
+				visual="injury_hands";
+				minimalHit=0.0099999998;
+				depends="HitArms";
+			};
+			class HitLegs: HitHands
+			{
+				armor=3;
+				material=-1;
+				name="legs";
+				passThrough=1;
+				radius=0.14;
+				explosionShielding=1;
+				visual="injury_legs";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class Incapacitated: HitLegs
+			{
+				armor=1000;
+				material=-1;
+				name="body";
+				passThrough=1;
+				radius=0;
+				explosionShielding=1;
+				visual="";
+				minimalHit=0;
+				depends="(((Total - 0.25) max 0) + ((HitHead - 0.25) max 0) + ((HitBody - 0.25) max 0)) * 2";
+			};
+		};
+		armor=2;
+		armorStructural=3;
+		explosionShielding=0.30000001;
+		minTotalDamageThreshold=0.001;
+		impactDamageMultiplier=0.5;
+	};
+	class B_BUDDY_Soldier_R_Base: B_BUDDY_Soldier_Base
+	{
+		author="Devon0215";
+		displayName="Base BUDDY (Regular)";
+		editorSubcategory="BUDDIES_Men_Regular";
+		accuracy=2.5;
+		camouflage=1.5;
+		minFireTime=8;
+		class AttributeValues
+		{
+			skill=0.5;
+		};
+	};
+	class B_BUDDY_Soldier_Recon_Base: B_BUDDY_Soldier_Base
+	{
+		author="Devon0215";
+		displayName="Base BUDDY (Recon)";
+		editorSubcategory="BUDDIES_Men_Recon";
+		accuracy=2;
+		camouflage=0.75;
+		minFireTime=7;
+		class AttributeValues
+		{
+			skill=0.75;
+		};
+	};
+	class B_BUDDY_Soldier_A_Base: B_BUDDY_Soldier_Base
+	{
+		author="Devon0215";
+		displayName="Base BUDDY (AIRBUD)";
+		editorSubcategory="BUDDIES_Men_Air";
+		accuracy=1.5;
+		camouflage=2;
+		minFireTime=8;
+		class AttributeValues
+		{
+			skill=0.5;
+		};
+	};
+	class B_BUDDY_Soldier_AQUABUD_Base: B_BUDDY_Soldier_Base
+	{
+		author="Devon0215";
+		displayName="Base BUDDY (AQUABUD)";
+		editorSubcategory="BUDDIES_Men_AQUABUD";
+		accuracy=1.5;
+		camouflage=2;
+		minFireTime=8;
+		class AttributeValues
+		{
+			skill=0.5;
+		};
+	};
+	class B_BUDDY_Soldier_Marine_Base: B_BUDDY_Soldier_Base
+	{
+		author="Devon0215";
+		displayName="Base BUDDY (Marines)";
+		editorSubcategory="BUDDIES_Men_Marines";
+		accuracy=2;
+		camouflage=1.75;
+		minFireTime=7;
+		class AttributeValues
+		{
+			skill=0.75;
+		};
+	};
+	class B_BUD_Soldier_Base: B_BUDDY_Soldier_Base
+	{
+		author="Devon0215";
+		displayName="Base BUDDY (BUD)";
+		editorSubcategory="BUD_Men";
+		accuracy=5;
+		camouflage=0.5;
+		minFireTime=5;
+		class AttributeValues
+		{
+			skill=1;
+		};
+	};
+	class BUDDIES_Uniform: B_BUDDY_Soldier_Base
+	{
+		author="Devon0215";
+		displayName="Buddy Uniform";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
+		uniformClass="BUDDIES_Camo";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_co.paa"
+		};
 	};
 	class BUDDIES_Uniform_Subdued: BUDDIES_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Uniform (Subdued)";
 		uniformClass="BUDDIES_Camo_Subdued";
 		hiddenSelections[]=
@@ -540,8 +786,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Uniform_Textured: BUDDIES_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Uniform (Textured)";
 		uniformClass="BUDDIES_Camo_Textured";
 		hiddenSelections[]=
@@ -554,12 +799,11 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_textured_co.paa"
 		};
 	};
-	class BUDDIES_Uniform_SS: BUDDIES_Uniform
+	class BUDDIES_Uniform_RS: BUDDIES_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Uniform (Rolled Sleeves)";
-		uniformClass="BUDDIES_Camo_SS";
+		uniformClass="BUDDIES_Camo_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		hiddenSelections[]=
 		{
@@ -571,43 +815,39 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_co.paa"
 		};
 	};
-	class BUDDIES_Uniform_Subdued_SS: BUDDIES_Uniform_SS
-	{
-		scope=1;
-		scopeCurator=1;
-		displayName="Buddy Uniform (Subdued, Rolled Sleeves)";
-		uniformClass="BUDDIES_Camo_Subdued_SS";
-		hiddenSelections[]=
-		{
-			"Camo",
-			"Insignia"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\BUDDIES_Pack\Data\Uniform\camo_buddies_subdued_co"
-		};
-	};
-	class BUDDIES_Uniform_Textured_SS: BUDDIES_Uniform_SS
-	{
-		scope=1;
-		scopeCurator=1;
-		displayName="Buddy Uniform (Textured, Rolled Sleeves)";
-		uniformClass="BUDDIES_Camo_Textured_SS";
-		hiddenSelections[]=
-		{
-			"Camo",
-			"Insignia"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\BUDDIES_Pack\Data\Uniform\camo_buddies_textured_co"
-		};
-	};
-	class BUDDIES_Uniform_Worn: B_BUDDY_Soldier_Base
+	class BUDDIES_Uniform_Subdued_RS: BUDDIES_Uniform_RS
 	{
 		author="Devon0215";
-		scope=1;
-		scopeCurator=1;
+		displayName="Buddy Uniform (Subdued, Rolled Sleeves)";
+		uniformClass="BUDDIES_Camo_Subdued_RS";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_subdued_co.paa"
+		};
+	};
+	class BUDDIES_Uniform_Textured_RS: BUDDIES_Uniform_RS
+	{
+		author="Devon0215";
+		displayName="Buddy Uniform (Textured, Rolled Sleeves)";
+		uniformClass="BUDDIES_Camo_Textured_RS";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_textured_co.paa"
+		};
+	};
+	class BUDDIES_Uniform_Worn: BUDDIES_Uniform
+	{
+		author="Devon0215";
 		displayName="Buddy Uniform (Worn)";
 		uniformClass="BUDDIES_Camo_Worn";
 		hiddenSelections[]=
@@ -619,27 +859,12 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_worn_co.paa"
 		};
-		weapons[]=
-		{
-			"throw",
-			"put"
-		};
-		respawnWeapons[]=
-		{
-			"throw",
-			"put"
-		};
-		magazines[]={};
-		respawnMagazines[]={};
-		linkedItems[]={};
-		respawnLinkedItems[]={};
 	};
-	class BUDDIES_Uniform_Worn_SS: BUDDIES_Uniform_Worn
+	class BUDDIES_Uniform_Worn_RS: BUDDIES_Uniform_Worn
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Uniform (Worn, Rolled Sleeves)";
-		uniformClass="BUDDIES_Camo_Worn_SS";
+		uniformClass="BUDDIES_Camo_Worn_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		hiddenSelections[]=
 		{
@@ -653,8 +878,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Uniform_Worn_Subdued: BUDDIES_Uniform_Worn
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Uniform (Worn, Subdued)";
 		uniformClass="BUDDIES_Camo_Worn_Subdued";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
@@ -668,12 +892,11 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_worn_subdued_co.paa"
 		};
 	};
-	class BUDDIES_Uniform_Worn_Subdued_SS: BUDDIES_Uniform_Worn_SS
+	class BUDDIES_Uniform_Worn_Subdued_RS: BUDDIES_Uniform_Worn_RS
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Uniform (Worn, Subdued, Rolled Sleeves)";
-		uniformClass="BUDDIES_Camo_Worn_Subdued_SS";
+		uniformClass="BUDDIES_Camo_Worn_Subdued_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		hiddenSelections[]=
 		{
@@ -687,8 +910,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Uniform_Worn_Textured: BUDDIES_Uniform_Worn
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Uniform (Worn, Textured)";
 		uniformClass="BUDDIES_Camo_Worn_Textured";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
@@ -702,12 +924,11 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_worn_textured_co.paa"
 		};
 	};
-	class BUDDIES_Uniform_Worn_Textured_SS: BUDDIES_Uniform_Worn_SS
+	class BUDDIES_Uniform_Worn_Textured_RS: BUDDIES_Uniform_Worn_RS
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Uniform (Worn, Textured, Rolled Sleeves)";
-		uniformClass="BUDDIES_Camo_Worn_Textured_SS";
+		uniformClass="BUDDIES_Camo_Worn_Textured_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		hiddenSelections[]=
 		{
@@ -719,11 +940,9 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_worn_textured_co.paa"
 		};
 	};
-	class BUDDIES_Marines_Uniform: B_BUDDY_Soldier_Base
+	class BUDDIES_Marines_Uniform: BUDDIES_Uniform
 	{
 		author="Devon0215";
-		scope=1;
-		scopeCurator=1;
 		displayName="Buddy Marines Uniform";
 		uniformClass="BUDDIES_Marines_Camo";
 		hiddenSelections[]=
@@ -735,26 +954,26 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_marines_co.paa"
 		};
-		weapons[]=
-		{
-			"throw",
-			"put"
-		};
-		respawnWeapons[]=
-		{
-			"throw",
-			"put"
-		};
-		magazines[]={};
-		respawnMagazines[]={};
-		linkedItems[]={};
-		respawnLinkedItems[]={};
 	};
-	class BUDDIES_Navy_Uniform: B_BUDDY_Soldier_Base
+	class BUDDIES_Marines_Uniform_RS: BUDDIES_Marines_Uniform
 	{
 		author="Devon0215";
-		scope=1;
-		scopeCurator=1;
+		displayName="Buddy Marines Uniform (Rolled Sleeves)";
+		uniformClass="BUDDIES_Marines_Camo_RS";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_marines_co.paa"
+		};
+	};
+	class BUDDIES_Navy_Uniform: BUDDIES_Uniform
+	{
+		author="Devon0215";
 		displayName="Buddy Navy Uniform";
 		uniformClass="BUDDIES_Navy_Camo";
 		hiddenSelections[]=
@@ -766,26 +985,26 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_navy_co.paa"
 		};
-		weapons[]=
-		{
-			"throw",
-			"put"
-		};
-		respawnWeapons[]=
-		{
-			"throw",
-			"put"
-		};
-		magazines[]={};
-		respawnMagazines[]={};
-		linkedItems[]={};
-		respawnLinkedItems[]={};
 	};
-	class BUDDIES_Recon_Uniform: B_BUDDY_Soldier_Base
+	class BUDDIES_Navy_Uniform_RS: BUDDIES_Navy_Uniform
 	{
 		author="Devon0215";
-		scope=1;
-		scopeCurator=1;
+		displayName="Buddy Navy Uniform (Rolled Sleeves)";
+		uniformClass="BUDDIES_Navy_Camo_RS";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_navy_co.paa"
+		};
+	};
+	class BUDDIES_Recon_Uniform: BUDDIES_Uniform
+	{
+		author="Devon0215";
 		displayName="Buddy Recon Uniform";
 		uniformClass="BUDDIES_Recon_Camo";
 		hiddenSelections[]=
@@ -797,29 +1016,13 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_recon_co.paa"
 		};
-		weapons[]=
-		{
-			"throw",
-			"put"
-		};
-		respawnWeapons[]=
-		{
-			"throw",
-			"put"
-		};
-		magazines[]={};
-		respawnMagazines[]={};
-		linkedItems[]={};
-		respawnLinkedItems[]={};
 	};
-	class BUDDIES_Recon_Uniform_SS: BUDDIES_Recon_Uniform
+	class BUDDIES_Recon_Uniform_RS: BUDDIES_Recon_Uniform
 	{
 		author="Devon0215";
-		scope=1;
-		scopeCurator=1;
 		displayName="Buddy Recon Uniform (Rolled Sleeves)";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUDDIES_Recon_Camo_SS";
+		uniformClass="BUDDIES_Recon_Camo_RS";
 		hiddenSelections[]=
 		{
 			"Camo",
@@ -829,26 +1032,10 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_recon_co.paa"
 		};
-		weapons[]=
-		{
-			"throw",
-			"put"
-		};
-		respawnWeapons[]=
-		{
-			"throw",
-			"put"
-		};
-		magazines[]={};
-		respawnMagazines[]={};
-		linkedItems[]={};
-		respawnLinkedItems[]={};
 	};
 	class BUDDIES_Recon_Uniform_Patch: BUDDIES_Recon_Uniform
 	{
 		author="Devon0215";
-		scope=1;
-		scopeCurator=1;
 		displayName="Buddy Recon Uniform (Patch)";
 		uniformClass="BUDDIES_Recon_Camo_Patch";
 		hiddenSelections[]=
@@ -860,29 +1047,15 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_recon_patch_co.paa"
 		};
-		weapons[]=
-		{
-			"throw",
-			"put"
-		};
-		respawnWeapons[]=
-		{
-			"throw",
-			"put"
-		};
-		magazines[]={};
-		respawnMagazines[]={};
-		linkedItems[]={};
-		respawnLinkedItems[]={};
 	};
-	class BUDDIES_Recon_Uniform_Patch_SS: BUDDIES_Recon_Uniform_SS
+	class BUDDIES_Recon_Uniform_Patch_RS: BUDDIES_Recon_Uniform_RS
 	{
 		author="Devon0215";
 		scope=1;
 		scopeCurator=1;
 		displayName="Buddy Recon Uniform (Patch, Rolled Sleeves)";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUDDIES_Recon_Camo_Patch_SS";
+		uniformClass="BUDDIES_Recon_Camo_Patch_RS";
 		hiddenSelections[]=
 		{
 			"Camo",
@@ -892,25 +1065,10 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_recon_patch_co.paa"
 		};
-		weapons[]=
-		{
-			"throw",
-			"put"
-		};
-		respawnWeapons[]=
-		{
-			"throw",
-			"put"
-		};
-		magazines[]={};
-		respawnMagazines[]={};
-		linkedItems[]={};
-		respawnLinkedItems[]={};
 	};
 	class BUD_Uniform: BUDDIES_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="BUD Uniform";
 		uniformClass="BUD_Camo";
 		hiddenSelections[]=
@@ -922,13 +1080,154 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_bud_co.paa"
 		};
+		class HitPoints
+		{
+			class HitFace
+			{
+				armor=1;
+				material=-1;
+				name="face_hub";
+				passThrough=0.80000001;
+				radius=0.079999998;
+				explosionShielding=0.1;
+				minimalHit=0.0099999998;
+			};
+			class HitNeck: HitFace
+			{
+				armor=1;
+				material=-1;
+				name="neck";
+				passThrough=0.80000001;
+				radius=0.1;
+				explosionShielding=0.5;
+				minimalHit=0.0099999998;
+			};
+			class HitHead: HitNeck
+			{
+				armor=1;
+				material=-1;
+				name="head";
+				passThrough=0.80000001;
+				radius=0.2;
+				explosionShielding=0.5;
+				minimalHit=0.0099999998;
+				depends="HitFace max HitNeck";
+			};
+			class HitPelvis: HitHead
+			{
+				armor=6;
+				material=-1;
+				name="pelvis";
+				passThrough=0.33000001;
+				radius=0.23999999;
+				explosionShielding=1;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class HitAbdomen: HitPelvis
+			{
+				armor=6;
+				material=-1;
+				name="spine1";
+				passThrough=0.33000001;
+				radius=0.16;
+				explosionShielding=1;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitDiaphragm: HitAbdomen
+			{
+				armor=6;
+				material=-1;
+				name="spine2";
+				passThrough=0.33000001;
+				radius=0.18000001;
+				explosionShielding=1.5;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitChest: HitDiaphragm
+			{
+				armor=6;
+				material=-1;
+				name="spine3";
+				passThrough=0.33000001;
+				radius=0.18000001;
+				explosionShielding=1.5;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+			};
+			class HitBody: HitChest
+			{
+				armor=1000;
+				material=-1;
+				name="body";
+				passThrough=1;
+				radius=0;
+				explosionShielding=1.5;
+				visual="injury_body";
+				minimalHit=0.0099999998;
+				depends="HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
+			};
+			class HitArms: HitBody
+			{
+				armor=3;
+				material=-1;
+				name="arms";
+				passThrough=1;
+				radius=0.1;
+				explosionShielding=1;
+				visual="injury_hands";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class HitHands: HitArms
+			{
+				armor=3;
+				material=-1;
+				name="hands";
+				passThrough=1;
+				radius=0.1;
+				explosionShielding=1;
+				visual="injury_hands";
+				minimalHit=0.0099999998;
+				depends="HitArms";
+			};
+			class HitLegs: HitHands
+			{
+				armor=3;
+				material=-1;
+				name="legs";
+				passThrough=1;
+				radius=0.14;
+				explosionShielding=1;
+				visual="injury_legs";
+				minimalHit=0.0099999998;
+				depends="0";
+			};
+			class Incapacitated: HitLegs
+			{
+				armor=1000;
+				material=-1;
+				name="body";
+				passThrough=1;
+				radius=0;
+				explosionShielding=1;
+				visual="";
+				minimalHit=0;
+				depends="(((Total - 0.25) max 0) + ((HitHead - 0.25) max 0) + ((HitBody - 0.25) max 0)) * 2";
+			};
+		};
+		armor=2;
+		armorStructural=4;
+		explosionShielding=0.40000001;
 	};
-	class BUD_Uniform_SS: BUD_Uniform
+	class BUD_Uniform_RS: BUD_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="BUD Uniform (Rolled Sleeves)";
-		uniformClass="BUD_Camo_SS";
+		uniformClass="BUD_Camo_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		hiddenSelections[]=
 		{
@@ -942,8 +1241,7 @@ class CfgVehicles
 	};
 	class BUD_Uniform_Patch: BUD_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="BUD Uniform (Patch)";
 		uniformClass="BUD_Camo_Patch";
 		hiddenSelections[]=
@@ -956,12 +1254,12 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_bud_patch_co.paa"
 		};
 	};
-	class BUD_Uniform_Patch_SS: BUD_Uniform
+	class BUD_Uniform_Patch_RS: BUD_Uniform
 	{
 		scope=1;
 		scopeCurator=1;
 		displayName="BUD Uniform (Patch, Rolled Sleeves)";
-		uniformClass="BUD_Camo_Patch_SS";
+		uniformClass="BUD_Camo_Patch_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		hiddenSelections[]=
 		{
@@ -975,8 +1273,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Armor_Uniform: BUDDIES_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Armor Uniform";
 		uniformClass="BUDDIES_Armor_Camo";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
@@ -992,8 +1289,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Air_Uniform: BUDDIES_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="AIRBUD Uniform";
 		uniformClass="BUDDIES_Air_Camo";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01";
@@ -1007,12 +1303,11 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_air_co.paa"
 		};
 	};
-	class BUDDIES_Air_Uniform_SS: BUDDIES_Uniform_SS
+	class BUDDIES_Air_Uniform_RS: BUDDIES_Uniform_RS
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="AIRBUD Uniform (Rolled Sleeves)";
-		uniformClass="BUDDIES_Air_Camo_SS";
+		uniformClass="BUDDIES_Air_Camo_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02";
 		hiddenSelections[]=
 		{
@@ -1026,8 +1321,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Air_Uniform_Patch: BUDDIES_Air_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="AIRBUD Uniform (Patch)";
 		uniformClass="BUDDIES_Air_Camo_Patch";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01";
@@ -1041,12 +1335,11 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_air_patch_co.paa"
 		};
 	};
-	class BUDDIES_Air_Uniform_Patch_SS: BUDDIES_Air_Uniform_SS
+	class BUDDIES_Air_Uniform_Patch_RS: BUDDIES_Air_Uniform_RS
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="AIRBUD Uniform (Patch, Rolled Sleeves)";
-		uniformClass="BUDDIES_Air_Camo_Patch_SS";
+		uniformClass="BUDDIES_Air_Camo_Patch_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02";
 		hiddenSelections[]=
 		{
@@ -1060,8 +1353,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Air_Crew_Uniform: BUDDIES_Air_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="AIRBUD Crew Uniform";
 		uniformClass="BUDDIES_Air_Crew_Camo";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
@@ -1077,8 +1369,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Air_Crew_Officer_Uniform: BUDDIES_Air_Crew_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="AIRBUD Crew Officer Uniform";
 		uniformClass="BUDDIES_Air_Crew_Officer_Camo";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
@@ -1094,8 +1385,7 @@ class CfgVehicles
 	};
 	class BUDDIES_Recon_Armor_Uniform: BUDDIES_Armor_Uniform
 	{
-		scope=1;
-		scopeCurator=1;
+		author="Devon0215";
 		displayName="Buddy Recon Armor Uniform";
 		uniformClass="BUDDIES_Recon_Armor_Camo";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
@@ -1114,10 +1404,9 @@ class CfgVehicles
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
+		cost=250000;
 		displayName="Officer";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Textured";
-		editorSubcategory="BUDDIES_Men_Militia";
 		class SpeechVariants
 		{
 			class Default
@@ -1135,10 +1424,7 @@ class CfgVehicles
 		textSingular="$STR_A3_nameSound_veh_infantry_officer_s";
 		textPlural="$STR_A3_nameSound_veh_infantry_officer_p";
 		nameSound="veh_infantry_officer_s";
-		cost=250000;
-		camouflage=1.6;
 		icon="iconManOfficer";
-		role="Rifleman";
 		weapons[]=
 		{
 			"hlc_rifle_M14",
@@ -1222,15 +1508,33 @@ class CfgVehicles
 			"V_SmershVest_01_radio_F"
 		};
 	};
-	class B_BUDDY_VIP: B_BUDDY_Officer
+	
+	class B_BUDDY_VIP: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
+		cost=250000;
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_officer_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_officer_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_officer_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_officer_p";
+		nameSound="veh_infantry_officer_s";
+		icon="iconManOfficer";
 		displayName="VIP";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Textured";
-		editorSubcategory="BUDDIES_Men_Militia";
 		weapons[]=
 		{
 			"rhsusf_weap_m1911a1",
@@ -1320,13 +1624,9 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Squad Leader";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Textured";
-		editorSubcategory="BUDDIES_Men_Militia";
 		cost=250000;
-		camouflage=1.4;
 		icon="iconManLeader";
-		role="Rifleman";
 		weapons[]=
 		{
 			"hlc_rifle_osw_GL",
@@ -1416,9 +1716,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Rifleman (FAL)";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Subdued";
-		editorSubcategory="BUDDIES_Men_Militia";
 		weapons[]=
 		{
 			"hlc_rifle_FAL5000",
@@ -1498,9 +1796,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Rifleman (Mosin)";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Subdued";
-		editorSubcategory="BUDDIES_Men_Militia";
 		weapons[]=
 		{
 			"rhs_weap_m38",
@@ -1642,9 +1938,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Rifleman (M14)";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Subdued";
-		editorSubcategory="BUDDIES_Men_Militia";
 		weapons[]=
 		{
 			"hlc_rifle_m14",
@@ -1716,9 +2010,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Rifleman (AKM)";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Subdued";
-		editorSubcategory="BUDDIES_Men_Militia";
 		weapons[]=
 		{
 			"rhs_weap_akm",
@@ -1804,10 +2096,8 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="AT Specialist (RPG7)";
-		faction="BUDDIES_Faction";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUDDIES_Camo_Worn_Subdued_SS";
-		editorSubcategory="BUDDIES_Men_Militia";
+		uniformClass="BUDDIES_Camo_Worn_Subdued_RS";
 		backpack="BUDDIES_RPG_Carrier_AT";
 		class SpeechVariants
 		{
@@ -1828,7 +2118,6 @@ class CfgVehicles
 		nameSound="veh_infantry_AT_s";
 		cost=130000;
 		threat[]={0.80000001,0.80000001,0.30000001};
-		camouflage=1.5;
 		icon="iconManAT";
 		role="MissileSpecialist";
 		weapons[]=
@@ -1916,10 +2205,8 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="AA Specialist (Igla)";
-		faction="BUDDIES_Faction";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUDDIES_Camo_Worn_Subdued_SS";
-		editorSubcategory="BUDDIES_Men_Militia";
+		uniformClass="BUDDIES_Camo_Worn_Subdued_RS";
 		backpack="BUDDIES_RPG_Carrier_AA";
 		class SpeechVariants
 		{
@@ -1940,7 +2227,6 @@ class CfgVehicles
 		nameSound="veh_infantry_AT_s";
 		cost=130000;
 		threat[]={0.80000001,0.1,1};
-		camouflage=1.5;
 		icon="iconManAT";
 		role="MissileSpecialist";
 		weapons[]=
@@ -2026,9 +2312,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Automatic Rifleman (RPK)";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Subdued";
-		editorSubcategory="BUDDIES_Men_Militia";
 		class SpeechVariants
 		{
 			class Default
@@ -2112,10 +2396,24 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Marksman (M76)";
-		faction="BUDDIES_Faction";
 		uniformClass="BUDDIES_Camo_Worn_Subdued";
-		editorSubcategory="BUDDIES_Men_Militia";
-		cost=250000;
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_sniper_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_sniper_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_sniper_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_sniper_p";
+		nameSound="veh_infantry_sniper_s";
 		role="Marksman";
 		weapons[]=
 		{
@@ -2214,10 +2512,8 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Medic";
-		faction="BUDDIES_Faction";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUDDIES_Camo_Worn_Subdued_SS";
-		editorSubcategory="BUDDIES_Men_Militia";
+		uniformClass="BUDDIES_Camo_Worn_Subdued_RS";
 		backpack="B_AssaultPack_rgr_Medic";
 		class SpeechVariants
 		{
@@ -2237,7 +2533,6 @@ class CfgVehicles
 		textPlural="$STR_A3_nameSound_veh_infantry_medic_p";
 		nameSound="veh_infantry_medic_s";
 		attendant=1;
-		camouflage=1.6;
 		icon="iconManMedic";
 		role="CombatLifeSaver";
 		picture="pictureHeal";
@@ -2316,16 +2611,12 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		displayName="Engineer";
-		faction="BUDDIES_Faction";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUDDIES_Camo_Worn_Subdued_SS";
-		editorSubcategory="BUDDIES_Men_Militia";
+		uniformClass="BUDDIES_Camo_Worn_Subdued_RS";
 		backpack="I_Carryall_oli_Eng";
 		canDeactivateMines=1;
 		engineer=1;
 		detectSkill=31;
-		cost=93000;
-		camouflage=1.6;
 		icon="iconManEngineer";
 		role="Sapper";
 		picture="pictureRepair";
@@ -2394,13 +2685,36 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_AA_IGLA: B_BUDDY_AA_IGLA
+	class B_BUDDY_R_AA_IGLA: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
-		editorSubcategory="BUDDIES_Men_Regular";
-		uniformClass="BUDDIES_Camo_Subdued_SS";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_AT_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_AT_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_AT_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_AT_p";
+		nameSound="veh_infantry_AT_s";
+		cost=130000;
+		threat[]={0.80000001,0.1,1};
+		icon="iconManAT";
+		role="MissileSpecialist";
+		displayName="AA Specialist (Igla)";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		uniformClass="BUDDIES_Camo_Subdued_RS";
+		backpack="BUDDIES_RPG_Carrier_AA";
 		weapons[]=
 		{
 			"rhs_weap_ak74",
@@ -2500,13 +2814,36 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_AT_RPG7: B_BUDDY_AT_RPG7
+	class B_BUDDY_R_AT_RPG7: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
-		uniformClass="BUDDIES_Camo_Subdued_SS";
-		editorSubcategory="BUDDIES_Men_Regular";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_AT_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_AT_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_AT_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_AT_p";
+		nameSound="veh_infantry_AT_s";
+		cost=130000;
+		threat[]={0.80000001,0.80000001,0.30000001};
+		icon="iconManAT";
+		role="MissileSpecialist";
+		uniformClass="BUDDIES_Camo_Subdued_RS";
+		displayName="AT Specialist (RPG7)";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		backpack="BUDDIES_RPG_Carrier_AT";
 		weapons[]=
 		{
 			"rhs_weap_ak74",
@@ -2610,14 +2947,33 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_MG_M60: B_BUDDY_Autorifleman_RPK
+	class B_BUDDY_R_MG_M60: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Machinegunner (M60)";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_MG_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_MG_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_MG_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_MG_p";
+		nameSound="veh_infantry_MG_s";
+		cost=220000;
+		icon="iconManMG";
+		role="MachineGunner";
 		uniformClass="BUDDIES_Camo_Subdued";
-		editorSubcategory="BUDDIES_Men_Regular";
 		weapons[]=
 		{
 			"hlc_lmg_M60",
@@ -2701,13 +3057,21 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Engineer: B_BUDDY_Engineer
+	class B_BUDDY_R_Engineer: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
+		displayName="Engineer";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		backpack="I_Carryall_oli_Eng";
 		scope=2;
 		scopeCurator=2;
-		uniformClass="BUDDIES_Camo_Subdued_SS";
-		editorSubcategory="BUDDIES_Men_Regular";
+		canDeactivateMines=1;
+		engineer=1;
+		detectSkill=31;
+		icon="iconManEngineer";
+		role="Sapper";
+		picture="pictureRepair";
+		uniformClass="BUDDIES_Camo_Subdued_RS";
 		weapons[]=
 		{
 			"hlc_smg_mp510",
@@ -2799,14 +3163,31 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Marksman_SVD: B_BUDDY_Marksman_M76
+	class B_BUDDY_R_Marksman_SVD: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Marksman (SVD)";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_sniper_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_sniper_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_sniper_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_sniper_p";
+		nameSound="veh_infantry_sniper_s";
+		role="Marksman";
 		uniformClass="BUDDIES_Camo_Subdued";
-		editorSubcategory="BUDDIES_Men_Regular";
 		weapons[]=
 		{
 			"rhs_weap_svdp_pso1",
@@ -2918,13 +3299,36 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Medic: B_BUDDY_Medic
+	class B_BUDDY_R_Medic: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
-		uniformClass="BUDDIES_Camo_Subdued_SS";
-		editorSubcategory="BUDDIES_Men_Regular";
+		displayName="Medic";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		backpack="B_AssaultPack_rgr_Medic";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_medic_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_medic_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_medic_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_medic_p";
+		nameSound="veh_infantry_medic_s";
+		attendant=1;
+		icon="iconManMedic";
+		role="CombatLifeSaver";
+		picture="pictureHeal";
+		uniformClass="BUDDIES_Camo_Subdued_RS";
 		weapons[]=
 		{
 			"rhs_weap_aks74",
@@ -3018,13 +3422,32 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Officer: B_BUDDY_Officer
+	class B_BUDDY_R_Officer: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
+		cost=250000;
+		displayName="Officer";
 		uniformClass="BUDDIES_Camo_Textured";
-		editorSubcategory="BUDDIES_Men_Regular";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_officer_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_officer_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_officer_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_officer_p";
+		nameSound="veh_infantry_officer_s";
+		icon="iconManOfficer";
 		weapons[]=
 		{
 			"hlc_rifle_m14dmr",
@@ -3130,14 +3553,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Rifleman_PM63: B_BUDDY_Rifleman_AKM
+	class B_BUDDY_R_Rifleman_PM63: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Rifleman (PM63)";
 		uniformClass="BUDDIES_Camo_Subdued";
-		editorSubcategory="BUDDIES_Men_Regular";
 		weapons[]=
 		{
 			"rhs_weap_pm63",
@@ -3211,13 +3633,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Rifleman_FAL: B_BUDDY_Rifleman_FAL
+	class B_BUDDY_R_Rifleman_FAL: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
+		displayName="Rifleman (FAL)";
 		uniformClass="BUDDIES_Camo_Subdued";
-		editorSubcategory="BUDDIES_Men_Regular";
 		weapons[]=
 		{
 			"hlc_rifle_FAL5061",
@@ -3317,14 +3739,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Rifleman_M21: B_BUDDY_Rifleman_M14
+	class B_BUDDY_R_Rifleman_M21: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Rifleman (M21)";
 		uniformClass="BUDDIES_Camo_Subdued";
-		editorSubcategory="BUDDIES_Men_Regular";
 		weapons[]=
 		{
 			"hlc_rifle_m21",
@@ -3422,13 +3843,15 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Squad_Leader: B_BUDDY_Squad_Leader
+	class B_BUDDY_R_Squad_Leader: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
+		displayName="Squad Leader";
+		cost=250000;
+		icon="iconManLeader";
 		uniformClass="BUDDIES_Camo_Textured";
-		editorSubcategory="BUDDIES_Men_Regular";
 		weapons[]=
 		{
 			"rhs_weap_m16a4_carryhandle_m203",
@@ -3564,15 +3987,14 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Driver: B_BUDDY_R_Rifleman_PM63
+	class B_BUDDY_R_Driver: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Driver";
-		editorSubcategory="BUDDIES_Men_Regular";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02";
-		uniformClass="BUDDIES_Camo_Subdued_SS";
+		uniformClass="BUDDIES_Camo_Subdued_RS";
 		role="Crewman";
 		weapons[]=
 		{
@@ -3653,7 +4075,7 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_R_Crew: B_BUDDY_R_Driver
+	class B_BUDDY_R_Crew: B_BUDDY_Soldier_R_Base
 	{
 		author="Devon0215";
 		scope=2;
@@ -3661,7 +4083,7 @@ class CfgVehicles
 		displayName="Crewman";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		uniformClass="BUDDIES_Armor_Camo";
-		editorSubcategory="BUDDIES_Men_Regular";
+		role="Crewman";
 		weapons[]=
 		{
 			"BUDDIES_aks74u",
@@ -3723,13 +4145,12 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_A_Pilot: B_BUDDY_Soldier_Base
+	class B_BUDDY_A_Pilot: B_BUDDY_Soldier_A_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Pilot";
-		editorSubcategory="BUDDIES_Men_Air";
 		uniformClass="BUDDIES_Air_Camo_Patch";
 		role="Crewman";
 		weapons[]=
@@ -3829,15 +4250,15 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_A_Crew: B_BUDDY_A_Pilot
+	class B_BUDDY_A_Crew: B_BUDDY_Soldier_A_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Crew";
-		editorSubcategory="BUDDIES_Men_Air";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		uniformClass="BUDDIES_Air_Crew_Camo";
+		role="Crewman";
 		weapons[]=
 		{
 			"rhs_weap_makarov_pm",
@@ -3907,15 +4328,15 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_A_Crew_Officer: B_BUDDY_A_Crew
+	class B_BUDDY_A_Crew_Officer: B_BUDDY_Soldier_A_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Crew Officer";
-		editorSubcategory="BUDDIES_Men_Air";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		uniformClass="BUDDIES_Air_Crew_Officer_Camo";
+		role="Crewman";
 		weapons[]=
 		{
 			"rhs_weap_makarov_pm",
@@ -3985,15 +4406,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_A_Secfor: B_BUDDY_Soldier_Base
+	class B_BUDDY_A_Secfor: B_BUDDY_Soldier_A_Base
 	{
 		author="chef";
 		scope=2;
 		scopeCurator=2;
 		displayName="Secfor";
-		editorSubcategory="BUDDIES_Men_Air";
 		uniformClass="BUDDIES_Air_Camo_Patch";
-		role="Rifleman";
 		weapons[]=
 		{
 			"hlc_wp_m16a2",
@@ -4077,15 +4496,14 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_A_Driver: B_BUDDY_R_Driver
+	class B_BUDDY_A_Driver: B_BUDDY_Soldier_A_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Driver";
-		editorSubcategory="BUDDIES_Men_Air";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUDDIES_Air_Camo_Patch_SS";
+		uniformClass="BUDDIES_Air_Camo_Patch_RS";
 		role="Crewman";
 		weapons[]=
 		{
@@ -4182,14 +4600,12 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_AquaBud_DeckCrew: B_BUDDY_A_Crew
+	class B_BUDDY_AQUABUD_DeckCrew: B_BUDDY_Soldier_AQUABUD_Base
     {
 		author="Atli";
 		scope=2;
 		scopeCurator=2;
 		displayName="Deck Crew";
-	    editorSubcategory="BUDDIES_Men_AquaBud";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		uniformClass="BUDDIES_Navy_Camo";
 		role="Crewman";
 		weapons[]=
@@ -4202,14 +4618,10 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
-		items[]=
-		{};
-		respawnItems[]=
-		{};
-		magazines[]=
-		{};
-		respawnMagazines[]=
-		{};
+		items[]={};
+		respawnItems[]={};
+		magazines[]={};
+		respawnMagazines[]={};
 		linkedItems[]=
 		{
 			"V_DeckCrew_white_F",
@@ -4231,14 +4643,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_Marine: B_BUDDY_R_Rifleman_FAL
+	class B_BUDDY_Marine_Rifleman: B_BUDDY_Soldier_Marine_Base
 	{
 		author="Atli";
 		scope=2;
 		scopeCurator=2;
-		displayName="Rifleman"
+		displayName="Rifleman";
 		uniformClass="BUDDIES_Marines_Camo";
-		editorSubcategory="BUDDIES_AQUABUD_Marines";
 		weapons[]=
 		{
 			"hlc_rifle_auga1carb",
@@ -4332,15 +4743,14 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_A_GroundCrew: B_BUDDY_AquaBud_DeckCrew
+	class B_BUDDY_A_GroundCrew: B_BUDDY_Soldier_A_Base
 	{
 		author="Atli";
 		scope=2;
 		scopeCurator=2;
 		displayName="Ground Crew";
-		editorSubcategory="BUDDIES_Men_Air";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		uniformClass="BUDDIES_Air_Camo";
+		role="Crewman";
 		linkedItems[]=
 		{
 			"V_DeckCrew_white_F",
@@ -4364,13 +4774,15 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_Recon_Squad_Leader: B_BUDDY_R_Squad_Leader
+	class B_BUDDY_Recon_Squad_Leader: B_BUDDY_Soldier_Recon_Base
 	{
 		author="Atli";
 		scope=2;
 		scopeCurator=2;
+		displayName="Squad Leader";
 		uniformClass="BUDDIES_Recon_Camo";
-		editorSubcategory="BUDDIES_Men_Recon";
+		cost=250000;
+		icon="iconManLeader";
 		weapons[]=
 		{
 			"CUP_arifle_FNFAL5061_wooden",
@@ -4462,15 +4874,14 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_Recon_Driver: B_BUDDY_R_Driver
+	class B_BUDDY_Recon_Driver: B_BUDDY_Soldier_Recon_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Driver";
-		editorSubcategory="BUDDIES_Men_Recon";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUDDIES_Recon_Camo_Patch_SS";
+		uniformClass="BUDDIES_Recon_Camo_Patch_RS";
 		role="Crewman";
 		weapons[]=
 		{
@@ -4543,7 +4954,7 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUDDY_Recon_Crew: B_BUDDY_R_Crew
+	class B_BUDDY_Recon_Crew: B_BUDDY_Soldier_Recon_Base
 	{
 		author="Devon0215";
 		scope=2;
@@ -4551,7 +4962,7 @@ class CfgVehicles
 		displayName="Crewman";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		uniformClass="BUDDIES_Recon_Armor_Camo";
-		editorSubcategory="BUDDIES_Men_Recon";
+		role="Crewman";
 		weapons[]=
 		{
 			"rhs_weap_aks74u",
@@ -4615,15 +5026,33 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_Officer: B_BUDDY_R_Officer
+	class B_BUD_Officer: B_BUD_Soldier_Base
 	{
 		author="chef";
 		scope=2;
 		scopeCurator=2;
 		displayName="Officer";
-		editorSubcategory="BUD_Men";
-		uniformClass="BUD_Camo_Patch_SS";
+		uniformClass="BUD_Camo_Patch_RS";
 		role="Officer";
+		cost=250000;
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_officer_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_officer_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_officer_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_officer_p";
+		nameSound="veh_infantry_officer_s";
+		icon="iconManOfficer";
 		weapons[]=
 		{
 			"BUD_Colt1911",
@@ -4713,14 +5142,16 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_Squad_Leader: B_BUDDY_Squad_Leader
+	class B_BUD_Squad_Leader: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUD_Camo_Patch_SS";
-		editorSubcategory="BUD_Men";
+		uniformClass="BUD_Camo_Patch_RS";
+		displayName="Squad Leader";
+		cost=250000;
+		icon="iconManLeader";
 		weapons[]=
 		{
 			"BUD_hk416d10_m320",
@@ -4832,7 +5263,7 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_Marksman_M14: B_BUDDY_Marksman_M76
+	class B_BUD_Marksman_M14: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
@@ -4840,7 +5271,24 @@ class CfgVehicles
 		displayName="Marksman (M14 SOPMOD)";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		uniformClass="BUD_Camo_Patch";
-		editorSubcategory="BUD_Men";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_sniper_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_sniper_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_sniper_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_sniper_p";
+		nameSound="veh_infantry_sniper_s";
+		role="Marksman";
 		weapons[]=
 		{
 			"BUD_m14sopmod",
@@ -4920,7 +5368,7 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_Sniper_M2010: B_BUDDY_Marksman_M76
+	class B_BUD_Sniper_M2010: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
@@ -4928,7 +5376,24 @@ class CfgVehicles
 		displayName="Sniper (M2010)";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		uniformClass="BUD_Camo_Patch";
-		editorSubcategory="BUD_Men";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_sniper_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_sniper_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_sniper_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_sniper_p";
+		nameSound="veh_infantry_sniper_s";
+		role="Marksman";
 		weapons[]=
 		{
 			"BUD_XM2010_wd",
@@ -5048,14 +5513,14 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_Rifleman_FAL: B_BUDDY_Rifleman_FAL
+	class B_BUD_Rifleman_FAL: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
+		displayName="Rifleman (FAL)";
 		uniformClass="BUD_Camo_Patch";
-		editorSubcategory="BUD_Men";
 		weapons[]=
 		{
 			"BUD_falosw",
@@ -5133,16 +5598,36 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_AA_Stinger: B_BUDDY_AA_IGLA
+	class B_BUD_AA_Stinger: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="AA Specialist (Stinger)";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUD_Camo_Patch_SS";
+		uniformClass="BUD_Camo_Patch_RS";
 		backpack="BUD_kitbag_blk_AA";
-		editorSubcategory="BUD_Men";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_AT_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_AT_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_AT_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_AT_p";
+		nameSound="veh_infantry_AT_s";
+		cost=130000;
+		threat[]={0.80000001,0.1,1};
+		icon="iconManAT";
+		role="MissileSpecialist";
 		weapons[]=
 		{
 			"BUD_m4a1_carryhandle",
@@ -5238,16 +5723,36 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_AT_MAAWS: B_BUDDY_AT_RPG7
+	class B_BUD_AT_MAAWS: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="AT Specialist (M3 MAAWS)";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUD_Camo_Patch_SS";
+		uniformClass="BUD_Camo_Patch_RS";
 		backpack="BUD_kitbag_blk_AT";
-		editorSubcategory="BUD_Men";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_AT_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_AT_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_AT_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_AT_p";
+		nameSound="veh_infantry_AT_s";
+		cost=130000;
+		threat[]={0.80000001,0.80000001,0.30000001};
+		icon="iconManAT";
+		role="MissileSpecialist";
 		weapons[]=
 		{
 			"BUD_ak74mr",
@@ -5347,15 +5852,21 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_Engineer: B_BUDDY_R_Engineer
+	class B_BUD_Engineer: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayname="Engineer";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="BUD_Camo_Patch_SS";
-		editorSubcategory="BUD_Men";
+		uniformClass="BUD_Camo_Patch_RS";
+		backpack="BUD_kitbag_blk_Engineer";
+		canDeactivateMines=1;
+		engineer=1;
+		detectSkill=31;
+		icon="iconManEngineer";
+		role="Sapper";
+		picture="pictureRepair";
 		weapons[]=
 		{
 			"BUD_mp5N_tac",
@@ -5453,15 +5964,35 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_Medic: B_BUDDY_R_Medic
+	class B_BUD_Medic: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Medic";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		uniformClass="BUD_Camo_Patch";
-		editorSubcategory="BUD_Men";
+		backpack="BUD_kitbag_blk_Medic";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_medic_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_medic_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_medic_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_medic_p";
+		nameSound="veh_infantry_medic_s";
+		attendant=1;
+		icon="iconManMedic";
+		role="CombatLifeSaver";
+		picture="pictureHeal";
 		weapons[]=
 		{
 			"BUD_ak104",
@@ -5545,15 +6076,33 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_BUD_MG_M249: B_BUDDY_R_MG_M60
+	class B_BUD_MG_M249: B_BUD_Soldier_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Machine Gunner (M249)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		uniformClass="BUD_Camo_Patch";
-		editorSubcategory="BUD_Men";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_MG_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_MG_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_infantry_MG_s";
+		textPlural="$STR_A3_nameSound_veh_infantry_MG_p";
+		nameSound="veh_infantry_MG_s";
+		cost=220000;
+		icon="iconManMG";
+		role="MachineGunner";
 		weapons[]=
 		{
 			"BUD_m249",
@@ -5868,7 +6417,7 @@ class CfgVehicles
 	class RHS_Ural_Open_MSV_01;
 	class RHS_Ural_Open_Flat_MSV_01;
 	class CUP_O_Ural_Reammo_RU;
-	class RHS_BM21_MSV_01;
+	class CUP_O_BM21_RU;
 	class RHS_Ural_Fuel_MSV_01;
 	class RHS_Ural_Repair_MSV_01;
 	class Wheeled_APC_F: Car_F
@@ -7424,7 +7973,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class BUDDIES_BM21: RHS_BM21_MSV_01
+	class BUDDIES_BM21: CUP_O_BM21_RU
 	{
 		side=1;
 		scope=2;
@@ -7437,12 +7986,8 @@ class CfgVehicles
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_ural_co.paa",
-			"rhsafrf\addons\rhs_a2port_car\ural\data\ural_bm21_co.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
+			"CUP\WheeledVehicles\CUP_WheeledVehicles_Ural\data\ural_bm21_co.paa",
+			"CUP\WheeledVehicles\CUP_WheeledVehicles_Ural\data\ural_bm21_co.paa"
 		};
 	};
 	class BUDDIES_Ural_Fuel: RHS_Ural_Fuel_MSV_01
@@ -9274,7 +9819,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
 		displayName="C130J";
 		crew="B_BUDDY_A_Crew";
@@ -9294,7 +9839,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
 		displayName="C130J (Cargo)";
 		crew="B_BUDDY_A_Crew";
@@ -9317,15 +9862,18 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
 		displayName="C-47"
-		crew="B_BUDDY_A_Crew_Officer";
+		crew="B_BUDDY_A_Crew";
+		typicalCargo[]=
+		{
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew"
+		};
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
 	class BUDDIES_Air_C47: CUP_B_C47_USA
@@ -9334,7 +9882,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
 		displayName="C-47 (AIRBUD)"
 		crew="B_BUDDY_A_Crew_Officer";
@@ -9342,10 +9890,6 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01a.paa",
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02a.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
 	class BUDDIES_AC47: CUP_B_AC47_Spooky_USA
@@ -9357,15 +9901,18 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
 		displayName="AC-47"
-		crew="B_BUDDY_A_Crew_Officer";
+		crew="B_BUDDY_A_Crew";
+		typicalCargo[]=
+		{
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew"
+		};
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
 	class BUDDIES_Air_AC47: CUP_B_AC47_Spooky_USA
@@ -9374,7 +9921,7 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
 		displayName="AC-47 (AIRBUD)"
 		crew="B_BUDDY_A_Crew_Officer";
@@ -9446,7 +9993,7 @@ class CfgVehicles
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
-		displayname="BUDDIES Flag (Basic)";
+		displayname="BUDDIES Flag";
 		class EventHandlers: EventHandlers
 		{
 			init="(_this select 0) setFlagTexture ""\BUDDIES_Pack\Data\Flag\flag_buddies_co.paa""";
@@ -9490,7 +10037,7 @@ class CfgVehicles
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
-		displayName="BUD Flag (Basic)";
+		displayName="BUD Flag";
 		class EventHandlers: EventHandlers
 		{
 			init="(_this select 0) setFlagTexture ""\BUDDIES_Pack\Data\Flag\flag_bud_co.paa""";
@@ -9512,7 +10059,7 @@ class CfgUnitInsignia
 {
 	class BUDDIES_Insignia
 	{
-		displayName="BUDDIES Insignia (Basic)";
+		displayName="BUDDIES Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies.paa";
 		textureVehicle="";
@@ -9589,7 +10136,7 @@ class CfgUnitInsignia
 	};
 	class BUD_Insignia
 	{
-		displayName="BUD Insignia (Basic)";
+		displayName="BUD Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_bud.paa";
 		textureVehicle="";
@@ -9620,7 +10167,7 @@ class CfgMarkers
 {
 	class BUDDIES_Marker
 	{
-		name="BUDDIES Marker (Basic)";
+		name="BUDDIES Marker";
 		icon="\BUDDIES_Pack\Data\Marker\marker_buddies.paa";
 		color[]={1,1,1,0};
 		size=32;
@@ -9671,16 +10218,8 @@ class CfgMarkers
 };
 class cfgWeapons
 {
-	class InventoryItem_Base_F;
 	class ItemCore;
-	class HeadgearItem: InventoryItem_Base_F
-	{
-		author="$STR_A3_Bohemia_Interactive";
-		_generalMacro="HeadgearItem";
-		allowedSlots[]={901,605};
-		type=605;
-		hiddenSelections[]={};
-	};
+	class HeadgearItem;
 	class BUDDIES_Beret_Textured: ItemCore
 	{
 		author="Devon0215";
@@ -9768,374 +10307,419 @@ class cfgWeapons
 			};
 		};
 	};
-    class UniformItem: InventoryItem_Base_F
+    class UniformItem;
+	class Uniform_Base;
+	class BUDDIES_Camo: Uniform_Base
 	{
-		type=801;
-	};
-	class BUDDIES_Camo: ItemCore
-	{
+		author="Devon0215";
 		scope=2;
-		allowedSlots[]={901};
 		displayName="BUDDIES Uniform";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_Subdued: ItemCore
+	class BUDDIES_Camo_Subdued: Uniform_Base
 	{
+		author="Devon0215";
 		scope=1;
-		allowedSlots[]={901};
 		displayName="BUDDIES Uniform (Subdued)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Subdued";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Subdued;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_Textured: ItemCore
+	class BUDDIES_Camo_Textured: Uniform_Base
 	{
+		author="Devon0215";
 		scope=1;
-		allowedSlots[]={901};
 		displayName="BUDDIES Uniform (Textured)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Textured";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Textured;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_SS: BUDDIES_Camo
+	class BUDDIES_Camo_RS: BUDDIES_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="BUDDIES Uniform (Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_Subdued_SS: BUDDIES_Camo
+	class BUDDIES_Camo_Subdued_RS: BUDDIES_Camo
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUDDIES Uniform (Subdued, Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Subdued_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Subdued_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_Textured_SS: BUDDIES_Camo
+	class BUDDIES_Camo_Textured_RS: BUDDIES_Camo
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUDDIES Uniform (Textured, Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Textured_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Textured_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_Worn: ItemCore
+	class BUDDIES_Camo_Worn: Uniform_Base
 	{
+		author="Devon0215";
 		scope=2;
-		allowedSlots[]={901};
 		displayName="BUDDIES Uniform (Worn)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_Worn_SS: BUDDIES_Camo_Worn
+	class BUDDIES_Camo_Worn_RS: BUDDIES_Camo_Worn
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="BUDDIES Uniform (Worn, Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
 	class BUDDIES_Camo_Worn_Subdued: BUDDIES_Camo_Worn
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUDDIES Uniform (Worn, Subdued)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_Subdued";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_Subdued;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_Worn_Subdued_SS: BUDDIES_Camo_Worn_SS
+	class BUDDIES_Camo_Worn_Subdued_RS: BUDDIES_Camo_Worn_RS
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUDDIES Uniform (Worn, Subdued, Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_Subdued_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_Subdued_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
 	class BUDDIES_Camo_Worn_Textured: BUDDIES_Camo_Worn
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUDDIES Uniform (Worn, Textured)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_Textured";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_Textured;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Camo_Worn_Textured_SS: BUDDIES_Camo_Worn_SS
+	class BUDDIES_Camo_Worn_Textured_RS: BUDDIES_Camo_Worn_RS
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUDDIES Uniform (Worn, Textured, Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Uniform_Worn_Textured_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Worn_Textured_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Marines_Camo: ItemCore
+	class BUDDIES_Marines_Camo: Uniform_Base
 	{
+		author="Devon0215";
 		scope=2;
-		allowedSlots[]={901};
 		displayName="BUDDIES Marines Uniform";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Marines_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Marines_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Navy_Camo: ItemCore
+	class BUDDIES_Marines_Camo_RS: BUDDIES_Marines_Camo
 	{
+		author="Devon0215";
+		displayName="BUDDIES Marines Uniform (Rolled Sleeves)";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=BUDDIES_Marines_Uniform_RS;
+			containerClass=Supply50;
+			mass=50;
+		};
+	};
+	class BUDDIES_Navy_Camo: Uniform_Base
+	{
+		author="Devon0215";
 		scope=2;
-		allowedSlots[]={901};
 		displayName="AQUABUD Uniform";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Navy_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Navy_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Recon_Camo: ItemCore
+	class BUDDIES_Navy_Camo_RS: BUDDIES_Navy_Camo
 	{
+		author="Devon0215";
+		displayName="AQUABUD Uniform (Rolled Sleeves)";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=BUDDIES_Navy_Uniform_RS;
+			containerClass=Supply50;
+			mass=50;
+		};
+	};
+	class BUDDIES_Recon_Camo: Uniform_Base
+	{
+		author="Devon0215";
 		scope=2;
-		allowedSlots[]={901};
 		displayName="BUDDIES Recon Uniform";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Recon_Camo_SS: BUDDIES_Recon_Camo
+	class BUDDIES_Recon_Camo_RS: BUDDIES_Recon_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="BUDDIES Recon Uniform (Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Uniform_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
 	class BUDDIES_Recon_Camo_Patch: BUDDIES_Recon_Camo
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUDDIES Recon Uniform (Patch)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Uniform_Patch";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Uniform_Patch;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Recon_Camo_Patch_SS: BUDDIES_Recon_Camo_SS
+	class BUDDIES_Recon_Camo_Patch_RS: BUDDIES_Recon_Camo_RS
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUDDIES Recon Uniform (Patch, Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Uniform_Patch_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Uniform_Patch_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
 	class BUD_Camo: BUDDIES_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="BUD Uniform";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUD_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUD_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUD_Camo_SS: BUDDIES_Camo_SS
+	class BUD_Camo_RS: BUD_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="BUD Uniform (Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUD_Uniform_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUD_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
 	class BUD_Camo_Patch: BUD_Camo
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUD Uniform (Patch)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUD_Uniform_Patch";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUD_Uniform_Patch;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUD_Camo_Patch_SS: BUD_Camo_SS
+	class BUD_Camo_Patch_RS: BUD_Camo_RS
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="BUD Uniform (Patch, Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUD_Uniform_Patch_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUD_Uniform_Patch_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
 	class BUDDIES_Armor_Camo: BUDDIES_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="BUDDIES Armor Uniform";
-		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Armor_Uniform";
-			containerClass="Supply100";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Armor_Uniform;
+			containerClass=Supply100;
 			mass=100;
 		};
 	};
 	class BUDDIES_Recon_Armor_Camo: BUDDIES_Armor_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="BUDDIES Recon Armor Uniform";
-		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Recon_Armor_Uniform";
-			containerClass="Supply100";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Recon_Armor_Uniform;
+			containerClass=Supply100;
 			mass=100;
 		};
 	};
 	class BUDDIES_Air_Camo: BUDDIES_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="AIRBUD Uniform";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Uniform";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Uniform;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Air_Camo_SS: BUDDIES_Camo_SS
+	class BUDDIES_Air_Camo_RS: BUDDIES_Camo_RS
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="AIRBUD Uniform (Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Uniform_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Uniform_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
 	class BUDDIES_Air_Camo_Patch: BUDDIES_Air_Camo
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="AIRBUD Uniform (Patch)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_01";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Uniform_Patch";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Uniform_Patch;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class BUDDIES_Air_Camo_Patch_SS: BUDDIES_Air_Camo_SS
+	class BUDDIES_Air_Camo_Patch_RS: BUDDIES_Air_Camo_RS
 	{
+		author="Devon0215";
 		scope=1;
 		displayName="AIRBUD Uniform (Patch, Rolled Sleeves)";
-		model="\A3\characters_f_beta\INDEP\ia_soldier_02";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Uniform_Patch_SS";
-			containerClass="Supply50";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Uniform_Patch_RS;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
 	class BUDDIES_Air_Crew_Camo: BUDDIES_Air_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="AIRBUD Crew Uniform";
-		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Crew_Uniform";
-			containerClass="Supply100";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Crew_Uniform;
+			containerClass=Supply100;
 			mass=100;
 		};
 	};
 	class BUDDIES_Air_Crew_Officer_Camo: BUDDIES_Air_Crew_Camo
 	{
+		author="Devon0215";
 		scope=2;
 		displayName="AIRBUD Crew Officer Uniform";
-		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		class ItemInfo: UniformItem
 		{
-			uniformClass="BUDDIES_Air_Crew_Officer_Uniform";
-			containerClass="Supply100";
+			uniformModel = "-";
+			uniformClass=BUDDIES_Air_Crew_Officer_Uniform;
+			containerClass=Supply100;
 			mass=100;
 		};
 	};
