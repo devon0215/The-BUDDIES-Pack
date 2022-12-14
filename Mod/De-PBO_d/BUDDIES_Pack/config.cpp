@@ -10087,7 +10087,7 @@ class CfgUnitInsignia
 	};
 	class BUDDIES_Air_Insignia
 	{
-		displayName="BUDDIES Air Force Insignia";
+		displayName="BUDDIES AIRBUD Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_air.paa";
 		textureVehicle="";
@@ -10097,6 +10097,13 @@ class CfgUnitInsignia
 		displayName="BUDDIES Armor Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_armor.paa";
+		textureVehicle="";
+	};
+	class BUDDIES_Aqua_Insignia
+	{
+		displayName="BUDDIES AQUABUD Insignia";
+		author="Saucy Salmon";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_aquabud.paa";
 		textureVehicle="";
 	};
 	class BUDDIES_Insignia_Simple
@@ -10150,14 +10157,14 @@ class CfgUnitInsignia
 	};
 	class Intel_Insignia
 	{
-		displayName="Intel Insignia";
+		displayName="BUDDIES Intel Insignia";
 		author="Starman";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_intel.paa";
 		textureVehicle="";
 	};
 	class BUDDIES_Medic_Insignia
 	{
-		displayName="Medical Insignia";
+		displayName="BUDDIES Medical Insignia";
 		author="Biwwy";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_medic.paa";
 		textureVehicle="";

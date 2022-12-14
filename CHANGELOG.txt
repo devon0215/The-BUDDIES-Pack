@@ -1,24 +1,6 @@
-ADDED
+ADDED:
 
--Added AIRBUD variants of C47/AC47
+- AQUABUD INSIGNIA
 
--Added C130J and Cargo Variant
-
--Added rolled sleeves verions of marine and navy uniforms
-
--Added Medic Insignia
-
--Added armor to BUD uniforms
-
--Added skill scaling
-
-CHANGED
-
--Cleaned up config (for real this time)
-
--Changed C47/AC47 crew to AIRBUD Crewmen
-
--Slightly Changed C47/AC47 skins
-
--Changed BM-21 from RHS version to CUP
+- UPDATED AIRBUD, INTEL, MEDICAL PATCH DISPLAY NAMES
 
