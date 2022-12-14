@@ -6417,7 +6417,7 @@ class CfgVehicles
 	class RHS_Ural_Open_MSV_01;
 	class RHS_Ural_Open_Flat_MSV_01;
 	class CUP_O_Ural_Reammo_RU;
-	class RHS_BM21_MSV_01;
+	class CUP_O_BM21_RU;
 	class RHS_Ural_Fuel_MSV_01;
 	class RHS_Ural_Repair_MSV_01;
 	class Wheeled_APC_F: Car_F
@@ -7973,7 +7973,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class BUDDIES_BM21: RHS_BM21_MSV_01
+	class BUDDIES_BM21: CUP_O_BM21_RU
 	{
 		side=1;
 		scope=2;
@@ -7986,12 +7986,8 @@ class CfgVehicles
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_ural_co.paa",
-			"rhsafrf\addons\rhs_a2port_car\ural\data\ural_bm21_co.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
+			"CUP\WheeledVehicles\CUP_WheeledVehicles_Ural\data\ural_bm21_co.paa",
+			"CUP\WheeledVehicles\CUP_WheeledVehicles_Ural\data\ural_bm21_co.paa"
 		};
 	};
 	class BUDDIES_Ural_Fuel: RHS_Ural_Fuel_MSV_01
