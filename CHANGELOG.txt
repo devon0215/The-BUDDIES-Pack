@@ -8,6 +8,8 @@ ADDED
 
 -Added armor to BUD uniforms
 
+-Added skill scaling
+
 CHANGED
 
 -Cleaned up config (for real this time)
