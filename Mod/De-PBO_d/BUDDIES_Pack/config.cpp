@@ -486,8 +486,17 @@ class CfgVehicles
 			};
 		};
 	};
-	class B_Soldier_base_F;
-	class B_BUDDY_Soldier_Base: B_Soldier_base_F
+	class SoldierWB;
+	class SoldierEB;
+	class B_Soldier_Base_F: SoldierWB
+	{
+		class EventHandlers;
+	};
+	class O_Soldier_Base_F: SoldierEB
+	{
+		class EventHandlers;
+	};
+	class B_BUDDY_Soldier_Base: B_Soldier_Base_F
 	{
 		author="Devon0215";
 		faceType="Man_A3";
@@ -505,13 +514,13 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Men_Militia";
 		camouflage=1;
 		minFireTime=12;
-		class AttributeValues
-		{
-			skill=0.25;
-		};
+		modelSides[]={3,1};
+		picture="";
 		cost=100000;
 		scope=1;
 		scopeCurator=1;
+		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
+		uniformClass="BUDDIES_Camo_Worn_Textured";
 		nakedUniform="U_BasicBody";
 		hiddenSelections[]={};
 		hiddenSelectionsTextures[]={};
@@ -529,6 +538,14 @@ class CfgVehicles
 		respawnMagazines[]={};
 		linkedItems[]={};
 		respawnLinkedItems[]={};
+		class AttributeValues
+		{
+			skill=0.25;
+		};
+		class EventHandlers: EventHandlers
+		{
+			init="_this select 0 setSkill 0.25;";
+		};
 	};
 	class B_BUDDY_Soldier_R_Base: B_BUDDY_Soldier_Base
 	{
@@ -540,6 +557,10 @@ class CfgVehicles
 		class AttributeValues
 		{
 			skill=0.5;
+		};
+		class EventHandlers: EventHandlers
+		{
+			init="_this select 0 setSkill 0.5;";
 		};
 	};
 	class B_BUDDY_Soldier_Recon_Base: B_BUDDY_Soldier_Base
@@ -553,6 +574,10 @@ class CfgVehicles
 		{
 			skill=0.75;
 		};
+		class EventHandlers: EventHandlers
+		{
+			init="_this select 0 setSkill 0.75;";
+		};
 	};
 	class B_BUDDY_Soldier_A_Base: B_BUDDY_Soldier_Base
 	{
@@ -564,6 +589,10 @@ class CfgVehicles
 		class AttributeValues
 		{
 			skill=0.5;
+		};
+		class EventHandlers: EventHandlers
+		{
+			init="_this select 0 setSkill 0.5;";
 		};
 	};
 	class B_BUDDY_Soldier_AQUABUD_Base: B_BUDDY_Soldier_Base
@@ -577,6 +606,10 @@ class CfgVehicles
 		{
 			skill=0.5;
 		};
+		class EventHandlers: EventHandlers
+		{
+			init="_this select 0 setSkill 0.5;";
+		};
 	};
 	class B_BUDDY_Soldier_Marine_Base: B_BUDDY_Soldier_Base
 	{
@@ -589,6 +622,10 @@ class CfgVehicles
 		{
 			skill=0.75;
 		};
+		class EventHandlers: EventHandlers
+		{
+			init="_this select 0 setSkill 0.75;";
+		};
 	};
 	class B_BUD_Soldier_Base: B_BUDDY_Soldier_Base
 	{
@@ -600,6 +637,10 @@ class CfgVehicles
 		class AttributeValues
 		{
 			skill=1;
+		};
+		class EventHandlers: EventHandlers
+		{
+			init="_this select 0 setSkill 1;";
 		};
 	};
 	class BUDDIES_Uniform: B_BUDDY_Soldier_Base
@@ -915,11 +956,29 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_recon_patch_co.paa"
 		};
 	};
-	class BUD_Uniform: BUDDIES_Uniform
+	class BUD_Uniform: O_Soldier_Base_F
 	{
 		author="Devon0215";
+		faceType="Man_A3";
+		identityTypes[]=
+		{
+			"LanguageENG_F",
+			"Head_NATO"
+		};
+		side=1;
+		genericNames="NATOMen";
 		displayName="BUD Uniform";
+		icon="iconMan";
+		role="Rifleman";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUD_Men";
+		modelSides[]={3,1};
+		picture="";
+		scope=1;
+		scopeCurator=1;
+		model="\A3\characters_f_beta\INDEP\ia_soldier_01.p3d";
 		uniformClass="BUD_Camo";
+		nakedUniform="U_BasicBody";
 		hiddenSelections[]=
 		{
 			"Camo",
@@ -929,6 +988,20 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_bud_co.paa"
 		};
+		weapons[]=
+		{
+			"throw",
+			"put"
+		};
+		respawnWeapons[]=
+		{
+			"throw",
+			"put"
+		};
+		magazines[]={};
+		respawnMagazines[]={};
+		linkedItems[]={};
+		respawnLinkedItems[]={};
 	};
 	class BUD_Uniform_RS: BUD_Uniform
 	{
@@ -9568,7 +9641,7 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
-		displayName="C-47"
+		displayName="C-47";
 		crew="B_BUDDY_A_Crew";
 		typicalCargo[]=
 		{
@@ -9591,7 +9664,7 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
-		displayName="C-47 (AIRBUD)"
+		displayName="C-47 (AIRBUD)";
 		crew="B_BUDDY_A_Crew_Officer";
 		hiddenSelectionsTextures[]=
 		{
@@ -9607,7 +9680,7 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
-		displayName="AC-47"
+		displayName="AC-47";
 		crew="B_BUDDY_A_Crew";
 		typicalCargo[]=
 		{
@@ -9630,16 +9703,12 @@ class CfgVehicles
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
-		displayName="AC-47 (AIRBUD)"
+		displayName="AC-47 (AIRBUD)";
 		crew="B_BUDDY_A_Crew_Officer";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_ac47_body_01.paa",
 			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02a.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
 	class BUDDIES_L39: rhs_l39_cdf
