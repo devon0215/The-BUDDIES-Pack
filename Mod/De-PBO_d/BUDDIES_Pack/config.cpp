@@ -9863,7 +9863,7 @@ class CfgUnitInsignia
 	};
 	class BUDDIES_Air_Insignia
 	{
-		displayName="BUDDIES Air Force Insignia";
+		displayName="BUDDIES AIRBUD Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_air.paa";
 		textureVehicle="";
@@ -9873,6 +9873,13 @@ class CfgUnitInsignia
 		displayName="BUDDIES Armor Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_armor.paa";
+		textureVehicle="";
+	};
+	class BUDDIES_Aqua_Insignia
+	{
+		displayName="BUDDIES AQUABUD Insignia";
+		author="Saucy Salmon";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_aquabud.paa";
 		textureVehicle="";
 	};
 	class BUDDIES_Insignia_Simple
