@@ -6579,6 +6579,19 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+		class TextureSources
+        {
+            class BUDDIES_UAZ_Skin
+            {
+                displayName="BUDDIES";
+                author="Devon0215";
+                textures[]=
+                {
+                    "\BUDDIES_Pack\Data\Vehicle\buddies_uaz_co.paa"
+                };
+                factions[]={};
+            };
+        };
 	};
 	class BUDDIES_UAZ_Open: RHS_UAZ_Open_MSV_01
 	{
@@ -6598,6 +6611,19 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+		class TextureSources
+        {
+            class BUDDIES_UAZ_Open_Skin
+            {
+                displayName="BUDDIES";
+                author="Weaver";
+                textures[]=
+                {
+                    "\BUDDIES_Pack\Data\Vehicle\buddies_uaz_co.paa"
+                };
+                factions[]={};
+            };
+        };
 	};
 	class BUDDIES_UAZ_DShKM: rhsgref_cdf_reg_uaz_dshkm
 	{
@@ -6618,6 +6644,20 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+		class TextureSources
+        {
+            class BUDDIES_UAZ_DShKM_Skin
+            {
+                displayName="BUDDIES";
+                author="Weaver";
+                textures[]=
+                {
+                    "\BUDDIES_Pack\Data\Vehicle\buddies_uaz_co.paa",
+					"rhsafrf\addons\rhs_a2port_car\uaz\data\uaz_mount_002_co.paa"
+                };
+                factions[]={};
+            };
+        };
 	};
 	class BUDDIES_UAZ_AGS: rhsgref_cdf_reg_uaz_ags
 	{
@@ -6638,6 +6678,20 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+		class TextureSources
+        {
+            class BUDDIES_UAZ_AGS_Skin
+            {
+                displayName="BUDDIES";
+                author="Weaver";
+                textures[]=
+                {
+                    "\BUDDIES_Pack\Data\Vehicle\buddies_uaz_co.paa",
+					"rhsafrf\addons\rhs_a2port_car\uaz\data\uaz_mount_002_co.paa"
+                };
+                factions[]={};
+            };
+        };
 	};
 	class BUDDIES_UAZ_SPG9: rhsgref_cdf_reg_uaz_spg9
 	{
@@ -6658,6 +6712,20 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+		class TextureSources
+        {
+            class BUDDIES_UAZ_SPG9_Skin
+            {
+                displayName="BUDDIES";
+                author="Weaver";
+                textures[]=
+                {
+                    "\BUDDIES_Pack\Data\Vehicle\buddies_uaz_co.paa",
+					"rhsafrf\addons\rhs_a2port_car\uaz\data\uaz_mount_002_co.paa"
+                };
+                factions[]={};
+            };
+        };
 	};
 	class BUDDIES_M151: CUP_I_M151_SYND
 	{
