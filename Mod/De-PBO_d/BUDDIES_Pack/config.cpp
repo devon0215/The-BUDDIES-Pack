@@ -9945,6 +9945,13 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_medic.paa";
 		textureVehicle="";
 	};
+	class BUDDIES_Thunderspear_Insignia
+	{
+		displayName="BUDDIES Thunderspear Insignia";
+		author="Starman";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_thunderspear.paa";
+		textureVehicle="";
+	};
 };
 class CfgMarkers
 {
@@ -9962,7 +9969,7 @@ class CfgMarkers
 	{
 		name="BUDDIES Marker (Simple)";
 		icon="\BUDDIES_Pack\Data\Marker\marker_buddies_simple.paa";
-		color[]={1,1,1,0};
+		color[]={1,1,1,1};
 		size=32;
 		shadow=0;
 		scope=2;
@@ -9982,7 +9989,7 @@ class CfgMarkers
 	{
 		name="BUD Marker";
 		icon="\BUDDIES_Pack\Data\Marker\marker_bud.paa";
-		color[]={1,1,1,0};
+		color[]={1,1,1,1};
 		size=32;
 		shadow=0;
 		scope=2;
@@ -9992,7 +9999,77 @@ class CfgMarkers
 	{
 		name="BUD Marker (Inverted)";
 		icon="\BUDDIES_Pack\Data\Marker\marker_bud_inverted.paa";
-		color[]={1,1,1,0};
+		color[]={1,1,1,1};
+		size=32;
+		shadow=0;
+		scope=2;
+		markerClass="Flags";
+	};
+	class BUDDIES_Air_Marker
+	{
+		name="A.I.R.B.U.D. Marker";
+		icon="\BUDDIES_Pack\Data\Marker\marker_buddies_air.paa";
+		color[]={1,1,1,1};
+		size=32;
+		shadow=0;
+		scope=2;
+		markerClass="Flags";
+	};
+	class BUDDIES_Aqua_Marker
+	{
+		name="AquaBUD Marker";
+		icon="\BUDDIES_Pack\Data\Marker\marker_buddies_aquabud.paa";
+		color[]={1,1,1,1};
+		size=32;
+		shadow=0;
+		scope=2;
+		markerClass="Flags";
+	};
+	class BUDDIES_Armor_Marker
+	{
+		name="BUDDIES Armor Marker";
+		icon="\BUDDIES_Pack\Data\Marker\marker_buddies_armor.paa";
+		color[]={1,1,1,1};
+		size=32;
+		shadow=0;
+		scope=2;
+		markerClass="Flags";
+	};
+	class BUDDIES_Medic_Marker
+	{
+		name="BUDDIES Medic Marker";
+		icon="\BUDDIES_Pack\Data\Marker\marker_buddies_medic.paa";
+		color[]={1,1,1,1};
+		size=32;
+		shadow=0;
+		scope=2;
+		markerClass="Flags";
+	};
+	class BUDDIES_Recon_Marker
+	{
+		name="BUDDIES Recon Marker";
+		icon="\BUDDIES_Pack\Data\Marker\marker_buddies_recon.paa";
+		color[]={1,1,1,1};
+		size=32;
+		shadow=0;
+		scope=2;
+		markerClass="Flags";
+	};
+	class BUDDIES_Intel_Marker
+	{
+		name="BUDDIES Intel Marker";
+		icon="\BUDDIES_Pack\Data\Marker\marker_intel.paa";
+		color[]={1,1,1,1};
+		size=32;
+		shadow=0;
+		scope=2;
+		markerClass="Flags";
+	};
+	class BUDDIES_Thunderspear_Marker
+	{
+		name="BUDDIES Thunderspear Marker";
+		icon="\BUDDIES_Pack\Data\Marker\marker_thunderspear.paa";
+		color[]={1,1,1,1};
 		size=32;
 		shadow=0;
 		scope=2;
