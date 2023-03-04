@@ -41,13 +41,13 @@ class CfgPatches
 			"B_BUDDY_R_Squad_Leader",
 			"B_BUDDY_R_Driver",
 			"B_BUDDY_R_Crew",
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_GroundCrew",
-			"B_AIRBUD_Crew",
-			"B_AIRBUD_Crew_Officer",
-			"B_AIRBUD_Secfor",
-			"B_AIRBUD_Driver",
-			"B_AQUABUD_DeckCrew",
+			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_GroundCrew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew_Officer",
+			"B_BUDDY_A_Secfor",
+			"B_BUDDY_A_Driver",
+			"B_BUDDY_AQUABUD_DeckCrew",
 			"B_BUDDY_Marine_Rifleman",
 			"B_BUDDY_Recon_Driver",
 			"B_BUDDY_Recon_Crew",
@@ -74,8 +74,8 @@ class CfgPatches
 			"BUDDIES_UAZ_SPG9",
 			"BUDDIES_M151",
 			"BUDDIES_M151_M2",
-			"AIRBUD_M151",
-			"AIRBUD_M151_M2",
+			"BUDDIES_Air_M151",
+			"BUDDIES_Air_M151_M2",
 			"BUDDIES_Recon_M151",
 			"BUDDIES_Recon_M151_M2",
 			"BUDDIES_M998_2dr",
@@ -149,14 +149,14 @@ class CfgPatches
 			"BUDDIES_UH1H",
 			"BUDDIES_UH1H_Gunship",
 			"BUDDIES_UH1H_Unarmed",
-			"BUD_MH6M",
-			"BUD_AH6M",
-			"BUD_UH60M2",
-			"BUD_UH60M",
-			"BUD_UH60M_ESSS2",
-			"BUD_UH60M_ESSS",
-			"AIRBUD_CH53E",
-			"AIRBUD_CH53E_VIV",
+			"BUDDIES_BUD_MH6M",
+			"BUDDIES_BUD_AH6M",
+			"BUDDIES_BUD_UH60M2",
+			"BUDDIES_BUD_UH60M",
+			"BUDDIES_BUD_UH60M_ESSS2",
+			"BUDDIES_BUD_UH60M_ESSS",
+			"BUDDIES_Air_CH53E",
+			"BUDDIES_Air_CH53E_VIV",
 			"BUDDIES_Mi8T",
 			"BUDDIES_Mi8MT",
 			"BUDDIES_Mi8MT_Cargo",
@@ -171,17 +171,19 @@ class CfgPatches
 			"BUDDIES_Mi24P",
 			"BUDDIES_Mi24V",
 			"BUDDIES_Mi24G",
-			"AIRBUD_C130J",
-			"AIRBUD_C130J_Cargo",
-			"AIRBUD_C47",
-			"AIRBUD_AC47",
-			"AIRBUD_L39",
-			"AIRBUD_MiG29SM"
+			"BUDDIES_C130J",
+			"BUDDIES_C130J_Cargo",
+			"BUDDIES_C47",
+			"BUDDIES_Air_C47",
+			"BUDDIES_AC47",
+			"BUDDIES_Air_AC47",
+			"BUDDIES_L39",
+			"BUDDIES_MiG29SM"
 		};
 		weapons[]=
 		{
 			"BUDDIES_Beret_Textured",
-			"AIRBUD_Beret",
+			"BUDDIES_Air_Beret",
 			"BUD_Beret_Inverted",
 			"BUDDIES_Camo",
 			"BUDDIES_Camo_RS",
@@ -193,14 +195,14 @@ class CfgPatches
 			"BUDDIES_Recon_Camo_RS",
 			"BUDDIES_Armor_Camo",
 			"BUDDIES_Recon_Armor_Camo",
-			"AquaBUD_Camo",
-			"AquaBUD_Camo_RS",
+			"BUDDIES_Navy_Camo",
+			"BUDDIES_Navy_Camo_RS",
 			"BUDDIES_Marines_Camo",
 			"BUDDIES_Marines_Camo_RS",
-			"AIRBUD_Camo",
-			"AIRBUD_Camo_RS",
-			"AIRBUD_Crew_Camo",
-			"AIRBUD_Crew_Officer_Camo"
+			"BUDDIES_Air_Camo",
+			"BUDDIES_Air_Camo_RS",
+			"BUDDIES_Air_Crew_Camo",
+			"BUDDIES_Air_Crew_Officer_Camo"
 		};
 		requiredVersion=1;
 		requiredAddons[]=
@@ -287,7 +289,7 @@ class CfgEditorSubcategories
 	{
 		displayName="Men (Regulars)";
 	};
-	class AIRBUD_Men
+	class BUDDIES_Men_Air
 	{
 		displayName="Men (A.I.R.B.U.D.)";
 	};
@@ -295,9 +297,9 @@ class CfgEditorSubcategories
 	{
 		displayName="Men (B.U.D.)";
 	};
-	class AquaBUD_Men
+	class BUDDIES_Men_AQUABUD
 	{
-		displayName="Men (AquaB.U.D.)";
+		displayName="Men (AQUABUD)";
 	};
 	class BUDDIES_Men_Marines
 	{
@@ -311,7 +313,7 @@ class CfgEditorSubcategories
 	{
 		displayName="Cars";
 	};
-	class AIRBUD_Cars
+	class BUDDIES_Air_Cars
 	{
 		displayName="Cars (A.I.R.B.U.D.)";
 	};
@@ -363,7 +365,7 @@ class CfgEditorSubcategories
 	{
 		displayName="Helicopters";
 	};
-	class AIRBUD_Helicopters
+	class BUDDIES_Air_Helicopters
 	{
 		displayName="Helicopters (A.I.R.B.U.D.)";
 	};
@@ -371,9 +373,13 @@ class CfgEditorSubcategories
 	{
 		displayName="Helicopters (B.U.D.)";
 	};
-	class AIRBUD_Planes
+	class BUDDIES_Planes
 	{
 		displayName="Planes";
+	};
+	class BUDDIES_Air_Planes
+	{
+		displayName="Planes (A.I.R.B.U.D.)";
 	};
 };
 class CfgVehicles
@@ -573,11 +579,11 @@ class CfgVehicles
 			init="_this select 0 setSkill 0.75;";
 		};
 	};
-	class B_AIRBUD_Soldier_Base: B_BUDDY_Soldier_Base
+	class B_BUDDY_Soldier_A_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
 		displayName="AIRBUD";
-		editorSubcategory="AIRBUD_Men";
+		editorSubcategory="BUDDIES_Men_Air";
 		camouflage=2;
 		minFireTime=8;
 		class AttributeValues
@@ -589,11 +595,11 @@ class CfgVehicles
 			init="_this select 0 setSkill 0.5;";
 		};
 	};
-	class B_AquaBUD_Soldier_Base: B_BUDDY_Soldier_Base
+	class B_BUDDY_Soldier_AQUABUD_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
 		displayName="AquaBUD";
-		editorSubcategory="AquaBUD_Men";
+		editorSubcategory="BUDDIES_Men_AQUABUD";
 		camouflage=2;
 		minFireTime=8;
 		class AttributeValues
@@ -855,11 +861,11 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_marines_co.paa"
 		};
 	};
-	class AquaBUD_Uniform: BUDDIES_Uniform
+	class BUDDIES_Navy_Uniform: BUDDIES_Uniform
 	{
 		author="Devon0215";
-		displayName="AquaBUD Uniform";
-		uniformClass="AquaBUD_Camo";
+		displayName="Buddy Navy Uniform";
+		uniformClass="BUDDIES_Navy_Camo";
 		hiddenSelections[]=
 		{
 			"Camo",
@@ -867,14 +873,14 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Uniform\camo_AquaBUD_co.paa"
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_navy_co.paa"
 		};
 	};
-	class AquaBUD_Uniform_RS: AquaBUD_Uniform
+	class BUDDIES_Navy_Uniform_RS: BUDDIES_Navy_Uniform
 	{
 		author="Devon0215";
-		displayName="AquaBUD Uniform (Rolled Sleeves)";
-		uniformClass="AquaBUD_Camo_RS";
+		displayName="Buddy Navy Uniform (Rolled Sleeves)";
+		uniformClass="BUDDIES_Navy_Camo_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
 		hiddenSelections[]=
 		{
@@ -883,7 +889,7 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Uniform\camo_aquabud_co.paa"
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_navy_co.paa"
 		};
 	};
 	class BUDDIES_Recon_Uniform: BUDDIES_Uniform
@@ -1061,11 +1067,11 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_armor_co.paa"
 		};
 	};
-	class AIRBUD_Uniform: BUDDIES_Uniform
+	class BUDDIES_Air_Uniform: BUDDIES_Uniform
 	{
 		author="Devon0215";
 		displayName="AIRBUD Uniform";
-		uniformClass="AIRBUD_Camo";
+		uniformClass="BUDDIES_Air_Camo";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01";
 		hiddenSelections[]=
 		{
@@ -1074,14 +1080,14 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Uniform\camo_airbud_co.paa"
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_air_co.paa"
 		};
 	};
-	class AIRBUD_Uniform_RS: BUDDIES_Uniform_RS
+	class BUDDIES_Air_Uniform_RS: BUDDIES_Uniform_RS
 	{
 		author="Devon0215";
 		displayName="AIRBUD Uniform (Rolled Sleeves)";
-		uniformClass="AIRBUD_Camo_RS";
+		uniformClass="BUDDIES_Air_Camo_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02";
 		hiddenSelections[]=
 		{
@@ -1090,14 +1096,14 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Uniform\camo_airbud_co.paa"
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_air_co.paa"
 		};
 	};
-	class AIRBUD_Uniform_Patch: AIRBUD_Uniform
+	class BUDDIES_Air_Uniform_Patch: BUDDIES_Air_Uniform
 	{
 		author="Devon0215";
 		displayName="AIRBUD Uniform (Patch)";
-		uniformClass="AIRBUD_Camo_Patch";
+		uniformClass="BUDDIES_Air_Camo_Patch";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_01";
 		hiddenSelections[]=
 		{
@@ -1106,14 +1112,14 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Uniform\camo_airbud_patch_co.paa"
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_air_patch_co.paa"
 		};
 	};
-	class AIRBUD_Uniform_Patch_RS: AIRBUD_Uniform_RS
+	class BUDDIES_Air_Uniform_Patch_RS: BUDDIES_Air_Uniform_RS
 	{
 		author="Devon0215";
 		displayName="AIRBUD Uniform (Patch, Rolled Sleeves)";
-		uniformClass="AIRBUD_Camo_Patch_RS";
+		uniformClass="BUDDIES_Air_Camo_Patch_RS";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02";
 		hiddenSelections[]=
 		{
@@ -1122,14 +1128,14 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Uniform\camo_airbud_patch_co.paa"
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_air_patch_co.paa"
 		};
 	};
-	class AIRBUD_Crew_Uniform: AIRBUD_Uniform
+	class BUDDIES_Air_Crew_Uniform: BUDDIES_Air_Uniform
 	{
 		author="Devon0215";
 		displayName="AIRBUD Crew Uniform";
-		uniformClass="AIRBUD_Crew_Camo";
+		uniformClass="BUDDIES_Air_Crew_Camo";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		hiddenSelections[]=
 		{
@@ -1138,14 +1144,14 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Uniform\camo_airbud_crew_co.paa"
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_air_crew_co.paa"
 		};
 	};
-	class AIRBUD_Crew_Officer_Uniform: AIRBUD_Crew_Uniform
+	class BUDDIES_Air_Crew_Officer_Uniform: BUDDIES_Air_Crew_Uniform
 	{
 		author="Devon0215";
 		displayName="AIRBUD Crew Officer Uniform";
-		uniformClass="AIRBUD_Crew_Officer_Camo";
+		uniformClass="BUDDIES_Air_Crew_Officer_Camo";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
 		hiddenSelections[]=
 		{
@@ -1154,7 +1160,7 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Uniform\camo_airbud_crew_officer_co.paa"
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_air_crew_officer_co.paa"
 		};
 	};
 	class BUDDIES_Recon_Armor_Uniform: BUDDIES_Armor_Uniform
@@ -3919,13 +3925,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_AIRBUD_Pilot: B_AIRBUD_Soldier_Base
+	class B_BUDDY_A_Pilot: B_BUDDY_Soldier_A_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Pilot";
-		uniformClass="AIRBUD_Camo_Patch";
+		uniformClass="BUDDIES_Air_Camo_Patch";
 		role="Crewman";
 		weapons[]=
 		{
@@ -4024,14 +4030,14 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_AIRBUD_Crew: B_AIRBUD_Soldier_Base
+	class B_BUDDY_A_Crew: B_BUDDY_Soldier_A_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Crew";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
-		uniformClass="AIRBUD_Crew_Camo";
+		uniformClass="BUDDIES_Air_Crew_Camo";
 		role="Crewman";
 		weapons[]=
 		{
@@ -4102,14 +4108,14 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_AIRBUD_Crew_Officer: B_AIRBUD_Soldier_Base
+	class B_BUDDY_A_Crew_Officer: B_BUDDY_Soldier_A_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Crew Officer";
 		model="\A3\characters_f_tank\Uniforms\U_Tank_crew_F.p3d";
-		uniformClass="AIRBUD_Crew_Officer_Camo";
+		uniformClass="BUDDIES_Air_Crew_Officer_Camo";
 		role="Crewman";
 		weapons[]=
 		{
@@ -4180,13 +4186,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_AIRBUD_Secfor: B_AIRBUD_Soldier_Base
+	class B_BUDDY_A_Secfor: B_BUDDY_Soldier_A_Base
 	{
 		author="chef";
 		scope=2;
 		scopeCurator=2;
 		displayName="Secfor";
-		uniformClass="AIRBUD_Camo_Patch";
+		uniformClass="BUDDIES_Air_Camo_Patch";
 		weapons[]=
 		{
 			"hlc_wp_m16a2",
@@ -4252,7 +4258,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"CUP_V_PMC_CIRAS_OD_Patrol",
-			"AIRBUD_Beret",
+			"BUDDIES_Air_Beret",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -4262,7 +4268,7 @@ class CfgVehicles
 		respawnLinkedItems[]=
 		{
 			"CUP_V_PMC_CIRAS_OD_Patrol",
-			"AIRBUD_Beret",
+			"BUDDIES_Air_Beret",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -4270,14 +4276,14 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_AIRBUD_Driver: B_AIRBUD_Soldier_Base
+	class B_BUDDY_A_Driver: B_BUDDY_Soldier_A_Base
 	{
 		author="Devon0215";
 		scope=2;
 		scopeCurator=2;
 		displayName="Driver";
 		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
-		uniformClass="AIRBUD_Camo_Patch_RS";
+		uniformClass="BUDDIES_Air_Camo_Patch_RS";
 		role="Crewman";
 		weapons[]=
 		{
@@ -4374,13 +4380,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_AquaBUD_DeckCrew: B_AquaBUD_Soldier_Base
+	class B_BUDDY_AQUABUD_DeckCrew: B_BUDDY_Soldier_AQUABUD_Base
     {
 		author="Atli";
 		scope=2;
 		scopeCurator=2;
 		displayName="Deck Crew";
-		uniformClass="AquaBUD_Camo";
+		uniformClass="BUDDIES_Navy_Camo";
 		role="Crewman";
 		weapons[]=
 		{
@@ -4517,13 +4523,13 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
-	class B_AIRBUD_GroundCrew: B_AIRBUD_Soldier_Base
+	class B_BUDDY_A_GroundCrew: B_BUDDY_Soldier_A_Base
 	{
 		author="Atli";
 		scope=2;
 		scopeCurator=2;
 		displayName="Ground Crew";
-		uniformClass="AIRBUD_Camo";
+		uniformClass="BUDDIES_Air_Camo";
 		role="Crewman";
 		linkedItems[]=
 		{
@@ -6719,19 +6725,19 @@ class CfgVehicles
 		class TransportBackpacks{};
 		maximumLoad=2500;
 	};
-	class AIRBUD_M151: BUDDIES_M151
+	class BUDDIES_Air_M151: BUDDIES_M151
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Cars";
+		editorSubcategory="BUDDIES_Air_Cars";
 		author="Devon0215";
 		displayName="M151A2";
-		crew="B_AIRBUD_Driver";
+		crew="B_BUDDY_A_Driver";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Driver"
+			"B_BUDDY_A_Driver"
 		};
 		textureList[]=
 		{
@@ -6740,7 +6746,7 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\AIRBUD_m151_hull_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_air_m151_hull_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_canvas_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_detail_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
@@ -6752,19 +6758,19 @@ class CfgVehicles
 		class TransportBackpacks{};
 		maximumLoad=2500;
 	};
-	class AIRBUD_M151_M2: BUDDIES_M151_M2
+	class BUDDIES_Air_M151_M2: BUDDIES_M151_M2
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Cars";
+		editorSubcategory="BUDDIES_Air_Cars";
 		author="Devon0215";
 		displayName="M151A2 (M2)";
-		crew="B_AIRBUD_Driver";
+		crew="B_BUDDY_A_Driver";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Driver"
+			"B_BUDDY_A_Driver"
 		};
 		textureList[]=
 		{
@@ -6773,7 +6779,7 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\AIRBUD_m151_hull_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_air_m151_hull_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_canvas_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_detail_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
@@ -8992,7 +8998,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="UH-1H";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_uh1h_co.paa",
@@ -9013,7 +9019,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="UH-1H Gunship";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_uh1h_co.paa",
@@ -9034,7 +9040,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="UH-1H Unarmed";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_uh1h_co.paa",
@@ -9055,7 +9061,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_BUD_Helicopters";
 		author="Saucy Salmon";
 		displayName="MH-6M";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mh6m.paa",
@@ -9075,7 +9081,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_BUD_Helicopters";
 		author="Saucy Salmon";
 		displayName="AH-6M";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mh6m.paa",
@@ -9094,10 +9100,10 @@ class CfgVehicles
 		displayName="UH-60M (Unarmed)";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9119,21 +9125,21 @@ class CfgVehicles
 		displayName="UH-60M";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot"
 		};
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret {};
 			class MainTurret: MainTurret
 			{
-				gunnerType="B_AIRBUD_Pilot";
+				gunnerType="B_BUDDY_A_Pilot";
 			};
 			class RightDoorGun: RightDoorGun
 			{
-				gunnerType="B_AIRBUD_Pilot";
+				gunnerType="B_BUDDY_A_Pilot";
 			};
 			class CargoTurret_01: CargoTurret_01 {};
 			class CargoTurret_02: CargoTurret_02 {};
@@ -9160,10 +9166,10 @@ class CfgVehicles
 		displayName="UH-60M (EWS)";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9185,10 +9191,10 @@ class CfgVehicles
 		displayName="UH-60M (ESSS)";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUDDIES_BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9202,25 +9208,25 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class AIRBUD_CH53E: CUP_B_CH53E_GER
+	class BUDDIES_Air_CH53E: CUP_B_CH53E_GER
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		displayName="CH-53G Super Stallion";
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Helicopters";
+		editorSubcategory="BUDDIES_Air_Helicopters";
 		author="Devon0215";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\AIRBUD_ch53_1_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_air_ch53_1_co.paa",
 			"CUP\AirVehicles\CUP_AirVehicles_CH53E\data\ch53_2_co_GER.paa"
 		};
 		class TransportWeapons{};
@@ -9229,25 +9235,25 @@ class CfgVehicles
 		class TransportBackpacks{};
 		maximumLoad=2500;
 	};
-	class AIRBUD_CH53E_VIV: CUP_B_CH53E_VIV_GER
+	class BUDDIES_Air_CH53E_VIV: CUP_B_CH53E_VIV_GER
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		displayName="CH-53G Super Stallion (VIV)";
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Helicopters";
+		editorSubcategory="BUDDIES_Air_Helicopters";
 		author="Devon0215";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_Pilot",
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\AIRBUD_ch53_1_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_air_ch53_1_co.paa",
 			"CUP\AirVehicles\CUP_AirVehicles_CH53E\data\ch53_2_co_GER.paa"
 		};
 		class TransportWeapons{};
@@ -9265,7 +9271,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8T";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9289,7 +9295,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MT";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9313,7 +9319,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MT (Cargo)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9337,7 +9343,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8AMT";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9361,10 +9367,10 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8AMT (VIV)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9388,7 +9394,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MTV-3";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9412,7 +9418,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MTV-3 (Cargo)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9436,7 +9442,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MTV-3 (Heavy)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9460,7 +9466,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8AMTSh";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8amtsh_co.paa",
@@ -9484,7 +9490,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24D";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9505,7 +9511,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24D (Early)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9526,7 +9532,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24P";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9554,7 +9560,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24V";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9575,7 +9581,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24G";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9587,76 +9593,122 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class AIRBUD_C130J: RHS_C130J
+	class BUDDIES_C130J: RHS_C130J
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
 		displayName="C130J";
-		crew="B_AIRBUD_Crew";
+		crew="B_BUDDY_A_Crew";
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\airbud_c130j_body_co.paa",
-			"\BUDDIES_Pack\Data\Vehicle\airbud_c130j_wings_co.paa"
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c130j_body_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c130j_wings_co.paa"
 		};
 		rhs_decalParameters[]=
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class AIRBUD_C130J_Cargo: RHS_C130J_Cargo
+	class BUDDIES_C130J_Cargo: RHS_C130J_Cargo
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
 		displayName="C130J (Cargo)";
-		crew="B_AIRBUD_Crew";
+		crew="B_BUDDY_A_Crew";
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\airbud_c130j_body_co.paa",
-			"\BUDDIES_Pack\Data\Vehicle\airbud_c130j_wings_co.paa"
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c130j_body_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c130j_wings_co.paa"
 		};
 		rhs_decalParameters[]=
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class AIRBUD_C47: CUP_B_C47_USA
+	class BUDDIES_C47: CUP_B_C47_USA
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Planes";
+		editorSubcategory="BUDDIES_Planes";
 		author="Saucy Salmon";
 		displayName="C-47";
-		crew="B_AIRBUD_Crew_Officer";
+		crew="B_BUDDY_A_Crew";
+		typicalCargo[]=
+		{
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\airbud_c47_body_01.paa",
-			"\BUDDIES_Pack\Data\Vehicle\airbud_c47_body_02.paa"
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
 		};
 	};
-	class AIRBUD_AC47: CUP_B_AC47_Spooky_USA
+	class BUDDIES_Air_C47: CUP_B_C47_USA
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Planes";
+		editorSubcategory="BUDDIES_Air_Planes";
 		author="Saucy Salmon";
-		displayName="AC-47";
-		crew="B_AIRBUD_Crew_Officer";
+		displayName="C-47 (AIRBUD)";
+		crew="B_BUDDY_A_Crew_Officer";
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\airbud_ac47_body_01.paa",
-			"\BUDDIES_Pack\Data\Vehicle\airbud_c47_body_02.paa"
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01a.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02a.paa"
+		};
+	};
+	class BUDDIES_AC47: CUP_B_AC47_Spooky_USA
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Planes";
+		author="Saucy Salmon";
+		displayName="AC-47";
+		crew="B_BUDDY_A_Crew";
+		typicalCargo[]=
+		{
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew",
+			"B_BUDDY_A_Crew"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_01.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02.paa"
+		};
+	};
+	class BUDDIES_Air_AC47: CUP_B_AC47_Spooky_USA
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Air_Planes";
+		author="Saucy Salmon";
+		displayName="AC-47 (AIRBUD)";
+		crew="B_BUDDY_A_Crew_Officer";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_ac47_body_01.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_c47_body_02a.paa"
 		};
 	};
 	class BUDDIES_L39: rhs_l39_cdf
@@ -9665,13 +9717,13 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Planes";
+		editorSubcategory="BUDDIES_Planes";
 		author="Devon0215";
 		displayName="L-39C";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9689,13 +9741,13 @@ class CfgVehicles
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Planes";
+		editorSubcategory="BUDDIES_Planes";
 		author="Devon0215";
 		displayName="MiG-29SM";
-		crew="B_AIRBUD_Pilot";
+		crew="B_BUDDY_A_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_BUDDY_A_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9809,11 +9861,11 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_textured.paa";
 		textureVehicle="";
 	};
-	class AIRBUD_Insignia
+	class BUDDIES_Air_Insignia
 	{
-		displayName="AIRBUD Insignia";
+		displayName="BUDDIES AIRBUD Insignia";
 		author="Devon0215";
-		texture="\BUDDIES_Pack\Data\Insignia\insignia_AIRBUD.paa";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_air.paa";
 		textureVehicle="";
 	};
 	class BUDDIES_Armor_Insignia
@@ -9823,11 +9875,11 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_armor.paa";
 		textureVehicle="";
 	};
-	class BUDDIES_AquaBUD_Insignia
+	class BUDDIES_Aqua_Insignia
 	{
-		displayName="AQUABUD Insignia";
+		displayName="BUDDIES AQUABUD Insignia";
 		author="Saucy Salmon";
-		texture="\BUDDIES_Pack\Data\Insignia\insignia_aquabud.paa";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_aquabud.paa";
 		textureVehicle="";
 	};
 	class BUDDIES_Insignia_Simple
@@ -9953,20 +10005,20 @@ class CfgMarkers
 		scope=1;
 		markerClass="Flags";
 	};
-	class AIRBUD_Marker
+	class BUDDIES_Air_Marker
 	{
-		name="AIRBUD Marker";
-		icon="\BUDDIES_Pack\Data\Marker\marker_AIRBUD.paa";
+		name="A.I.R.B.U.D. Marker";
+		icon="\BUDDIES_Pack\Data\Marker\marker_buddies_air.paa";
 		color[]={1,1,1,1};
 		size=32;
 		shadow=0;
 		scope=1;
 		markerClass="Flags";
 	};
-	class AquaBUD_Marker
+	class BUDDIES_Aqua_Marker
 	{
 		name="AquaBUD Marker";
-		icon="\BUDDIES_Pack\Data\Marker\marker_aquabud.paa";
+		icon="\BUDDIES_Pack\Data\Marker\marker_buddies_aquabud.paa";
 		color[]={1,1,1,1};
 		size=32;
 		shadow=0;
@@ -10057,7 +10109,7 @@ class cfgWeapons
 			};
 		};
 	};
-	class AIRBUD_Beret: ItemCore
+	class BUDDIES_Air_Beret: ItemCore
 	{
 		author="Devon0215";
 		scope=2;
@@ -10071,7 +10123,7 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Headgear\headgear_beret02_AIRBUD_co.paa"
+			"\BUDDIES_Pack\Data\Headgear\headgear_beret02_buddies_air_co.paa"
 		};
 		class ItemInfo: HeadgearItem
 		{
@@ -10298,7 +10350,7 @@ class cfgWeapons
 			mass=50;
 		};
 	};
-	class AquaBUD_Camo: Uniform_Base
+	class BUDDIES_Navy_Camo: Uniform_Base
 	{
 		author="Devon0215";
 		scope=2;
@@ -10306,19 +10358,19 @@ class cfgWeapons
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=AquaBUD_Uniform;
+			uniformClass=BUDDIES_Navy_Uniform;
 			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class AquaBUD_Camo_RS: AquaBUD_Camo
+	class BUDDIES_Navy_Camo_RS: BUDDIES_Navy_Camo
 	{
 		author="Devon0215";
 		displayName="AQUABUD Uniform (Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=AquaBUD_Uniform_RS;
+			uniformClass=BUDDIES_Navy_Uniform_RS;
 			containerClass=Supply50;
 			mass=50;
 		};
@@ -10453,7 +10505,7 @@ class cfgWeapons
 			mass=100;
 		};
 	};
-	class AIRBUD_Camo: BUDDIES_Camo
+	class BUDDIES_Air_Camo: BUDDIES_Camo
 	{
 		author="Devon0215";
 		scope=2;
@@ -10461,12 +10513,12 @@ class cfgWeapons
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=AIRBUD_Uniform;
+			uniformClass=BUDDIES_Air_Uniform;
 			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class AIRBUD_Camo_RS: BUDDIES_Camo_RS
+	class BUDDIES_Air_Camo_RS: BUDDIES_Camo_RS
 	{
 		author="Devon0215";
 		scope=2;
@@ -10474,12 +10526,12 @@ class cfgWeapons
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=AIRBUD_Uniform_RS;
+			uniformClass=BUDDIES_Air_Uniform_RS;
 			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class AIRBUD_Camo_Patch: AIRBUD_Camo
+	class BUDDIES_Air_Camo_Patch: BUDDIES_Air_Camo
 	{
 		author="Devon0215";
 		scope=1;
@@ -10487,12 +10539,12 @@ class cfgWeapons
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=AIRBUD_Uniform_Patch;
+			uniformClass=BUDDIES_Air_Uniform_Patch;
 			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class AIRBUD_Camo_Patch_RS: AIRBUD_Camo_RS
+	class BUDDIES_Air_Camo_Patch_RS: BUDDIES_Air_Camo_RS
 	{
 		author="Devon0215";
 		scope=1;
@@ -10500,12 +10552,12 @@ class cfgWeapons
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=AIRBUD_Uniform_Patch_RS;
+			uniformClass=BUDDIES_Air_Uniform_Patch_RS;
 			containerClass=Supply50;
 			mass=50;
 		};
 	};
-	class AIRBUD_Crew_Camo: AIRBUD_Camo
+	class BUDDIES_Air_Crew_Camo: BUDDIES_Air_Camo
 	{
 		author="Devon0215";
 		scope=2;
@@ -10513,12 +10565,12 @@ class cfgWeapons
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=AIRBUD_Crew_Uniform;
+			uniformClass=BUDDIES_Air_Crew_Uniform;
 			containerClass=Supply100;
 			mass=100;
 		};
 	};
-	class AIRBUD_Crew_Officer_Camo: AIRBUD_Crew_Camo
+	class BUDDIES_Air_Crew_Officer_Camo: BUDDIES_Air_Crew_Camo
 	{
 		author="Devon0215";
 		scope=2;
@@ -10526,7 +10578,7 @@ class cfgWeapons
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=AIRBUD_Crew_Officer_Uniform;
+			uniformClass=BUDDIES_Air_Crew_Officer_Uniform;
 			containerClass=Supply100;
 			mass=100;
 		};
