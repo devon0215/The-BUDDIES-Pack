@@ -151,10 +151,12 @@ class CfgPatches
 			"BUDDIES_UH1H_Unarmed",
 			"BUD_MH6M",
 			"BUD_AH6M",
-			"BUD_UH60M2",
 			"BUD_UH60M",
-			"BUD_UH60M_ESSS2",
-			"BUD_UH60M_ESSS",
+			"BUD_UH60M_FFV",
+			"BUD_UH60M_Unarmed",
+			"BUD_UH60M_Unarmed_FFV",
+			"BUD_MH60L_DAP_2x",
+			"BUD_MH60L_DAP_4x",
 			"AIRBUD_CH53E",
 			"AIRBUD_CH53E_VIV",
 			"BUDDIES_Mi8T",
@@ -367,7 +369,7 @@ class CfgEditorSubcategories
 	{
 		displayName="Helicopters (A.I.R.B.U.D.)";
 	};
-	class BUDDIES_BUD_Helicopters
+	class BUD_Helicopters
 	{
 		displayName="Helicopters (B.U.D.)";
 	};
@@ -6371,80 +6373,29 @@ class CfgVehicles
 			};
 		};
 	};
-	class Air;
-	class Helicopter: Air
-	{
-		class Turrets;
-		class HitPoints
-		{
-			class HitGlass1;
-			class HitGlass2;
-			class HitGlass3;
-			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-			class HitHull;
-			class HitEngine;
-			class HitAvionics;
-		};
-	};
+	class Helicopter;
 	class Helicopter_Base_F: Helicopter
 	{
-		class Turrets: Turrets
-		{
-			class MainTurret;
-		};
-		class HitPoints: HitPoints
-		{
-			class HitGlass1;
-			class HitGlass2;
-			class HitGlass3;
-			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-			class HitMissiles;
-			class HitHull;
-			class HitEngine;
-			class HitAvionics;
-			class HitVRotor;
-			class HitHRotor;
-		};
-		class AnimationSources;
-		class Eventhandlers;
-		class CargoTurret;
-		class ViewOptics;
-		class Reflectors
-		{
-			class Right;
-		};
+		class Turrets;
+		class HitPoints;
 	};
 	class Helicopter_Base_H: Helicopter_Base_F
 	{
+		class RotorLibHelicopterProperties;
+		class ViewOptics;
 		class Turrets: Turrets
 		{
 			class CopilotTurret;
+			class MainTurret;
 		};
 		class AnimationSources;
-		class Eventhandlers;
-		class Viewoptics;
-		class HitPoints;
 		class Components;
-	};
-	class Heli_Transport_01_base_F: Helicopter_Base_H
-	{
-		class Sounds;
-		class SoundsExt
-		{
-			class Sounds;
-		};
 		class HitPoints: HitPoints
 		{
 			class HitHull;
 			class HitFuel;
 			class HitAvionics;
 			class HitMissiles;
-			class HitEngine1;
-			class HitEngine2;
 			class HitEngine;
 			class HitHRotor;
 			class HitVRotor;
@@ -6454,80 +6405,84 @@ class CfgVehicles
 			class HitGlass4;
 			class HitGlass5;
 			class HitGlass6;
-			class HitGlass7;
-			class HitGlass8;
 		};
-	};
-	class RHS_UH60_Base: Heli_Transport_01_base_F
-	{
 		class EventHandlers;
 	};
-	class RHS_UH60M_base: RHS_UH60_Base
-	{
-		class EventHandlers;
-	};
-	class RHS_UH60M_US_base: RHS_UH60M_base
-	{
-		class EventHandlers;
-	};
-	class RHS_UH60M: RHS_UH60M_US_base
+	class CUP_Uh60_Base: Helicopter_Base_H
 	{
 		class Turrets: Turrets
 		{
-			class CopilotTurret;
-			class MainTurret;
-			class RightDoorGun;
-			class CargoTurret_01;
-			class CargoTurret_02;
-			class CargoTurret_03;
-			class CargoTurret_04;
+			class CopilotTurret: CopilotTurret {};
+			class MainTurret: MainTurret {};
+			class RightDoorGun: MainTurret {};
 		};
-		class EventHandlers;
 	};
-	class RHS_UH60M_d: RHS_UH60M
+	class CUP_Uh60_FFV_Base: CUP_Uh60_Base
+	{
+		class CargoTurret;
+		class Turrets: Turrets
+		{
+			class CopilotTurret: CopilotTurret {};
+			class MainTurret: MainTurret {};
+			class RightDoorGun: RightDoorGun {};
+			class CargoTurret_01: CargoTurret {};
+			class CargoTurret_02: CargoTurret_01 {};
+			class CargoTurret_03: CargoTurret_01 {};
+			class CargoTurret_04: CargoTurret_01 {};
+		};
+	};
+	class CUP_UH60_Unarmed_Base: CUP_Uh60_Base
+	{
+		class CargoTurret;
+		class Turrets: Turrets
+		{
+			class CopilotTurret: CopilotTurret {};
+			delete MainTurret;
+			delete RightDoorGun;
+			class CargoTurret_01: CargoTurret {};
+			class CargoTurret_02: CargoTurret_01 {};
+		};
+	};
+	class CUP_Uh60_Unarmed_FFV_Base: CUP_UH60_Unarmed_Base
+	{
+		class CargoTurret;
+		class Turrets: Turrets
+		{
+			class CopilotTurret: CopilotTurret {};
+			delete MainTurret;
+			delete RightDoorGun;
+			class CargoTurret_01: CargoTurret {};
+			class CargoTurret_02: CargoTurret_01 {};
+			class CargoTurret_03: CargoTurret_01 {};
+			class CargoTurret_04: CargoTurret_01 {};
+			class CargoTurret_05: CargoTurret_01 {};
+			class CargoTurret_06: CargoTurret_01 {};
+		};
+	};
+	class CUP_MH60L_Dap_4x_Dynamic_Base: CUP_Uh60_Base
 	{
 		class Turrets: Turrets
 		{
-			class CopilotTurret;
-			class MainTurret;
-			class RightDoorGun;
-			class CargoTurret_01;
-			class CargoTurret_02;
-			class CargoTurret_03;
-			class CargoTurret_04;
+			class CopilotTurret: CopilotTurret {};
+			class MainTurret: MainTurret {};
+			class RightDoorGun: RightDoorGun {};
 		};
 	};
-	class RHS_UH60M2: RHS_UH60M
+	class CUP_MH60L_Dap_2x_Dynamic_Base: CUP_Uh60_Base
 	{
 		class Turrets: Turrets
 		{
-			class CopilotTurret;
-			class CargoTurret_01;
-			class CargoTurret_02;
-			class CargoTurret_03;
-			class CargoTurret_04;
+			class CopilotTurret: CopilotTurret {};
+			class MainTurret: MainTurret {};
+			class RightDoorGun: RightDoorGun {};
 		};
 	};
-	class RHS_UH60M2_d: RHS_UH60M2
-	{
-		class EventHandlers;
-	};
-	class RHS_UH60M_ESSS: RHS_UH60M2
-	{
-		class EventHandlers;
-	};
-	class RHS_UH60M_ESSS2: RHS_UH60M_ESSS
-	{
-		class EventHandlers;
-	};
-	class RHS_UH60M_ESSS_d: RHS_UH60M_ESSS
-	{
-		class EventHandlers;
-	};
-	class RHS_UH60M_ESSS2_d: RHS_UH60M_ESSS2
-	{
-		class EventHandlers;
-	};
+	class CUP_B_UH60M_US: CUP_Uh60_Base {};
+	class CUP_B_MH60L_DAP_4x_US: CUP_MH60L_Dap_4x_Dynamic_Base {};
+	class CUP_B_MH60L_DAP_2x_US: CUP_MH60L_Dap_2x_Dynamic_Base {};
+	class CUP_B_UH60M_FFV_US: CUP_Uh60_FFV_Base {};
+	class CUP_B_UH60M_Unarmed_US: CUP_UH60_Unarmed_Base {};
+	class CUP_B_UH60M_Unarmed_FFV_US: CUP_Uh60_Unarmed_FFV_Base {};
 	class rhs_uh1h_hidf;
 	class rhs_uh1h_hidf_gunship;
 	class rhs_uh1h_hidf_unarmed;
@@ -9114,19 +9069,19 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class BUDDIES_BUD_MH6M: rhs_melb_mh6m
+	class BUD_MH6M: rhs_melb_mh6m
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_BUD_Helicopters";
+		editorSubcategory="BUD_Helicopters";
 		author="Saucy Salmon";
 		displayName="MH-6M";
 		crew="B_AIRBUD_Pilot";
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\buddies_mh6m.paa",
+			"\BUDDIES_Pack\Data\Vehicle\bud_mh6m.paa",
 			"rhsusf\addons\rhsusf_melb\data\decals\SN\blank_ca.paa"
 		};
 		rhs_decalParameters[]=
@@ -9134,19 +9089,19 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class BUDDIES_BUD_AH6M: rhs_melb_ah6m
+	class BUD_AH6M: rhs_melb_ah6m
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_BUD_Helicopters";
+		editorSubcategory="BUD_Helicopters";
 		author="Saucy Salmon";
 		displayName="AH-6M";
 		crew="B_AIRBUD_Pilot";
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\buddies_mh6m.paa",
+			"\BUDDIES_Pack\Data\Vehicle\bud_mh6m.paa",
 			"rhsusf\addons\rhsusf_melb\data\decals\SN\blank_ca.paa"
 		};
 		rhs_decalParameters[]=
@@ -9154,80 +9109,34 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class BUDDIES_BUD_UH60M2: RHS_UH60M2_d
+	class BUD_UH60M: CUP_B_UH60M_US
 	{
-		side=1;
 		scope=2;
-		scopeCurator=2;
-		displayName="UH-60M (Unarmed)";
-		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
-		typicalCargo[]=
-		{
-			"B_AIRBUD_Pilot"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
-			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_engine_co.paa",
-			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
-			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
-		};
-	};
-	class BUDDIES_BUD_UH60M: RHS_UH60M_d
-	{
 		side=1;
-		scope=2;
-		scopeCurator=2;
+		author="Devon0215";
 		displayName="UH-60M";
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_BUD_Helicopters";
+		editorSubcategory="BUD_Helicopters";
 		crew="B_AIRBUD_Pilot";
 		typicalCargo[]=
 		{
 			"B_AIRBUD_Pilot"
 		};
-		class Turrets: Turrets
-		{
-			class CopilotTurret: CopilotTurret {};
-			class MainTurret: MainTurret
-			{
-				gunnerType="B_AIRBUD_Pilot";
-			};
-			class RightDoorGun: RightDoorGun
-			{
-				gunnerType="B_AIRBUD_Pilot";
-			};
-			class CargoTurret_01: CargoTurret_01 {};
-			class CargoTurret_02: CargoTurret_02 {};
-			class CargoTurret_03: CargoTurret_03 {};
-			class CargoTurret_04: CargoTurret_04 {};
-		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
-			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_engine_co.paa",
-			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
-			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_engine_co.paa",
+			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 		};
 	};
-	class BUDDIES_BUD_UH60M_ESSS2: RHS_UH60M_ESSS2_d
+	class BUD_UH60M_FFV: CUP_B_UH60M_FFV_US
 	{
-		side=1;
 		scope=2;
-		scopeCurator=2;
-		displayName="UH-60M (EWS)";
+		side=1;
+		author="Devon0215";
+		displayName="UH-60M (FFV)";
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_BUD_Helicopters";
+		editorSubcategory="BUD_Helicopters";
 		crew="B_AIRBUD_Pilot";
 		typicalCargo[]=
 		{
@@ -9235,24 +9144,19 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
-			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_engine_co.paa",
-			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
-			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
-		};
-		rhs_decalParameters[]=
-		{
-			"[""RHS_Decal_Enabled"", false, true];"
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_engine_co.paa",
+			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 		};
 	};
-	class BUDDIES_BUD_UH60M_ESSS: RHS_UH60M_ESSS_d
+	class BUD_UH60M_Unarmed: CUP_B_UH60M_Unarmed_US
 	{
-		side=1;
 		scope=2;
-		scopeCurator=2;
-		displayName="UH-60M (ESSS)";
+		side=1;
+		author="Devon0215";
+		displayName="UH-60M (Unarmed)";
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_BUD_Helicopters";
+		editorSubcategory="BUD_Helicopters";
 		crew="B_AIRBUD_Pilot";
 		typicalCargo[]=
 		{
@@ -9260,14 +9164,69 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_fuselage_co.paa",
-			"\BUDDIES_Pack\Data\Vehicle\buddies_uh60m_engine_co.paa",
-			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\default_co.paa",
-			"rhsusf\addons\rhsusf_a2port_air\uh60m\data\uh60m_dust_filter_co.paa"
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_engine_co.paa",
+			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 		};
-		rhs_decalParameters[]=
+	};
+	class BUD_UH60M_Unarmed_FFV: CUP_B_UH60M_Unarmed_FFV_US
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="UH-60M (Unarmed/FFV)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUD_Helicopters";
+		crew="B_AIRBUD_Pilot";
+		typicalCargo[]=
 		{
-			"[""RHS_Decal_Enabled"", false, true];"
+			"B_AIRBUD_Pilot"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_engine_co.paa",
+			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
+		};
+	};
+	class BUD_MH60L_DAP_4x: CUP_B_MH60L_DAP_4x_US
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="MH-60L DAP (4 Stores)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUD_Helicopters";
+		crew="B_AIRBUD_Pilot";
+		typicalCargo[]=
+		{
+			"B_AIRBUD_Pilot"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_engine_co.paa",
+			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
+		};
+	};
+	class BUD_MH60L_DAP_2x: CUP_B_MH60L_DAP_2x_US
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="MH-60L DAP (2 Stores)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUD_Helicopters";
+		crew="B_AIRBUD_Pilot";
+		typicalCargo[]=
+		{
+			"B_AIRBUD_Pilot"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_fuselage_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\bud_uh60m_engine_co.paa",
+			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 		};
 	};
 	class AIRBUD_CH53E: CUP_B_CH53E_GER
