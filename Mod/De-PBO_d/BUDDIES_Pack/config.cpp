@@ -1066,6 +1066,37 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_recon_patch_co.paa"
 		};
 	};
+	class Intel_Uniform: BUDDIES_Uniform
+	{
+		author="Biwwy";
+		displayname="Intel Uniform";
+		uniformClass="Intel_Camo";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_intel_co.paa"
+		};
+	};
+	class Intel_Uniform_RS: Intel_Uniform
+	{
+		author="Biwwy";
+		displayName="Intel Uniform (Rolled Sleeves)";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		uniformClass="BUDDIES_Intel_Camo_RS";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_intel_co.paa"
+		};
+	};
 	class BUD_Uniform: BUDDIES_Uniform
 	{
 		author="Devon0215";
@@ -10134,9 +10165,16 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_textured_simple.paa";
 		textureVehicle="";
 	};
-	class BUDDIES_Recon_Insignia
+	class BUDDIES_RRecon_Insignia
 	{
 		displayName="BUDDIES Recon Insignia";
+		author="Biwwy";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_rrecon.paa";
+		textureVehicle="";
+	};
+	class BUDDIES_Recon_Insignia
+	{
+		displayName="9th Recon Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_recon.paa";
 		textureVehicle="";
@@ -10162,11 +10200,25 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_intel.paa";
 		textureVehicle="";
 	};
+	class High_Insignia
+	{
+		displayName="BUDDIES High Command Insignia";
+		author="Starman";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_ohc.paa";
+		textureVehicle="";
+	};
 	class BUDDIES_Medic_Insignia
 	{
 		displayName="BUDDIES Medical Insignia";
 		author="Biwwy";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_medic.paa";
+		textureVehicle="";
+	};
+	class BUDDIES_LOVE_Insignia
+	{
+		displayName="8th LOVE Insignia";
+		author="Saucy";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_love.paa";
 		textureVehicle="";
 	};
 };
@@ -10300,6 +10352,35 @@ class cfgWeapons
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Headgear\headgear_beret02_bud_inverted_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			mass=6;
+			uniformModel="\A3\characters_f_epb\BLUFOR\headgear_beret02";
+			modelSides[]={3,1};
+			armor=0;
+			passThrough=1;
+			hiddenSelections[]=
+			{
+				"Camo"
+			};
+		};
+	};
+	class OHC_Beret: ItemCore
+	{
+		authoer="Saucy";
+		scope=2;
+		weaponPoolAvailable=1;
+		displayName="BUDDIES High Command Beret";
+		picture="\A3\characters_f_epb\BLUFOR\Data\UI\icon_h_beret02_ca.paa";
+		model="\A3\characters_f_epb\BLUFOR\headgear_beret02";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Headgear\headgear_beret02_buddies_ohc_co.paa"
 		};
 		class ItemInfo: HeadgearItem
 		{
@@ -10571,6 +10652,32 @@ class cfgWeapons
 			uniformModel = "-";
 			uniformClass=BUDDIES_Recon_Uniform_Patch_RS;
 			containerClass=Supply50;
+			mass=50;
+		};
+	};
+	class Intel_Camo: BUDDIES_Camo
+	{
+		author="Biwwy";
+		scope=2;
+		displayname="Intel Uniform";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=Intel_Uniform;
+			containClass=Supply50;
+			mass=50;
+		};
+	};
+	class Intel_Camo_RS: Intel_Camo
+	{
+		author="Biwwy";
+		scope=2;
+		displayname="Intel Uniform (Rolled Sleeves)";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=Intel_Uniform_RS;
+			containClass=Supply50;
 			mass=50;
 		};
 	};
