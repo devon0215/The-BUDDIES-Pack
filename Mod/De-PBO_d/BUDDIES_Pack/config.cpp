@@ -9686,7 +9686,7 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Vehicle\airbud_c47_body_02.paa"
 		};
 	};
-	class BUDDIES_L39: rhs_l39_cdf
+	class AIRBUD_L39: rhs_l39_cdf
 	{
 		side=1;
 		scope=2;
@@ -9710,7 +9710,7 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class BUDDIES_MiG29SM: rhs_mig29sm_vvsc
+	class AIRBUD_MiG29SM: rhs_mig29sm_vvsc
 	{
 		side=1;
 		scope=2;
