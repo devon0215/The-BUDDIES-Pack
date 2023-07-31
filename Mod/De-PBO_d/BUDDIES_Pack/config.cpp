@@ -10175,7 +10175,7 @@ class CfgUnitInsignia
 	};
 	class BUDDIES_Recon_Mantis_Insignia
 	{
-		displayName="9th Recon 'Mantis' Insignia";
+		displayName="BUDDIES 9th Recon 'Mantis' Insignia";
 		author="Devon0215";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_recon_mantis.paa";
 		textureVehicle="";
@@ -10194,14 +10194,14 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_bud_inverted.paa";
 		textureVehicle="";
 	};
-	class Intel_Insignia
+	class BUDDIES_Intel_Insignia
 	{
 		displayName="BUDDIES Intel Insignia";
 		author="Starman";
-		texture="\BUDDIES_Pack\Data\Insignia\insignia_intel.paa";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_intel.paa";
 		textureVehicle="";
 	};
-	class High_Insignia
+	class BUDDIES_High_Insignia
 	{
 		displayName="BUDDIES High Command Insignia";
 		author="Starman";
@@ -10669,7 +10669,7 @@ class cfgWeapons
 			mass=50;
 		};
 	};
-	class BUDDIES_Intel_Camo_RS: Intel_Camo
+	class BUDDIES_Intel_Camo_RS: BUDDIES_Intel_Camo
 	{
 		author="Biwwy";
 		scope=2;
