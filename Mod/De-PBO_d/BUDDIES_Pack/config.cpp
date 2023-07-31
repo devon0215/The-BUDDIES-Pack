@@ -1082,7 +1082,7 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_intel_co.paa"
 		};
 	};
-	class BUDDIES_Intel_Uniform_RS: Intel_Uniform
+	class BUDDIES_Intel_Uniform_RS: BUDDIES_Intel_Uniform
 	{
 		author="Biwwy";
 		displayName="Intel Uniform (Rolled Sleeves)";
