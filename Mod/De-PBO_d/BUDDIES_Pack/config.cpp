@@ -9974,7 +9974,7 @@ class CfgUnitInsignia
 	};
 	class BUDDIES_LOVE_Insignia
 	{
-		displayName="8th LOVE Insignia";
+		displayName="BUDDIES 8th LOVE Insignia";
 		author="Saucy";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_love.paa";
 		textureVehicle="";
