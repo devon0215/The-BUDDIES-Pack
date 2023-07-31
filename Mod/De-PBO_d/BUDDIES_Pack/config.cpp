@@ -185,6 +185,7 @@ class CfgPatches
 			"BUDDIES_Beret_Textured",
 			"AIRBUD_Beret",
 			"BUD_Beret_Inverted",
+			"BUDDIES_OHC_Beret",
 			"BUDDIES_Camo",
 			"BUDDIES_Camo_RS",
 			"BUDDIES_Camo_Worn",
@@ -950,6 +951,37 @@ class CfgVehicles
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_recon_patch_co.paa"
+		};
+	};
+	class BUDDIES_Intel_Uniform: BUDDIES_Uniform
+	{
+		author="Biwwy";
+		displayname="Intel Uniform";
+		uniformClass="BUDDIES_Intel_Camo";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_intel_co.paa"
+		};
+	};
+	class BUDDIES_Intel_Uniform_RS: BUDDIES_Intel_Uniform
+	{
+		author="Biwwy";
+		displayName="Intel Uniform (Rolled Sleeves)";
+		model="\A3\characters_f_beta\INDEP\ia_soldier_02.p3d";
+		uniformClass="BUDDIES_Intel_Camo_RS";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_intel_co.paa"
 		};
 	};
 	class BUD_Uniform: O_Soldier_Base_F
@@ -9888,8 +9920,15 @@ class CfgUnitInsignia
 	class BUDDIES_Recon_Insignia
 	{
 		displayName="BUDDIES Recon Insignia";
-		author="Devon0215";
+		author="Biwwy";
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_recon.paa";
+		textureVehicle="";
+	};
+	class BUDDIES_Recon_Mantis_Insignia
+	{
+		displayName="BUDDIES 9th Recon 'Mantis' Insignia";
+		author="Devon0215";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_recon_mantis.paa";
 		textureVehicle="";
 	};
 	class BUD_Insignia
@@ -9910,7 +9949,14 @@ class CfgUnitInsignia
 	{
 		displayName="BUDDIES Intel Insignia";
 		author="Starman";
-		texture="\BUDDIES_Pack\Data\Insignia\insignia_intel.paa";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_intel.paa";
+		textureVehicle="";
+	};
+	class BUDDIES_High_Insignia
+	{
+		displayName="BUDDIES High Command Insignia";
+		author="Starman";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_ohc.paa";
 		textureVehicle="";
 	};
 	class BUDDIES_Medic_Insignia
@@ -9924,7 +9970,13 @@ class CfgUnitInsignia
 	{
 		displayName="BUDDIES Thunderspear Insignia";
 		author="Starman";
-		texture="\BUDDIES_Pack\Data\Insignia\insignia_thunderspear.paa";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_thunderspear.paa";
+	};
+	class BUDDIES_LOVE_Insignia
+	{
+		displayName="8th LOVE Insignia";
+		author="Saucy";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_love.paa";
 		textureVehicle="";
 	};
 };
@@ -10128,6 +10180,35 @@ class cfgWeapons
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Headgear\headgear_beret02_bud_inverted_co.paa"
+		};
+		class ItemInfo: HeadgearItem
+		{
+			mass=6;
+			uniformModel="\A3\characters_f_epb\BLUFOR\headgear_beret02";
+			modelSides[]={3,1};
+			armor=0;
+			passThrough=1;
+			hiddenSelections[]=
+			{
+				"Camo"
+			};
+		};
+	};
+	class BUDDIES_OHC_Beret: ItemCore
+	{
+		authoer="Saucy";
+		scope=2;
+		weaponPoolAvailable=1;
+		displayName="BUDDIES High Command Beret";
+		picture="\A3\characters_f_epb\BLUFOR\Data\UI\icon_h_beret02_ca.paa";
+		model="\A3\characters_f_epb\BLUFOR\headgear_beret02";
+		hiddenSelections[]=
+		{
+			"Camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Headgear\headgear_beret02_buddies_ohc_co.paa"
 		};
 		class ItemInfo: HeadgearItem
 		{
@@ -10399,6 +10480,32 @@ class cfgWeapons
 			uniformModel = "-";
 			uniformClass=BUDDIES_Recon_Uniform_Patch_RS;
 			containerClass=Supply50;
+			mass=50;
+		};
+	};
+	class BUDDIES_Intel_Camo: BUDDIES_Camo
+	{
+		author="Biwwy";
+		scope=2;
+		displayname="BUDDIES Intel Uniform";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=BUDDIES_Intel_Uniform;
+			containClass=Supply50;
+			mass=50;
+		};
+	};
+	class BUDDIES_Intel_Camo_RS: BUDDIES_Intel_Camo
+	{
+		author="Biwwy";
+		scope=2;
+		displayname="BUDDIES Intel Uniform (Rolled Sleeves)";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=BUDDIES_Intel_Uniform_RS;
+			containClass=Supply50;
 			mass=50;
 		};
 	};
