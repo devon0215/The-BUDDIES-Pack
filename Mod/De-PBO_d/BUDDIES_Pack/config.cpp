@@ -185,6 +185,7 @@ class CfgPatches
 			"BUDDIES_Beret_Textured",
 			"BUDDIES_Air_Beret",
 			"BUD_Beret_Inverted",
+			"BUDDIES_OHC_Beret",
 			"BUDDIES_Camo",
 			"BUDDIES_Camo_RS",
 			"BUDDIES_Camo_Worn",
@@ -1066,11 +1067,11 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_recon_patch_co.paa"
 		};
 	};
-	class Intel_Uniform: BUDDIES_Uniform
+	class BUDDIES_Intel_Uniform: BUDDIES_Uniform
 	{
 		author="Biwwy";
 		displayname="Intel Uniform";
-		uniformClass="Intel_Camo";
+		uniformClass="BUDDIES_Intel_Camo";
 		hiddenSelections[]=
 		{
 			"Camo",
@@ -1081,7 +1082,7 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Uniform\camo_intel_co.paa"
 		};
 	};
-	class Intel_Uniform_RS: Intel_Uniform
+	class BUDDIES_Intel_Uniform_RS: Intel_Uniform
 	{
 		author="Biwwy";
 		displayName="Intel Uniform (Rolled Sleeves)";
@@ -10165,18 +10166,18 @@ class CfgUnitInsignia
 		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_textured_simple.paa";
 		textureVehicle="";
 	};
-	class BUDDIES_RRecon_Insignia
+	class BUDDIES_Recon_Insignia
 	{
 		displayName="BUDDIES Recon Insignia";
 		author="Biwwy";
-		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_rrecon.paa";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_recon.paa";
 		textureVehicle="";
 	};
-	class BUDDIES_Recon_Insignia
+	class BUDDIES_Recon_Mantis_Insignia
 	{
-		displayName="9th Recon Insignia";
+		displayName="9th Recon 'Mantis' Insignia";
 		author="Devon0215";
-		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_recon.paa";
+		texture="\BUDDIES_Pack\Data\Insignia\insignia_buddies_recon_mantis.paa";
 		textureVehicle="";
 	};
 	class BUD_Insignia
@@ -10366,7 +10367,7 @@ class cfgWeapons
 			};
 		};
 	};
-	class OHC_Beret: ItemCore
+	class BUDDIES_OHC_Beret: ItemCore
 	{
 		authoer="Saucy";
 		scope=2;
@@ -10655,28 +10656,28 @@ class cfgWeapons
 			mass=50;
 		};
 	};
-	class Intel_Camo: BUDDIES_Camo
+	class BUDDIES_Intel_Camo: BUDDIES_Camo
 	{
 		author="Biwwy";
 		scope=2;
-		displayname="Intel Uniform";
+		displayname="BUDDIES Intel Uniform";
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=Intel_Uniform;
+			uniformClass=BUDDIES_Intel_Uniform;
 			containClass=Supply50;
 			mass=50;
 		};
 	};
-	class Intel_Camo_RS: Intel_Camo
+	class BUDDIES_Intel_Camo_RS: Intel_Camo
 	{
 		author="Biwwy";
 		scope=2;
-		displayname="Intel Uniform (Rolled Sleeves)";
+		displayname="BUDDIES Intel Uniform (Rolled Sleeves)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel = "-";
-			uniformClass=Intel_Uniform_RS;
+			uniformClass=BUDDIES_Intel_Uniform_RS;
 			containClass=Supply50;
 			mass=50;
 		};
