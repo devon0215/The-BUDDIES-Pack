@@ -10492,7 +10492,7 @@ class cfgWeapons
 		{
 			uniformModel = "-";
 			uniformClass=BUDDIES_Intel_Uniform;
-			containClass=Supply50;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
