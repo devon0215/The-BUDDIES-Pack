@@ -42,6 +42,7 @@ class CfgPatches
 			"B_BUDDY_R_Driver",
 			"B_BUDDY_R_Crew",
 			"B_AIRBUD_Pilot",
+			"B_AIRBUD_Heli_Pilot",
 			"B_AIRBUD_GroundCrew",
 			"B_AIRBUD_Crew",
 			"B_AIRBUD_Crew_Officer",
@@ -149,6 +150,12 @@ class CfgPatches
 			"BUDDIES_UH1H",
 			"BUDDIES_UH1H_Gunship",
 			"BUDDIES_UH1H_Unarmed",
+			"BUDDIES_412_Transport",
+			"BUDDIES_412_Armed",
+			"BUDDIES_412_AT",
+			"BUDDIES_412_Utility",
+			"BUDDIES_412_Radar",
+			"BUDDIES_412_DynamicLoadout",
 			"BUD_MH6M",
 			"BUD_AH6M",
 			"BUD_UH60M",
@@ -365,10 +372,6 @@ class CfgEditorSubcategories
 	class BUDDIES_Helicopters
 	{
 		displayName="Helicopters";
-	};
-	class AIRBUD_Helicopters
-	{
-		displayName="Helicopters (A.I.R.B.U.D.)";
 	};
 	class BUD_Helicopters
 	{
@@ -4058,6 +4061,30 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
+	class B_AIRBUD_Heli_Pilot: B_AIRBUD_Pilot
+	{
+		displayName="Heli Pilot";
+		linkedItems[]=
+		{
+			"CUP_V_B_PilotVest",
+			"rhs_zsh7a_mike_alt",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+		respawnLinkedItems[]=
+		{
+			"CUP_V_B_PilotVest",
+			"rhs_zsh7a_mike_alt",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+	}
 	class B_AIRBUD_Crew: B_AIRBUD_Soldier_Base
 	{
 		author="Devon0215";
@@ -6518,6 +6545,12 @@ class CfgVehicles
 	class rhs_uh1h_hidf;
 	class rhs_uh1h_hidf_gunship;
 	class rhs_uh1h_hidf_unarmed;
+	class CUP_I_412_Mil_Transport_PMC;
+	class CUP_I_412_Military_Armed_PMC;
+	class CUP_I_412_Military_Armed_AT_PMC;
+	class CUP_I_412_Mil_Utility_PMC;
+	class CUP_I_412_Military_Radar_PMC;
+	class CUP_I_412_dynamicLoadout_PMC;
 	class rhs_melb_mh6m;
 	class rhs_melb_ah6m;
 	class CUP_B_CH53E_GER;
@@ -9047,7 +9080,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="UH-1H";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_uh1h_co.paa",
@@ -9068,7 +9101,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="UH-1H Gunship";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_uh1h_co.paa",
@@ -9089,7 +9122,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="UH-1H Unarmed";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_uh1h_co.paa",
@@ -9101,6 +9134,108 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
+	class BUDDIES_412_Transport: CUP_I_412_Mil_Transport_PMC
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Helicopters";
+		author="Devon0215";
+		displayName="CH-146 Griffon (Transport)";
+		crew="B_AIRBUD_Heli_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_Main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
+		};
+	};
+	class BUDDIES_412_Armed: CUP_I_412_Military_Armed_PMC
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Helicopters";
+		author="Devon0215";
+		displayName="CH-146 Griffon (Armed)";
+		crew="B_AIRBUD_Heli_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_Main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
+		};
+	};
+	class BUDDIES_412_AT: CUP_I_412_Military_Armed_AT_PMC
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Helicopters";
+		author="Devon0215";
+		displayName="CH-146 Griffon (AT)";
+		crew="B_AIRBUD_Heli_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_Main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
+		};
+	};
+	class BUDDIES_412_Utility: CUP_I_412_Mil_Utility_PMC
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Helicopters";
+		author="Devon0215";
+		displayName="CH-146 Griffon (Utility)";
+		crew="B_AIRBUD_Heli_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_Main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
+		};
+	};
+	class BUDDIES_412_Radar: CUP_I_412_Military_Radar_PMC
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Helicopters";
+		author="Devon0215";
+		displayName="CH-146 Griffon (Radar)";
+		crew="B_AIRBUD_Heli_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_Main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
+		};
+	};
+	class BUDDIES_412_DynamicLoadout: CUP_I_412_dynamicLoadout_PMC
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Helicopters";
+		author="Devon0215";
+		displayName="CH-146 Griffon (Dynamic Loadout)";
+		crew="B_AIRBUD_Heli_Pilot";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_Main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
+		};
+	};
 	class BUD_MH6M: rhs_melb_mh6m
 	{
 		side=1;
@@ -9110,7 +9245,7 @@ class CfgVehicles
 		editorSubcategory="BUD_Helicopters";
 		author="Saucy Salmon";
 		displayName="MH-6M";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\bud_mh6m.paa",
@@ -9130,7 +9265,7 @@ class CfgVehicles
 		editorSubcategory="BUD_Helicopters";
 		author="Saucy Salmon";
 		displayName="AH-6M";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\bud_mh6m.paa",
@@ -9149,10 +9284,10 @@ class CfgVehicles
 		displayName="UH-60M";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9169,10 +9304,10 @@ class CfgVehicles
 		displayName="UH-60M (FFV)";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9189,10 +9324,10 @@ class CfgVehicles
 		displayName="UH-60M (Unarmed)";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9209,10 +9344,10 @@ class CfgVehicles
 		displayName="UH-60M (Unarmed/FFV)";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9229,10 +9364,10 @@ class CfgVehicles
 		displayName="MH-60L DAP (4 Stores)";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9249,10 +9384,10 @@ class CfgVehicles
 		displayName="MH-60L DAP (2 Stores)";
 		faction="BUDDIES_Faction";
 		editorSubcategory="BUD_Helicopters";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9268,14 +9403,14 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="CH-53G Super Stallion";
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Helicopters";
+		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot",
+			"B_AIRBUD_Heli_Pilot",
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9295,14 +9430,14 @@ class CfgVehicles
 		scopeCurator=2;
 		displayName="CH-53G Super Stallion (VIV)";
 		faction="BUDDIES_Faction";
-		editorSubcategory="AIRBUD_Helicopters";
+		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_Pilot",
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot",
+			"B_AIRBUD_Heli_Pilot",
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9324,7 +9459,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8T";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9348,7 +9483,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MT";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9372,7 +9507,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MT (Cargo)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9396,7 +9531,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8AMT";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9420,10 +9555,10 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8AMT (VIV)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
 		{
-			"B_AIRBUD_Pilot"
+			"B_AIRBUD_Heli_Pilot"
 		};
 		hiddenSelectionsTextures[]=
 		{
@@ -9447,7 +9582,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MTV-3";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9471,7 +9606,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MTV-3 (Cargo)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9495,7 +9630,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8MTV-3 (Heavy)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8_body_co.paa",
@@ -9519,7 +9654,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-8AMTSh";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi8amtsh_co.paa",
@@ -9543,7 +9678,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24D";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9564,7 +9699,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24D (Early)";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9585,7 +9720,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24P";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9613,7 +9748,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24V";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
@@ -9634,7 +9769,7 @@ class CfgVehicles
 		editorSubcategory="BUDDIES_Helicopters";
 		author="Devon0215";
 		displayName="Mi-24G";
-		crew="B_AIRBUD_Pilot";
+		crew="B_AIRBUD_Heli_Pilot";
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Vehicle\buddies_mi24g_co.paa",
