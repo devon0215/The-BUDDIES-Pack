@@ -164,8 +164,8 @@ class CfgPatches
 			"BUD_UH60M_Unarmed_FFV",
 			"BUD_MH60L_DAP_2x",
 			"BUD_MH60L_DAP_4x",
-			"AIRBUD_CH53E",
-			"AIRBUD_CH53E_VIV",
+			"BUDDIES_CH53E",
+			"BUDDIES_CH53E_VIV",
 			"BUDDIES_Mi8T",
 			"BUDDIES_Mi8MT",
 			"BUDDIES_Mi8MT_Cargo",
@@ -4084,7 +4084,7 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemGPS"
 		};
-	}
+	};
 	class B_AIRBUD_Crew: B_AIRBUD_Soldier_Base
 	{
 		author="Devon0215";
@@ -9396,7 +9396,7 @@ class CfgVehicles
 			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 		};
 	};
-	class AIRBUD_CH53E: CUP_B_CH53E_GER
+	class BUDDIES_CH53E: CUP_B_CH53E_GER
 	{
 		side=1;
 		scope=2;
@@ -9423,7 +9423,7 @@ class CfgVehicles
 		class TransportBackpacks{};
 		maximumLoad=2500;
 	};
-	class AIRBUD_CH53E_VIV: CUP_B_CH53E_VIV_GER
+	class BUDDIES_CH53E_VIV: CUP_B_CH53E_VIV_GER
 	{
 		side=1;
 		scope=2;
