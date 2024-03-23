@@ -150,12 +150,12 @@ class CfgPatches
 			"BUDDIES_UH1H",
 			"BUDDIES_UH1H_Gunship",
 			"BUDDIES_UH1H_Unarmed",
-			"BUDDIES_412_Transport",
-			"BUDDIES_412_Armed",
-			"BUDDIES_412_AT",
-			"BUDDIES_412_Utility",
-			"BUDDIES_412_Radar",
-			"BUDDIES_412_DynamicLoadout",
+			"AIRBUD_412_Transport",
+			"AIRBUD_412_Armed",
+			"AIRBUD_412_AT",
+			"AIRBUD_412_Utility",
+			"AIRBUD_412_Radar",
+			"AIRBUD_412_DynamicLoadout",
 			"BUD_MH6M",
 			"BUD_AH6M",
 			"BUD_UH60M",
@@ -164,8 +164,8 @@ class CfgPatches
 			"BUD_UH60M_Unarmed_FFV",
 			"BUD_MH60L_DAP_2x",
 			"BUD_MH60L_DAP_4x",
-			"BUDDIES_CH53E",
-			"BUDDIES_CH53E_VIV",
+			"AIRBUD_CH53E",
+			"AIRBUD_CH53E_VIV",
 			"BUDDIES_Mi8T",
 			"BUDDIES_Mi8MT",
 			"BUDDIES_Mi8MT_Cargo",
@@ -372,6 +372,10 @@ class CfgEditorSubcategories
 	class BUDDIES_Helicopters
 	{
 		displayName="Helicopters";
+	};
+	class AIRBUD_Helicopters
+	{
+		displayName="Helicopters (A.I.R.B.U.D.)"
 	};
 	class BUD_Helicopters
 	{
@@ -9134,13 +9138,13 @@ class CfgVehicles
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
 	};
-	class BUDDIES_412_Transport: CUP_I_412_Mil_Transport_PMC
+	class AIRBUD_412_Transport: CUP_I_412_Mil_Transport_PMC
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Helicopters";
+		editorSubcategory="AIRBUD_Helicopters";
 		author="Devon0215";
 		displayName="CH-146 Griffon (Transport)";
 		crew="B_AIRBUD_Heli_Pilot";
@@ -9151,13 +9155,13 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
 		};
 	};
-	class BUDDIES_412_Armed: CUP_I_412_Military_Armed_PMC
+	class AIRBUD_412_Armed: CUP_I_412_Military_Armed_PMC
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Helicopters";
+		editorSubcategory="AIRBUD_Helicopters";
 		author="Devon0215";
 		displayName="CH-146 Griffon (Armed)";
 		crew="B_AIRBUD_Heli_Pilot";
@@ -9168,13 +9172,13 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
 		};
 	};
-	class BUDDIES_412_AT: CUP_I_412_Military_Armed_AT_PMC
+	class AIRBUD_412_AT: CUP_I_412_Military_Armed_AT_PMC
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Helicopters";
+		editorSubcategory="AIRBUD_Helicopters";
 		author="Devon0215";
 		displayName="CH-146 Griffon (AT)";
 		crew="B_AIRBUD_Heli_Pilot";
@@ -9185,13 +9189,13 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
 		};
 	};
-	class BUDDIES_412_Utility: CUP_I_412_Mil_Utility_PMC
+	class AIRBUD_412_Utility: CUP_I_412_Mil_Utility_PMC
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Helicopters";
+		editorSubcategory="AIRBUD_Helicopters";
 		author="Devon0215";
 		displayName="CH-146 Griffon (Utility)";
 		crew="B_AIRBUD_Heli_Pilot";
@@ -9202,13 +9206,13 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
 		};
 	};
-	class BUDDIES_412_Radar: CUP_I_412_Military_Radar_PMC
+	class AIRBUD_412_Radar: CUP_I_412_Military_Radar_PMC
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Helicopters";
+		editorSubcategory="AIRBUD_Helicopters";
 		author="Devon0215";
 		displayName="CH-146 Griffon (Radar)";
 		crew="B_AIRBUD_Heli_Pilot";
@@ -9219,13 +9223,13 @@ class CfgVehicles
 			"\BUDDIES_Pack\Data\Vehicle\BUDDIES_412_ext1_co.paa"
 		};
 	};
-	class BUDDIES_412_DynamicLoadout: CUP_I_412_dynamicLoadout_PMC
+	class AIRBUD_412_DynamicLoadout: CUP_I_412_dynamicLoadout_PMC
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Helicopters";
+		editorSubcategory="AIRBUD_Helicopters";
 		author="Devon0215";
 		displayName="CH-146 Griffon (Dynamic Loadout)";
 		crew="B_AIRBUD_Heli_Pilot";
@@ -9396,14 +9400,14 @@ class CfgVehicles
 			"cup\airvehicles\cup_airvehicles_uh60\data\default_co.paa"
 		};
 	};
-	class BUDDIES_CH53E: CUP_B_CH53E_GER
+	class AIRBUD_CH53E: CUP_B_CH53E_GER
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		displayName="CH-53G Super Stallion";
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Helicopters";
+		editorSubcategory="AIRBUD_Helicopters";
 		author="Devon0215";
 		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
@@ -9423,14 +9427,14 @@ class CfgVehicles
 		class TransportBackpacks{};
 		maximumLoad=2500;
 	};
-	class BUDDIES_CH53E_VIV: CUP_B_CH53E_VIV_GER
+	class AIRBUD_CH53E_VIV: CUP_B_CH53E_VIV_GER
 	{
 		side=1;
 		scope=2;
 		scopeCurator=2;
 		displayName="CH-53G Super Stallion (VIV)";
 		faction="BUDDIES_Faction";
-		editorSubcategory="BUDDIES_Helicopters";
+		editorSubcategory="AIRBUD_Helicopters";
 		author="Devon0215";
 		crew="B_AIRBUD_Heli_Pilot";
 		typicalCargo[]=
@@ -12358,9 +12362,4 @@ class CfgGroups
 			};
 		};
 	};
-};
-class cfgMods
-{
-	author="Devon0215";
-	timepacked="1570453165";
 };
