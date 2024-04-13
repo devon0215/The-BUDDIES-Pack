@@ -123,6 +123,9 @@ class CfgPatches
 			"BUDDIES_BTR70",
 			"BUDDIES_BTR80",
 			"BUDDIES_BTR80A",
+			"BUDDIES_M113A1",
+			"BUDDIES_M113A3",
+			"BUDDIES_M163",
 			"BUDDIES_bmp1",
 			"BUDDIES_bmp1d",
 			"BUDDIES_bmp1k",
@@ -223,8 +226,6 @@ class CfgPatches
 			"CUP_Weapons_LoadOrder",
 			"CUP_Creatures_People_LoadOrder",
 			"CUP_Vehicles_LoadOrder",
-			"VSM_Vests_Config",
-			"VSM_HELMETS",
 			"Alpine_Config",
 			"Alpine_Vests_Config",
 			"AOR2_Config",
@@ -233,21 +234,6 @@ class CfgPatches
 			"Arid_Vests_Config",
 			"Black_Config",
 			"Black_Vests_Config",
-			"VSM_AOR1_Config",
-			"VSM_Bowman_headsets",
-			"VSM_CSAT_OD_Config",
-			"VSM_FaceMask_Config",
-			"VSM_M81_Config",
-			"VSM_Multicam_Config",
-			"VSM_MulticamTropic_Config",
-			"VSM_HEADGEAR_Fix",
-			"VSM_OGA_Fix",
-			"VSM_Scorpion_Fix",
-			"VSM_OCP_Config",
-			"VSM_OGA_Config",
-			"VSM_ProjectHonor_Config",
-			"VSM_Scorpion_Config",
-			"VSM_Shemagh_config",
 			"hlcweapons_falpocalypse",
 			"hlcweapons_acr",
 			"hlcweapons_ar15",
@@ -273,7 +259,11 @@ class CfgPatches
 			"hlcweapons_Johnson",
 			"hlcweapons_SCAR",
 			"hlcweapons_XM8",
-			"sp_fwa_mas"
+			"sp_fwa_mas",
+			"USP_Gear_Core",
+			"USP_Gear_Pack",
+			"USP_Gear_Face",
+			"USP_Gear_Vest"
 		};
 	};
 };
@@ -349,6 +339,10 @@ class CfgEditorSubcategories
 	{
 		displayName="APCs (Marines)";
 	};
+	class AIRBUD_APCs
+	{
+		displayName="APCs (A.I.R.B.U.D.)"
+	}
 	class BUDDIES_IFVs
 	{
 		displayName="IFVs";
@@ -388,7 +382,7 @@ class CfgEditorSubcategories
 };
 class CfgVehicles
 {
-	class Black_Backpack_kitbag;
+	class USP_REEBOW_3DAP_MCB;
 	class rhs_rpg_empty;
 	class BUDDIES_RPG_Carrier_AT: rhs_rpg_empty
 	{
@@ -419,7 +413,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class BUD_kitbag_blk_AA: Black_Backpack_kitbag
+	class BUD_kitbag_blk_AA: USP_REEBOW_3DAP_MCB
 	{
 		scope=1;
 		class TransportMagazines
@@ -431,7 +425,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class BUD_kitbag_blk_AT: Black_Backpack_kitbag
+	class BUD_kitbag_blk_AT: USP_REEBOW_3DAP_MCB
 	{
 		scope=1;
 		class TransportMagazines
@@ -443,7 +437,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class BUD_kitbag_blk_Medic: Black_Backpack_kitbag
+	class BUD_kitbag_blk_Medic: USP_REEBOW_3DAP_MCB
 	{
 		scope=1;
 		class TransportItems
@@ -460,7 +454,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class BUD_kitbag_blk_Engineer: Black_Backpack_kitbag
+	class BUD_kitbag_blk_Engineer: USP_REEBOW_3DAP_MCB
 	{
 		scope=1;
 		class TransportItems
@@ -1592,7 +1586,7 @@ class CfgVehicles
 			"ItemRadio",
 			"ItemGPS",
 			"rhs_ssh60",
-			"VSM_MBSS_Green"
+			"CUP_V_B_PASGT_OD"
 		};
 		respawnlinkedItems[]=
 		{
@@ -1602,7 +1596,7 @@ class CfgVehicles
 			"ItemRadio",
 			"ItemGPS",
 			"rhs_ssh60",
-			"VSM_MBSS_Green"
+			"CUP_V_B_PASGT_OD"
 		};
 	};
 	class B_BUDDY_Rifleman_Mosin: B_BUDDY_Soldier_Base
@@ -1729,7 +1723,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"V_TacChestrig_grn_F",
-			"VSM_Beanie_OD",
+			"H_Watchcap_camo",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -1739,7 +1733,7 @@ class CfgVehicles
 		respawnLinkedItems[]=
 		{
 			"V_TacChestrig_grn_F",
-			"VSM_Beanie_OD",
+			"H_Watchcap_camo",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -1891,7 +1885,7 @@ class CfgVehicles
 			"ItemGPS",
 			"rhs_ssh68_2",
 			"rhsgref_chicom",
-			"VSM_Shemagh_OD"
+			"CUP_FR_NeckScarf"
 		};
 		respawnLinkedItems[]=
 		{
@@ -1902,7 +1896,7 @@ class CfgVehicles
 			"ItemGPS",
 			"rhs_ssh68_2",
 			"rhsgref_chicom",
-			"VSM_Shemagh_OD"
+			"CUP_FR_NeckScarf"
 		};
 	};
 	class B_BUDDY_AT_RPG7: B_BUDDY_Soldier_Base
@@ -1995,7 +1989,7 @@ class CfgVehicles
 		{
 			"rhssaf_vest_md99_md2camo_rifleman",
 			"rhs_ssh60",
-			"VSM_balaclava2_Black",
+			"USP_BALACLAVA_RGR",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -2006,7 +2000,7 @@ class CfgVehicles
 		{
 			"rhssaf_vest_md99_md2camo_rifleman",
 			"rhs_ssh60",
-			"VSM_balaclava2_Black",
+			"USP_BALACLAVA_RGR",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -2609,7 +2603,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"rhsgref_helmet_pasgt_woodland",
-			"VSM_CarrierRig_Operator_OGA_OD",
+			"USP_EAGLE_CIRAS_LOAD",
 			"G_Lowprofile",
 			"ItemMap",
 			"ItemCompass",
@@ -2620,7 +2614,7 @@ class CfgVehicles
 		respawnLinkedItems[]=
 		{
 			"rhsgref_helmet_pasgt_woodland",
-			"VSM_CarrierRig_Operator_OGA_OD",
+			"USP_EAGLE_CIRAS_LOAD",
 			"G_Lowprofile",
 			"ItemMap",
 			"ItemCompass",
@@ -2702,9 +2696,6 @@ class CfgVehicles
 			"rhs_30Rnd_545x39_7N10_AK",
 			"rhs_30Rnd_545x39_7N10_AK",
 			"rhs_30Rnd_545x39_7N10_AK",
-			"rhs_30Rnd_545x39_7N10_AK",
-			"rhs_30Rnd_545x39_7N10_AK",
-			"rhs_30Rnd_545x39_7N10_AK",
 			"rhs_mag_m67",
 			"rhs_mag_m67",
 			"SmokeShell",
@@ -2728,9 +2719,6 @@ class CfgVehicles
 			"rhs_30Rnd_545x39_7N10_AK",
 			"rhs_30Rnd_545x39_7N10_AK",
 			"rhs_30Rnd_545x39_7N10_AK",
-			"rhs_30Rnd_545x39_7N10_AK",
-			"rhs_30Rnd_545x39_7N10_AK",
-			"rhs_30Rnd_545x39_7N10_AK",
 			"rhs_mag_m67",
 			"rhs_mag_m67",
 			"SmokeShell",
@@ -2744,7 +2732,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"rhsgref_helmet_pasgt_altis_lizard",
-			"VSM_FAPC_Operator_OGA_OD",
+			"CUP_V_B_JPC_OD_Light",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -2754,7 +2742,7 @@ class CfgVehicles
 		respawnLinkedItems[]=
 		{
 			"rhsgref_helmet_pasgt_altis_lizard",
-			"VSM_FAPC_Operator_OGA_OD",
+			"CUP_V_B_JPC_OD_Light",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -2821,13 +2809,6 @@ class CfgVehicles
 		};
 		magazines[]=
 		{
-			"SmokeShell",
-			"SmokeShell",
-			"SmokeShellGreen",
-			"SmokeShellBlue",
-			"rhs_mag_m67",
-			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
-			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
 			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
 			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
 			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
@@ -2837,13 +2818,6 @@ class CfgVehicles
 		};
 		respawnMagazines[]=
 		{
-			"SmokeShell",
-			"SmokeShell",
-			"SmokeShellGreen",
-			"SmokeShellBlue",
-			"rhs_mag_m67",
-			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
-			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
 			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
 			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
 			"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
@@ -2854,7 +2828,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"rhs_6b28_green",
-			"VSM_LBT6094_MG_OGA_OD",
+			"CUP_V_B_Armatus_BB_OD",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -2864,7 +2838,7 @@ class CfgVehicles
 		respawnLinkedItems[]=
 		{
 			"rhs_6b28_green",
-			"VSM_LBT6094_MG_OGA_OD",
+			"CUP_V_B_Armatus_BB_OD",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -3095,8 +3069,8 @@ class CfgVehicles
 		};
 		linkedItems[]=
 		{
-			"VSM_Bowman_cap_Green",
-			"VSM_FAPC_Operator_OGA_OD",
+			"H_Cap_oli_hs",
+			"CUP_V_B_Armatus_BB_OD",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -3105,8 +3079,8 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"VSM_Bowman_cap_Green",
-			"VSM_FAPC_Operator_OGA_OD",
+			"H_Cap_oli_hs",
+			"CUP_V_B_Armatus_BB_OD",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -3317,9 +3291,6 @@ class CfgVehicles
 			"hlc_20Rnd_762x51_B_M14",
 			"hlc_20Rnd_762x51_B_M14",
 			"hlc_20Rnd_762x51_B_M14",
-			"hlc_20Rnd_762x51_B_M14",
-			"hlc_20Rnd_762x51_B_M14",
-			"hlc_20Rnd_762x51_B_M14",
 			"hlc_20Rnd_762x51_B_M14"
 		};
 		respawnMagazines[]=
@@ -3342,14 +3313,11 @@ class CfgVehicles
 			"hlc_20Rnd_762x51_B_M14",
 			"hlc_20Rnd_762x51_B_M14",
 			"hlc_20Rnd_762x51_B_M14",
-			"hlc_20Rnd_762x51_B_M14",
-			"hlc_20Rnd_762x51_B_M14",
-			"hlc_20Rnd_762x51_B_M14",
 			"hlc_20Rnd_762x51_B_M14"
 		};
 		linkedItems[]=
 		{
-			"VSM_FAPC_operator_OGA_OD",
+			"CUP_V_B_Armatus_BB_OD",
 			"BUDDIES_Beret_Textured",
 			"ItemMap",
 			"ItemCompass",
@@ -3359,7 +3327,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"VSM_FAPC_operator_OGA_OD",
+			"CUP_V_B_Armatus_BB_OD",
 			"BUDDIES_Beret_Textured",
 			"ItemMap",
 			"ItemCompass",
@@ -3535,7 +3503,7 @@ class CfgVehicles
 		};
 		linkedItems[]=
 		{
-			"VSM_LBT6094_operator_OGA_OD",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"rhssaf_helmet_m97_olive_nocamo",
 			"ItemMap",
 			"ItemCompass",
@@ -3545,7 +3513,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"VSM_LBT6094_operator_OGA_OD",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"rhssaf_helmet_m97_olive_nocamo",
 			"ItemMap",
 			"ItemCompass",
@@ -3639,7 +3607,7 @@ class CfgVehicles
 		};
 		linkedItems[]=
 		{
-			"VSM_FAPC_operator_OGA_OD",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"rhsusf_opscore_fg",
 			"ItemMap",
 			"ItemCompass",
@@ -3649,7 +3617,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"VSM_FAPC_operator_OGA_OD",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"rhsusf_opscore_fg",
 			"ItemMap",
 			"ItemCompass",
@@ -3783,7 +3751,7 @@ class CfgVehicles
 		};
 		linkedItems[]=
 		{
-			"VSM_RAV_Operator_OGA_OD",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"rhssaf_helmet_m97_olive_nocamo_black_ess",
 			"ItemMap",
 			"ItemCompass",
@@ -3793,7 +3761,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"VSM_RAV_Operator_OGA_OD",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"rhssaf_helmet_m97_olive_nocamo_black_ess",
 			"ItemMap",
 			"ItemCompass",
@@ -4562,7 +4530,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"CUP_H_Ger_M92_Tan_GG_CF",
-			"VSM_FAPC_Operator_OGA",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"rhs_googles_black",
 			"ItemMap",
 			"ItemCompass",
@@ -4573,7 +4541,7 @@ class CfgVehicles
 	    respawnLinkedItems[]=
 		{
 			"CUP_H_Ger_M92_Tan_GG_CF",
-			"VSM_FAPC_Operator_OGA",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"rhs_googles_black",
 			"ItemMap",
 			"ItemCompass",
@@ -4594,7 +4562,6 @@ class CfgVehicles
 		{
 			"V_DeckCrew_white_F",
 			"CUP_H_PMC_Cap_Grey",
-			"VSM_Peltor_OD_glasses",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -4605,7 +4572,6 @@ class CfgVehicles
 		{
 			"V_DeckCrew_white_F",
 			"CUP_H_PMC_Cap_Grey",
-			"VSM_Peltor_OD_glasses",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -4773,8 +4739,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"H_Cap_blk",
-			"VSM_Shemagh_Facemask_OD_Peltor_Goggles",
-			"VSM_MBSS_PACA",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -4784,8 +4749,7 @@ class CfgVehicles
 		respawnLinkedItems[]=
 		{
 			"H_Cap_blk",
-			"VSM_Shemagh_Facemask_OD_Peltor_Goggles",
-			"VSM_MBSS_PACA",
+			"UPS_CRYE_CPC_LIGHT_RGR",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -5081,7 +5045,6 @@ class CfgVehicles
 		{
 			"CUP_V_PMC_CIRAS_Black_TL",
 			"rhssaf_helmet_m97_black_nocamo",
-			"VSM_Balaclava2_black_Goggles",
 			"rhsusf_ANPVS_14",
 			"ItemMap",
 			"ItemCompass",
@@ -5093,7 +5056,6 @@ class CfgVehicles
 		{
 			"CUP_V_PMC_CIRAS_Black_TL",
 			"rhssaf_helmet_m97_black_nocamo",
-			"VSM_Balaclava2_black_Goggles",
 			"rhsusf_ANPVS_14",
 			"ItemMap",
 			"ItemCompass",
@@ -5186,7 +5148,6 @@ class CfgVehicles
 		{
 			"CUP_V_PMC_CIRAS_Black_Patrol",
 			"rhssaf_helmet_m97_black_nocamo",
-			"VSM_balaclava_Black",
 			"rhsusf_ANPVS_14",
 			"ItemMap",
 			"ItemCompass",
@@ -5198,7 +5159,6 @@ class CfgVehicles
 		{
 			"CUP_V_PMC_CIRAS_Black_Patrol",
 			"rhssaf_helmet_m97_black_nocamo",
-			"VSM_balaclava_Black",
 			"rhsusf_ANPVS_14",
 			"ItemMap",
 			"ItemCompass",
@@ -5331,7 +5291,6 @@ class CfgVehicles
 		{
 			"CUP_V_PMC_CIRAS_Black_Patrol",
 			"rhssaf_helmet_m97_black_nocamo",
-			"VSM_balaclava2_Black",
 			"rhsusf_ANPVS_14",
 			"ItemMap",
 			"ItemCompass",
@@ -5343,7 +5302,6 @@ class CfgVehicles
 		{
 			"CUP_V_PMC_CIRAS_Black_Patrol",
 			"rhssaf_helmet_m97_black_nocamo",
-			"VSM_balaclava2_Black",
 			"rhsusf_ANPVS_14",
 			"ItemMap",
 			"ItemCompass",
@@ -5416,7 +5374,6 @@ class CfgVehicles
 		{
 			"CUP_V_PMC_IOTV_Black_Patrol",
 			"rhssaf_helmet_m97_black_nocamo",
-			"VSM_FaceMask_black",
 			"rhsusf_ANPVS_14",
 			"ItemMap",
 			"ItemCompass",
@@ -5428,7 +5385,6 @@ class CfgVehicles
 		{
 			"CUP_V_PMC_IOTV_Black_Patrol",
 			"rhssaf_helmet_m97_black_nocamo",
-			"VSM_FaceMask_black",
 			"rhsusf_ANPVS_14",
 			"ItemMap",
 			"ItemCompass",
@@ -6303,6 +6259,9 @@ class CfgVehicles
 	class rhs_btr70_msv;
 	class rhs_btr80_msv;
 	class rhs_btr80a_msv;
+	class CUP_B_M113A1_USA;
+	class CUP_B_M113A3_USA;
+	class CUP_B_M163_Vulcan_USA;
 	class rhs_bmp1_msv;
 	class rhs_bmp1p_msv;
 	class rhs_bmp1k_msv;
@@ -8100,6 +8059,78 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+	};
+	class BUDDIES_M113A1: CUP_B_M113A1_USA
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_APCs";
+		author="Devon0215";
+		displayName="M113A1";
+		crew="B_BUDDY_R_Crew";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Crew"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_unique_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_accesories_co.paa",
+			""
+		};
+		textureList[]={};
+		animationList[]={};
+	};
+	class BUDDIES_M113A3: CUP_B_M113A3_USA
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_APCs";
+		author="Devon0215";
+		displayName="M113A3";
+		crew="B_BUDDY_R_Crew";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Crew"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_unique_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_accesories_co.paa",
+			""
+		};
+		textureList[]={};
+		animationList[]={};
+	};
+	class BUDDIES_M163: CUP_B_M163_Vulcan_USA
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="AIRBUD_APCs";
+		author="Devon0215";
+		displayName="M163";
+		crew="B_BUDDY_R_Crew";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Crew"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m163_main_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m163_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_unique_co.paa",
+			"\BUDDIES_Pack\Data\Vehicle\buddies_m113_accesories_co.paa"
+		};
+		textureList[]={};
 	};
 	class BUDDIES_bmp1: rhs_bmp1_msv
 	{
