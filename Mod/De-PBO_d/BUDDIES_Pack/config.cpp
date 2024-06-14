@@ -200,6 +200,8 @@ class CfgPatches
 			"BUDDIES_Camo_RS",
 			"BUDDIES_Camo_Worn",
 			"BUDDIES_Camo_Worn_RS",
+			"BUDDIES_Intel_Camo",
+			"BUDDIES_Intel_Camo_RS",
 			"BUD_Camo",
 			"BUD_Camo_RS",
 			"BUDDIES_Recon_Camo",
@@ -226,14 +228,6 @@ class CfgPatches
 			"CUP_Weapons_LoadOrder",
 			"CUP_Creatures_People_LoadOrder",
 			"CUP_Vehicles_LoadOrder",
-			"Alpine_Config",
-			"Alpine_Vests_Config",
-			"AOR2_Config",
-			"AOR2_Vests_Config",
-			"Arid_Config",
-			"Arid_Vests_Config",
-			"Black_Config",
-			"Black_Vests_Config",
 			"hlcweapons_falpocalypse",
 			"hlcweapons_acr",
 			"hlcweapons_ar15",
@@ -259,7 +253,6 @@ class CfgPatches
 			"hlcweapons_Johnson",
 			"hlcweapons_SCAR",
 			"hlcweapons_XM8",
-			"sp_fwa_mas",
 			"USP_Gear_Core",
 			"USP_Gear_Pack",
 			"USP_Gear_Face",
@@ -3503,7 +3496,7 @@ class CfgVehicles
 		};
 		linkedItems[]=
 		{
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"rhssaf_helmet_m97_olive_nocamo",
 			"ItemMap",
 			"ItemCompass",
@@ -3513,7 +3506,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"rhssaf_helmet_m97_olive_nocamo",
 			"ItemMap",
 			"ItemCompass",
@@ -3607,7 +3600,7 @@ class CfgVehicles
 		};
 		linkedItems[]=
 		{
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"rhsusf_opscore_fg",
 			"ItemMap",
 			"ItemCompass",
@@ -3617,7 +3610,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"rhsusf_opscore_fg",
 			"ItemMap",
 			"ItemCompass",
@@ -3751,7 +3744,7 @@ class CfgVehicles
 		};
 		linkedItems[]=
 		{
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"rhssaf_helmet_m97_olive_nocamo_black_ess",
 			"ItemMap",
 			"ItemCompass",
@@ -3761,7 +3754,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"rhssaf_helmet_m97_olive_nocamo_black_ess",
 			"ItemMap",
 			"ItemCompass",
@@ -4530,7 +4523,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"CUP_H_Ger_M92_Tan_GG_CF",
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"rhs_googles_black",
 			"ItemMap",
 			"ItemCompass",
@@ -4541,7 +4534,7 @@ class CfgVehicles
 	    respawnLinkedItems[]=
 		{
 			"CUP_H_Ger_M92_Tan_GG_CF",
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"rhs_googles_black",
 			"ItemMap",
 			"ItemCompass",
@@ -4739,7 +4732,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"H_Cap_blk",
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -4749,7 +4742,7 @@ class CfgVehicles
 		respawnLinkedItems[]=
 		{
 			"H_Cap_blk",
-			"UPS_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
 			"ItemMap",
 			"ItemCompass",
 			"ItemRadio",
@@ -10675,7 +10668,7 @@ class cfgWeapons
 		{
 			uniformModel = "-";
 			uniformClass=BUDDIES_Intel_Uniform_RS;
-			containClass=Supply50;
+			containerClass=Supply50;
 			mass=50;
 		};
 	};
