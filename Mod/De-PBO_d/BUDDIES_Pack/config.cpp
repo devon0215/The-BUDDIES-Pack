@@ -187,6 +187,8 @@ class CfgPatches
 			"AIRBUD_C130J_Cargo",
 			"AIRBUD_C47",
 			"AIRBUD_AC47",
+			"AIRBUD_Legacy_C47",
+			"AIRBUD_Legacy_AC47",
 			"AIRBUD_L39",
 			"AIRBUD_MiG29SM"
 		};
@@ -9879,6 +9881,24 @@ class CfgVehicles
 		{
 			"\BUDDIES_Pack\Data\Vehicle\airbud_ac47_body_01.paa",
 			"\BUDDIES_Pack\Data\Vehicle\airbud_c47_body_02.paa"
+		};
+	};
+	class AIRBUD_Legacy_C47: AIRBUD_C47
+	{
+		displayName="C-47 (Legacy)";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\legacy_buddies_c47_body_01.paa",
+			"\BUDDIES_Pack\Data\Vehicle\legacy_buddies_c47_body_02.paa"
+		};
+	};
+	class AIRBUD_Legacy_AC47: AIRBUD_AC47
+	{
+		displayName="AC-47 (Legacy)";
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Vehicle\legacy_buddies_c47_body_01.paa",
+			"\BUDDIES_Pack\Data\Vehicle\legacy_buddies_c47_body_02.paa"
 		};
 	};
 	class AIRBUD_L39: rhs_l39_cdf
