@@ -9,6 +9,7 @@ FIXES
 -add units for the marine and recon parts of the faction
 -Retexture old vehicles to be devon green
 -Add buddy retextures as skins in the editor/zeus
+-Skate or die upside down on legacy c47
 ----------------------------------------
 
 Wishlist
