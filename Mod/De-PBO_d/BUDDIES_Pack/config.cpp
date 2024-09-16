@@ -49,6 +49,7 @@ class CfgPatches
 			"B_AIRBUD_Secfor",
 			"B_AIRBUD_Driver",
 			"B_AQUABUD_DeckCrew",
+			"B_BUDDY_Marine_Squad_Leader",
 			"B_BUDDY_Marine_Rifleman",
 			"B_BUDDY_Recon_Driver",
 			"B_BUDDY_Recon_Crew",
@@ -4445,6 +4446,102 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
+	class B_BUDDY_Marine_Squad_Leader: B_BUDDY_Soldier_Marine_Base
+	{
+		author="Devon0215";
+		scope=2;
+		scopeCurator=2;
+		displayName="Squad Leader";
+		uniformClass="BUDDIES_Marines_Camo";
+		cost=250000;
+		icon="iconManLeader";
+		weapons[]=
+		{
+			"CUP_arifle_Mk17_CQC_EGLM",
+			"Throw",
+			"Put"
+		};
+		respawnWeapons[]=
+		{
+			"CUP_arifle_Mk17_CQC_EGLM",
+			"Throw",
+			"Put"
+		};
+		items[]=
+		{
+			"FirstAidKit",
+			"FirstAidKit"
+		};
+		respawnItems[]=
+		{
+			"FirstAidKit",
+			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_Smoke_M203",
+			"CUP_1Rnd_Smoke_M203",
+			"CUP_1Rnd_SmokeGreen_M203",
+			"CUP_1Rnd_SmokeRed_M203"
+		};
+		respawnMagazines[]=
+		{
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_20Rnd_762x51_B_SCAR",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_HEDP_M203",
+			"CUP_1Rnd_Smoke_M203",
+			"CUP_1Rnd_Smoke_M203",
+			"CUP_1Rnd_SmokeGreen_M203",
+			"CUP_1Rnd_SmokeRed_M203"
+		};
+		linkedItems[]=
+		{
+			"rhsusf_opscore_mar_ut_pelt",
+			"CUP_V_CPC_tlbelt_coy",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+		respawnLinkedItems[]=
+		{
+			"rhsusf_opscore_mar_ut_pelt",
+			"CUP_V_CPC_tlbelt_coy",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+	};
 	class B_BUDDY_Marine_Rifleman: B_BUDDY_Soldier_Marine_Base
 	{
 		author="Atli";
@@ -4525,7 +4622,7 @@ class CfgVehicles
 		linkedItems[]=
 		{
 			"CUP_H_Ger_M92_Tan_GG_CF",
-			"USP_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT",
 			"rhs_googles_black",
 			"ItemMap",
 			"ItemCompass",
@@ -4536,7 +4633,7 @@ class CfgVehicles
 	    respawnLinkedItems[]=
 		{
 			"CUP_H_Ger_M92_Tan_GG_CF",
-			"USP_CRYE_CPC_LIGHT_RGR",
+			"USP_CRYE_CPC_LIGHT",
 			"rhs_googles_black",
 			"ItemMap",
 			"ItemCompass",
@@ -6726,11 +6823,23 @@ class CfgVehicles
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
 		};
-		class TransportWeapons{};
-		class TransportMagazines{};
-		class TransportItems{};
-		class TransportBackpacks{};
-		maximumLoad=2500;
+		class TextureSources
+		{
+			class BUDDIES_M151_Skin
+			{
+				displayName="BUDDIES";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m151_hull_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_canvas_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_detail_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
+				};
+				factions[]={};
+			};
+		};
 	};
 	class BUDDIES_M151_M2: CUP_I_M151_M2_SYND
 	{
@@ -6759,11 +6868,23 @@ class CfgVehicles
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
 		};
-		class TransportWeapons{};
-		class TransportMagazines{};
-		class TransportItems{};
-		class TransportBackpacks{};
-		maximumLoad=2500;
+		class TextureSources
+		{
+			class BUDDIES_M151_M2_Skin
+			{
+				displayName="BUDDIES";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m151_hull_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_canvas_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_detail_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
+				};
+				factions[]={};
+			};
+		};
 	};
 	class AIRBUD_M151: BUDDIES_M151
 	{
@@ -6792,11 +6913,23 @@ class CfgVehicles
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
 		};
-		class TransportWeapons{};
-		class TransportMagazines{};
-		class TransportItems{};
-		class TransportBackpacks{};
-		maximumLoad=2500;
+		class TextureSources
+		{
+			class AIRBUD_M151_Skin
+			{
+				displayName="AIRBUD";
+				author="Devon0215";
+				texture[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\AIRBUD_m151_hull_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_canvas_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_detail_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
+				};
+				factions[]={};
+			};
+		};
 	};
 	class AIRBUD_M151_M2: BUDDIES_M151_M2
 	{
@@ -6825,11 +6958,23 @@ class CfgVehicles
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
 		};
-		class TransportWeapons{};
-		class TransportMagazines{};
-		class TransportItems{};
-		class TransportBackpacks{};
-		maximumLoad=2500;
+		class TextureSources
+		{
+			class AIRBUD_M151_M2_Skin
+			{
+				displayName="AIRBUD";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\AIRBUD_m151_hull_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_canvas_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_detail_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
+				};
+				factions[]={};
+			};
+		};
 	};
 	class BUDDIES_Recon_M151: BUDDIES_M151
 	{
@@ -6858,11 +7003,22 @@ class CfgVehicles
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
 		};
-		class TransportWeapons{};
-		class TransportMagazines{};
-		class TransportItems{};
-		class TransportBackpacks{};
-		maximumLoad=2500;
+		class TextureSources
+		{
+			class BUDDIES_Recon_M151_Skin
+			{
+				displayName="BUDDIES Recon";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_recon_m151_hull_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_canvas_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_detail_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
+				};
+			};
+		};
 	};
 	class BUDDIES_Recon_M151_M2: BUDDIES_M151_M2
 	{
@@ -6891,11 +7047,22 @@ class CfgVehicles
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
 			"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
 		};
-		class TransportWeapons{};
-		class TransportMagazines{};
-		class TransportItems{};
-		class TransportBackpacks{};
-		maximumLoad=2500;
+		class TextureSources
+		{
+			class BUDDIES_Recon_M151_M2_Skin
+			{
+				displayName="BUDDIES Recon";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_recon_m151_hull_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_canvas_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_detail_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_underbody_co.paa",
+					"\CUP\WheeledVehicles\CUP_WheeledVehicles_M151\data\m151_wheel_co.paa"
+				};
+			};
+		};
 	};
 	class BUDDIES_M998_2dr: rhsgref_hidf_M998_2dr
 	{
@@ -6924,6 +7091,28 @@ class CfgVehicles
 		rhs_decalParameters[]=
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
+		};
+		class TextureSources
+		{
+			class BUDDIES_M998_2dr_Skin
+			{
+				displayName="BUDDIES";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_ext_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\A2_parts_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\wheel_wranglermt_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_mainbody_lg_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_wood_lg_co.paa",
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_2dr_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\tile_exmetal_lg_co.paa",
+					"",
+					""
+				};
+			};
 		};
 	};
 	class BUDDIES_M998_2dr_Halftop: rhsgref_hidf_M998_2dr_halftop
@@ -6954,6 +7143,28 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+		class TextureSources
+		{
+			class BUDDIES_M998_2dr_Halftop_Skin
+			{
+				displayName="BUDDIES";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_ext_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\A2_parts_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\wheel_wranglermt_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_mainbody_lg_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_wood_lg_co.paa",
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_2dr_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\tile_exmetal_lg_co.paa",
+					"",
+					""
+				};
+			};
+		};
 	};
 	class BUDDIES_M998_2dr_Fulltop: rhsgref_hidf_M998_2dr_fulltop
 	{
@@ -6982,6 +7193,28 @@ class CfgVehicles
 		rhs_decalParameters[]=
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
+		};
+		class TextureSources
+		{
+			class BUDDIES_M998_2dr_Fulltop_Skin
+			{
+				displayName="BUDDIES";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_ext_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\A2_parts_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\wheel_wranglermt_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_mainbody_lg_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_wood_lg_co.paa",
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_2dr_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\tile_exmetal_lg_co.paa",
+					"",
+					""
+				};
+			};
 		};
 	};
 	class BUDDIES_M998_4dr: rhsgref_hidf_m998_4dr
@@ -7012,6 +7245,28 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+		class TextureSources
+		{
+			class BUDDIES_M998_4dr_Skin
+			{
+				displayName="BUDDIES";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_ext_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\A2_parts_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\wheel_wranglermt_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_mainbody_lg_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_wood_lg_co.paa",
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_4dr_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\tile_exmetal_lg_co.paa",
+					"",
+					""
+				};
+			};
+		};
 	};
 	class BUDDIES_M998_4dr_Halftop: rhsgref_hidf_M998_4dr_halftop
 	{
@@ -7041,6 +7296,28 @@ class CfgVehicles
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
 		};
+		class TextureSources
+		{
+			class BUDDIES_M998_4dr_Halftop_Skin
+			{
+				displayName="BUDDIES";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_ext_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\A2_parts_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\wheel_wranglermt_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_mainbody_lg_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_wood_lg_co.paa",
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_4dr_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\tile_exmetal_lg_co.paa",
+					"",
+					""
+				};
+			};
+		};
 	};
 	class BUDDIES_M998_4dr_Fulltop: rhsgref_hidf_M998_4dr_fulltop
 	{
@@ -7069,6 +7346,28 @@ class CfgVehicles
 		rhs_decalParameters[]=
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
+		};
+		class TextureSources
+		{
+			class BUDDIES_M998_4dr_Fulltop
+			{
+				displayName="BUDDIES";
+				author="Devon0215";
+				textures[]=
+				{
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_ext_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\A2_parts_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\wheel_wranglermt_lg_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_mainbody_lg_co.paa",
+					"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\m998_interior_wood_lg_co.paa",
+					"\BUDDIES_Pack\Data\Vehicle\buddies_m998_4dr_co.paa",
+					"rhsgref\addons\rhsgref_vehicles_ret\data\hidf\hmmwv\tile_exmetal_lg_co.paa",
+					"",
+					""
+				};
+			};
 		};
 	};
 	class BUDDIES_M1025: rhsgref_hidf_m1025

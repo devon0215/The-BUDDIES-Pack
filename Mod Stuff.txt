@@ -2,9 +2,7 @@
 FIXES
 
 -Marine vehicles have regular buddy crew and drivers
--Need marine rolled sleeves, patched, and patched rolled sleeves uniforms
--Need navy rolled sleeves, patched, and patched rolled sleeves, uniforms
--Add Marine and navy insignia
+-Add Marine insignia
 -Add preview pictures for all the vehicles
 -add units for the marine and recon parts of the faction
 -Retexture old vehicles to be devon green
@@ -15,10 +13,14 @@ FIXES
 Wishlist
 
 -T-shirt w/ Trousers for various branches/uniforms (designs vary, e.g. "moto")
+-Viper/Venom RasCO skins
+-Randomized facewear for all units
+-SOCOM/Recon humvees
+-British cars (Coyote, Jackal, etc) for Marines
 -Winter Gear
+-Militia Specific vehicles with "worn" uniform color
 -Intel Patch/Beret
 -Ambywamce
--BUD skill scaling as Spec Forces
 -AQUABUD LCVP, Frigate, Gunboat, Big transport I can't think of
 -FOB/Base Compositions
 -More BUDDIES Signs
