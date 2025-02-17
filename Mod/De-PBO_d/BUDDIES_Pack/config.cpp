@@ -191,7 +191,22 @@ class CfgPatches
 			"AIRBUD_Legacy_C47",
 			"AIRBUD_Legacy_AC47",
 			"AIRBUD_L39",
-			"AIRBUD_MiG29SM"
+			"AIRBUD_MiG29SM",
+			"BUDDIES_Static_ZU23",
+			"BUDDIES_Static_NSV_Tripod",
+			"BUDDIES_Static_KORD",
+			"BUDDIES_Static_KORD_High",
+			"BUDDIES_Static_DSHKM",
+			"BUDDIES_Static_DSHKM_Mini_Tripod",
+			"BUDDIES_Static_AGS30",
+			"BUDDIES_Static_SPG9",
+			"BUDDIES_Static_SPG9M",
+			"BUDDIES_Static_Igla",
+			"BUDDIES_Static_2b14",
+			"BUDDIES_Static_Metis",
+			"BUDDIES_Static_Kornet",
+			"BUDDIES_Static_D30",
+			"BUDDIES_Static_D30_AT"
 		};
 		weapons[]=
 		{
@@ -374,6 +389,10 @@ class CfgEditorSubcategories
 	class AIRBUD_Planes
 	{
 		displayName="Planes";
+	};
+	class BUDDIES_Statics
+	{
+		displayName="Statics";
 	};
 };
 class CfgVehicles
@@ -6116,6 +6135,17 @@ class CfgVehicles
 		};
 	};
 	class LandVehicle;
+	class StaticWeapon: LandVehicle
+	{
+		class Turrets
+		{
+			class MainTurret;
+		};
+	};
+	class StaticCannon: StaticWeapon
+	{
+		class ViewOptics;
+	};
 	class Car: LandVehicle
 	{
 		class HitPoints;
@@ -6630,6 +6660,29 @@ class CfgVehicles
 	class CUP_B_AC47_Spooky_USA;
 	class rhs_l39_cdf;
 	class rhs_mig29sm_vvsc;
+	class RHS_ZU23_base: StaticCannon
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret;
+			class CargoTurret_01;
+		};
+	};
+	class RHS_ZU23_MSV: RHS_ZU23_base {};
+	class RHS_NSV_TriPod_MSV;
+	class rhs_KORD_MSV;
+	class rhs_KORD_high_MSV;
+	class rhs_DSHKM_ins;
+	class rhs_DSHKM_Mini_TriPod_ins;
+	class RHS_AGS30_TriPod_MSV;
+	class rhs_SPG9_INS;
+	class rhs_SPG9M_MSV;
+	class rhs_Igla_AA_pod_msv;
+	class rhs_2b14_82mm_msv;
+	class rhs_Metis_9k115_2_msv;
+	class rhs_Kornet_9M133_2_msv;
+	class rhs_D30_msv;
+	class rhs_D30_AT_msv;
 	class BUDDIES_UAZ: RHS_UAZ_MSV_01
 	{
 		side=1;
@@ -10250,6 +10303,226 @@ class CfgVehicles
 		rhs_decalParameters[]=
 		{
 			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_Static_ZU23: RHS_ZU23_MSV
+	{
+		side=1;
+		scope=2;
+		author="Devon0215";
+		displayName="Zu-23";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_01: CargoTurret_01
+			{
+				gunnerType="B_BUDDY_R_Driver";
+			};
+		};
+	};
+	class BUDDIES_Static_NSV_Tripod: RHS_NSV_TriPod_MSV
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="NSV";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_KORD: rhs_KORD_MSV
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="KORD";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_KORD_High: rhs_KORD_high_MSV
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="KORD (High)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_DSHKM: rhs_DSHKM_ins
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="DshKM";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_DSHKM_Mini_Tripod: rhs_DSHKM_Mini_TriPod_ins
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="DshKM (Mini Tripod)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_AGS30: RHS_AGS30_TriPod_MSV
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="AGS-30";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_SPG9: rhs_SPG9_INS
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="SPG-9";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_SPG9M: rhs_SPG9M_MSV
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="SPG-9M";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_Igla: rhs_Igla_AA_pod_msv
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="Igla";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_2b14: rhs_2b14_82mm_msv
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="2B14";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_Metis: rhs_Metis_9k115_2_msv
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="Metis";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_Kornet: rhs_Kornet_9M133_2_msv
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="Kornet";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_D30: rhs_D30_msv
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="D-30";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
+		};
+	};
+	class BUDDIES_Static_D30_AT: rhs_D30_AT_msv
+	{
+		scope=2;
+		side=1;
+		author="Devon0215";
+		displayName="D-30 (AT)";
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_Statics";
+		crew="B_BUDDY_R_Driver";
+		typicalCargo[]=
+		{
+			"B_BUDDY_R_Driver"
 		};
 	};
 	class Flagcarrier;
