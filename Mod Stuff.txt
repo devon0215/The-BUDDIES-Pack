@@ -6,27 +6,24 @@ FIXES
 -Add preview pictures for all the vehicles
 -add units for the marine and recon parts of the faction
 -Retexture old vehicles to be devon green
--Add buddy retextures as skins in the editor/zeus
 -Skate or die upside down on legacy c47
 ----------------------------------------
 
 Wishlist
 
 -T-shirt w/ Trousers for various branches/uniforms (designs vary, e.g. "moto")
--Viper/Venom RasCO skins
+-Viper/Venom
 -Randomized facewear for all units
 -SOCOM/Recon humvees
 -British cars (Coyote, Jackal, etc) for Marines
 -Winter Gear
 -Militia Specific vehicles with "worn" uniform color
--Intel Patch/Beret
 -Ambywamce
 -AQUABUD LCVP, Frigate, Gunboat, Big transport I can't think of
 -FOB/Base Compositions
 -More BUDDIES Signs
 -Support Personnel
--Static Weapons
--Covert Civilian BUD
+-Covert Civilian BUD (JOY)
 -High Command (units of da goons)
 -Person Specific Skins for vics (story category?)
 -BUD Prowler
@@ -35,3 +32,8 @@ Wishlist
 -BRDM
 -Marine and Navy 8-Points
 -Recon Sweater
+-BMP3
+-modern british ifv (whatever that's called)
+-su25
+-l39za
+-mtlb

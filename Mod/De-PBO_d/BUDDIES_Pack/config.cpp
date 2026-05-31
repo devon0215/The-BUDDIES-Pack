@@ -54,6 +54,7 @@ class CfgPatches
 			"B_BUDDY_Recon_Driver",
 			"B_BUDDY_Recon_Crew",
 			"B_BUDDY_Recon_Squad_Leader",
+			"B_BUDDY_Winter_Rifleman",
 			"B_BUD_Officer",
 			"B_BUD_Marksman_M14",
 			"B_BUD_Rifleman_FAL",
@@ -135,6 +136,10 @@ class CfgPatches
 			"BUDDIES_bmp2e",
 			"BUDDIES_bmp2k",
 			"BUDDIES_bmp2d",
+			"BUDDIES_BMP3",
+			"BUDDIES_BMP3_Late",
+			"BUDDIES_BMP3M",
+			"BUDDIES_BMP3MERA",
 			"BUDDIES_Recon_brm1k",
 			"BUDDIES_Recon_prp3",
 			"BUDDIES_Recon_LT_01_AA",
@@ -218,6 +223,8 @@ class CfgPatches
 			"BUDDIES_Camo_RS",
 			"BUDDIES_Camo_Worn",
 			"BUDDIES_Camo_Worn_RS",
+			"BUDDIES_Camo_Winter",
+			"BUDDIES_Camo_Winter_RS",
 			"BUDDIES_Intel_Camo",
 			"BUDDIES_Intel_Camo_RS",
 			"BUD_Camo",
@@ -317,6 +324,10 @@ class CfgEditorSubcategories
 	class BUDDIES_Men_Recon
 	{
 		displayName="Men (Recon)";
+	};
+	class BUDDIES_Men_Winter
+	{
+		displayName="Men (Winter)";
 	};
 	class BUDDIES_Cars
 	{
@@ -592,6 +603,22 @@ class CfgVehicles
 			init="_this select 0 setSkill 0.75;";
 		};
 	};
+	class B_BUDDY_Soldier_Winter_Base: B_BUDDY_Soldier_Base
+	{
+		author="Devon0215";
+		displayName="Winter";
+		editorSubcategory="BUDDIES_Men_Winter";
+		camouflage=0.75;
+		minFireTime=7;
+		class AttributeValues
+		{
+			skill=0.75;
+		};
+		class EventHandlers: EventHandlers
+		{
+			init="_this select 0 setSkill 0.75;";
+		};
+	};
 	class B_AIRBUD_Soldier_Base: B_BUDDY_Soldier_Base
 	{
 		author="Devon0215";
@@ -841,6 +868,36 @@ class CfgVehicles
 		hiddenSelectionsTextures[]=
 		{
 			"\BUDDIES_Pack\Data\Uniform\camo_buddies_worn_textured_co.paa"
+		};
+	};
+	class BUDDIES_Uniform_Winter: BUDDIES_Uniform
+	{
+		author="Devon0215";
+		displayName="Buddy Uniform (Winter)";
+		uniformClass="BUDDIES_Camo_Winter";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_winter_co.paa"
+		};
+	};
+	class BUDDIES_Uniform_Winter_RS: BUDDIES_Uniform_RS
+	{
+		author="Devon0215";
+		displayName="Buddy Uniform (Winter, Rolled Sleeves)";
+		uniformClass="BUDDIES_Camo_Winter_RS";
+		hiddenSelections[]=
+		{
+			"Camo",
+			"Insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\BUDDIES_Pack\Data\Uniform\camo_buddies_winter_co.paa"
 		};
 	};
 	class BUDDIES_Marines_Uniform: BUDDIES_Uniform
@@ -4940,6 +4997,94 @@ class CfgVehicles
 			"ItemGPS"
 		};
 	};
+	class B_BUDDY_Winter_Rifleman: B_BUDDY_Soldier_Winter_Base
+	{
+		author="Devon0215";
+		scope=2;
+		scopeCurator=2;
+		displayName="Rifleman";
+		uniformClass="BUDDIES_Camo_Winter";
+		weapons[]=
+		{
+			"CUP_arifle_G36A",
+			"Throw",
+			"Put"
+		};
+		respawnWeapons[]=
+		{
+			"CUP_arifle_G36A",
+			"Throw",
+			"Put"
+		};
+		items[]=
+		{
+			"FirstAidKit",
+			"FirstAitKit",
+			"FirstAidKit"
+		};
+		respawnItems[]=
+		{
+			"FirstAidKit",
+			"FirstAitKit",
+			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"rhs_mag_m67",
+			"rhs_mag_m67",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell"
+		};
+		respawnMagazines[]=
+		{
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"CUP_30Rnd_556x45_G36",
+			"rhs_mag_m67",
+			"rhs_mag_m67",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell"
+		};
+		linkedItems[]=
+		{
+			"rhssaf_helmet_m97_olive_nocamo",
+			"USP_BALACLAVA_ESS_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+		respawnLinkedItems[]=
+		{
+			"rhssaf_helmet_m97_olive_nocamo",
+			"USP_BALACLAVA_ESS_RGR",
+			"USP_CRYE_CPC_LIGHT_RGR",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"ItemWatch",
+			"ItemGPS"
+		};
+	};
 	class B_BUD_Officer: B_BUD_Soldier_Base
 	{
 		author="chef";
@@ -6431,6 +6576,53 @@ class CfgVehicles
 		};
 		class EventHandlers;
 	};
+	class rhs_bmp3tank_base: Tank_F
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				class Turrets: Turrets
+				{
+					class CommanderOptics;
+				};
+			};
+			class GPMGTurret1: NewTurret{};
+			class GPMGTurret2: GPMGTurret1{};
+		};
+	};
+	class rhs_bmp3_msv: rhs_bmp3tank_base{};
+	class rhs_bmp3_late_msv: rhs_bmp3tank_base
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				class Turrets: Turrets
+				{
+					class CommanderOptics;
+				};
+			};
+			class GPMGTurret1;
+			class GPMGTurret2;
+		};
+	};
+	class rhs_bmp3m_msv: rhs_bmp3tank_base
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				class Turrets: Turrets
+				{
+					class CommanderOptics;
+				};
+			};
+			class GPMGTurret1;
+			class GPMGTurret2;
+		};
+	};
+	class rhs_bmp3mera_msv;
 	class LT_01_base_F: Tank_F{};
 	class LT_01_AA_base_F: LT_01_base_F{};
 	class LT_01_AT_base_F: LT_01_base_F{};
@@ -8721,6 +8913,150 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_bmp\textures\bmp_4_co.paa",
 			"rhsafrf\addons\rhs_bmp\textures\bmp_5_co.paa",
 			"rhsafrf\addons\rhs_bmp\textures\bmp_6_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BMP3: rhs_bmp3_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_IFVs";
+		author="Devon0215";
+		displayName="BMP-3 (Early)";
+		crew="B_BUDDY_R_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_bmp3_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BMP3_Late: rhs_bmp3_late_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_IFVs";
+		author="Devon0215";
+		displayName="BMP-3 (Late)";
+		crew="B_BUDDY_R_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_bmp3_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_mod_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BMP3M: rhs_bmp3m_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_IFVs";
+		author="Devon0215";
+		displayName="BMP-3 (Vesna-K)";
+		crew="B_BUDDY_R_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_bmp3_3M_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_3m_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
+		rhs_decalParameters[]=
+		{
+			"[""RHS_Decal_Enabled"", false, true];"
+		};
+	};
+	class BUDDIES_BMP3MERA: rhs_bmp3mera_msv
+	{
+		side=1;
+		scope=2;
+		scopeCurator=2;
+		faction="BUDDIES_Faction";
+		editorSubcategory="BUDDIES_IFVs";
+		author="Devon0215";
+		displayName="BMP-3 (Vesna-K/A)";
+		crew="B_BUDDY_R_Crew";
+		hiddenSelectionsTextures[]=
+		{
+			"BUDDIES_Pack\Data\Vehicle\BUDDIES_bmp3_3MERA_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_3m_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa",
+			"rhsafrf\addons\rhs_bmp3\data\3m_era_co.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
 			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
 			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
 			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
@@ -11054,6 +11390,32 @@ class cfgWeapons
 		{
 			uniformModel = "-";
 			uniformClass=BUDDIES_Uniform_Textured_RS;
+			containerClass=Supply50;
+			mass=50;
+		};
+	};
+	class BUDDIES_Camo_Winter: BUDDIES_Camo
+	{
+		author="Devon0215";
+		scope=2;
+		displayName="BUDDIES Uniform (Winter)";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass=BUDDIES_Uniform_Winter;
+			containerClass=Supply50;
+			mass=50;
+		};
+	};
+	class BUDDIES_Camo_Winter_RS: BUDDIES_Camo
+	{
+		author="Devon0215";
+		scope=2;
+		displayName="BUDDIES Uniform (Winter, Rolled Sleeves)";
+		class ItemInfo: UniformItem
+		{
+			uniformModel = "-";
+			uniformClass = "BUDDIES_Uniform_Winter_RS";
 			containerClass=Supply50;
 			mass=50;
 		};
